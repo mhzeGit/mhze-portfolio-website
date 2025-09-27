@@ -1,0 +1,139 @@
+// Blog functionality - handles display and navigation
+
+// Initialize blog when page loads
+document.addEventListener('DOMContentLoaded', function() {
+  initializeBlog();
+});
+
+// Initialize the blog system
+function initializeBlog() {
+  generateBlogCards();
+  console.log("Blog system initialized");
+}
+
+// Generate blog cards from data
+function generateBlogCards() {
+  const blogGrid = document.getElementById('blog-grid');
+  if (!blogGrid) return;
+
+  const posts = getAllBlogPosts();
+  
+  blogGrid.innerHTML = posts.map(post => `
+    <article class="blog-card" onclick="showBlogPost('${post.id}')">
+      <div class="blog-image">${post.image}</div>
+      <div class="blog-content">
+        <div class="blog-meta">
+          <span class="blog-date">${post.date}</span>
+          <span class="read-time">${post.readTime}</span>
+        </div>
+        <h3>${post.title}</h3>
+        <p>${post.description}</p>
+        <div class="blog-tags">
+          ${post.tags.map(tag => `<span class="blog-tag">${tag}</span>`).join('')}
+        </div>
+      </div>
+    </article>
+  `).join('');
+}
+
+// Show individual blog post
+function showBlogPost(postId) {
+  const post = getBlogPost(postId);
+  if (!post) {
+    console.error(`Blog post with id "${postId}" not found`);
+    return;
+  }
+
+  // Hide blog listing and show blog post
+  document.getElementById('blog-listing').style.display = 'none';
+  document.getElementById('blog-post').style.display = 'block';
+
+  // Populate post data
+  document.getElementById('post-title').textContent = post.title;
+  document.getElementById('post-date').textContent = post.date;
+  document.getElementById('post-read-time').textContent = post.readTime;
+  document.getElementById('post-author').textContent = `By ${post.author}`;
+  document.getElementById('post-image').textContent = post.image;
+  document.getElementById('post-content').innerHTML = post.content;
+
+  // Populate tags
+  const tagsContainer = document.getElementById('post-tags');
+  tagsContainer.innerHTML = post.tags.map(tag => 
+    `<span class="blog-tag">${tag}</span>`
+  ).join('');
+
+  // Update page title
+  document.title = `${post.title} - MHZE Blog`;
+
+  // Scroll to top
+  window.scrollTo(0, 0);
+}
+
+// Show blog listing page
+function showBlogListing() {
+  document.getElementById('blog-post').style.display = 'none';
+  document.getElementById('blog-listing').style.display = 'block';
+  
+  // Reset page title
+  document.title = 'MHZE - Blog';
+  
+  // Scroll to top
+  window.scrollTo(0, 0);
+}
+
+// Handle browser back/forward navigation
+window.addEventListener('popstate', function(event) {
+  if (event.state && event.state.postId) {
+    showBlogPost(event.state.postId);
+  } else {
+    showBlogListing();
+  }
+});
+
+// Add history state when showing a post
+function showBlogPostWithHistory(postId) {
+  showBlogPost(postId);
+  history.pushState({ postId: postId }, '', `#${postId}`);
+}
+
+// Check URL on page load for direct post links
+function checkUrlOnLoad() {
+  const hash = window.location.hash.substring(1);
+  if (hash && getBlogPost(hash)) {
+    showBlogPost(hash);
+  }
+}
+
+// Enhanced initialization
+function initializeBlog() {
+  generateBlogCards();
+  checkUrlOnLoad();
+  console.log("Blog system initialized");
+}
+
+// Smooth scrolling for navigation links (inherited from main.js pattern)
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth' });
+    }
+  });
+});
+
+// Get all blog posts as an array
+function getAllBlogPosts() {
+  return Object.keys(window.blogPosts || {}).map(id => ({
+    id,
+    ...window.blogPosts[id]
+  }));
+}
+
+// Get a specific blog post by ID
+function getBlogPost(postId) {
+  return window.blogPosts && window.blogPosts[postId] ? {
+    id: postId,
+    ...window.blogPosts[postId]
+  } : null;
+}

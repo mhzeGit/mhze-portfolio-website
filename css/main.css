@@ -27,7 +27,7 @@ nav {
   top: 0px;
   width: 100%;
   /* background: rgba(15, 15, 35, 0.9);  */
-  background: rgba(12, 10, 17, 0.637); 
+  background: rgba(16, 13, 19, 0.4); 
 
   backdrop-filter: blur(10px);
   z-index: 1000;
@@ -62,7 +62,7 @@ nav {
   transition: all 0.3s ease-in-out;
 }
 
-.nav-links a:hover {
+.nav-links a:hover, .nav-links a.active {
   color: #bdbef4;
   text-shadow: 0 0 15px rgba(189, 190, 244, 0.4);
 }
@@ -384,9 +384,6 @@ footer {
   0%, 100% { transform: translateY(0px); }
   50% { transform: translateY(-10px); }
 }
-
-
-
 
 /* Text Glow Pulse*/
 @keyframes glowPulse {
