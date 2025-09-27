@@ -1,6 +1,6 @@
 const blogPosts = {
   'your-new-post-id': {
-    title: 'Your New Post Title',
+    title: 'Farming Challenge | The Game Mechanic Devlog',
     date: 'March 25, 2025',
     readTime: '6 min read',
     author: 'Mohammad Hassan',
