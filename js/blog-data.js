@@ -4,21 +4,47 @@ const blogPosts = {
     date: 'September 27, 2025',
     readTime: '16 min read',
     author: 'Mohammad Hassan',
-    image: '../assets/BlogsContent/BlogThumbnail_FarmingMechanic.png',
-    description: 'Deep dive into creating a farming system for my latest game project, including challenges and solutions.',
+    image: '../assets/BlogsContent/Blog_FarmingMechanic/BlogThumbnail_FarmingMechanic.png',
+    description: 'Deep dive into creating a farming system for my latest game project, including challenges and solutions I went through.',
     tags: ['Game Mechanic', 'Farming', 'Devlog', 'Unity', 'C#'],
     content: `
-      <h2>Building the Farming System</h2>
-      <p>Creating a farming mechanic proved more challenging than I initially expected. Here's what I learned...</p>
-      
-      <h3>The Core Challenge</h3>
-      <p>Players needed to feel engaged with the farming process without it becoming tedious. The balance between realism and fun gameplay was crucial.</p>
-      
-      <h3>Technical Implementation</h3>
-      <p>I used Unity's Tilemap system combined with custom C# scripts to handle crop growth, soil states, and player interactions.</p>
-      
-      <h3>What I Learned</h3>
-      <p>The importance of player feedback loops and visual clarity in game mechanics cannot be overstated.</p>`
+    <h2>Introduction</h2>
+    <p>In this post I’ll go over how I built my new farming mechanic and the main <strong>challenges</strong> I ran into. I’ll skip the basics like the first-person controller, pickup, and interaction systems, and focus on the interesting parts.</p>
+
+    <p>Before touching code, I start with planning. At this stage I was already unsure how I’d pull some things off. I wrote down a rough step-by-step idea of how the farming loop should work, then went back and refined it. Most steps were familiar tasks, but two stood out: <strong>digging the soil</strong> and <strong>watering</strong>.</p>
+
+    <p>Other farming games often take <strong>shortcuts</strong> here, but I wanted something more natural. Not full realism, but an experience where the player can dig soil step by step and actually water it to make it look wet. Great in theory, but I wasn’t sure if it was even possible or worth it.</p>
+
+    <h2>Challenge 1: Digging the Soil</h2>
+    <p>I started with digging since it seemed simpler. Instead of modifying the ground mesh directly, I went for a <strong>fake approach</strong> using models that look like dug soil without actually changing the terrain. Since farming only needs surface digging for seeds, this was enough.</p>
+
+    
+    
+    <div class="blog-image-card right">
+        <img src="../assets/BlogsContent/Blog_FarmingMechanic/DiggedSoilStagesBlenderScreenshot.png" alt="Different stages of dug soil models">
+        <p class="image-caption">Different stages of dug soil, showing progression from first dig attempt to fully digged and then coverd by soil.</p>
+    </div>
+
+
+
+    <p><br>In Blender, I created 3–4 stages of dug soil. <br> My plan was to swap them in-engine as the player digs. <br><br>I kept everything <strong>non-destructive</strong>, leaving subdivision and displacement modifiers unapplied so I could easily generate variations later.</p>
+
+    <p><strong>Important detail:</strong> the “holes” aren’t real. The illusion of depth comes from raising the edges, not lowering the center. That way I avoid touching the terrain mesh at all.</p>
+
+
+    <p>In Unity, I set up the hoe to spawn one of these models at the hit point. It worked, but the models looked wrong, like they were floating above the ground. Same material, good UVs, but still off.</p>
+
+    <p>After checking closely, I found two issues:</p>
+    <ul>
+      <li>The UVs of the dug soil didn’t line up with the terrain.</li>
+      <li>The edges met the ground at sharp angles, making seams visible.</li>
+    </ul>
+
+    <p>These made the soil look disconnected, so fixing them became the next hurdle.</p>
+
+    <h2>Challenge 2: Watering</h2>
+    <p>(continue here…)</p>
+  `
   },
 
   'player-arm-animation': {
