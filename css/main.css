@@ -8,7 +8,8 @@
 /* Body */
 body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
+  /* background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%); */
+  background-color: #1d1c1f;
   color: #e2e8f0;
   line-height: 1.6;
   min-height: 100vh;
@@ -23,9 +24,11 @@ body {
 /* Navigation */
 nav {
   position: fixed;
-  top: 0;
+  top: 0px;
   width: 100%;
-  background: rgba(15, 15, 35, 0.9);
+  /* background: rgba(15, 15, 35, 0.9);  */
+  background: rgba(18, 15, 24, 0.637); 
+
   backdrop-filter: blur(10px);
   z-index: 1000;
   border-bottom: 1px solid rgba(99, 102, 241, 0.2);
@@ -33,51 +36,66 @@ nav {
 
 .nav-container {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
-  padding: 1rem 2rem;
+  justify-content: center;
+  padding: 1rem 2rem ;
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 10 auto;
 }
 
-.logo {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: #6366f1;
-  text-decoration: none;
-}
 
 .nav-links {
   display: flex;
   gap: 2rem;
   list-style: none;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  
 }
 
 .nav-links a {
-  color: #e2e8f0;
+  color: #9088d0;
   text-decoration: none;
-  transition: color 0.3s ease;
   font-weight: 500;
+  transition: all 0.3s ease-in-out;
 }
 
 .nav-links a:hover {
-  color: #6366f1;
+  color: #bdbef4;
+  text-shadow: 0 0 15px rgba(189, 190, 244, 0.4);
 }
 
 /* Hero Section */
 .hero {
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   position: relative;
   overflow: hidden;
+  /* padding-top: 20px; Default padding for all devices */
 }
 
 .hero-content {
   z-index: 2;
   max-width: 800px;
+  padding: 1rem;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding-top: 120px; /* Increased padding for mobile */
+    align-items: flex-start; /* Align from top on mobile */
+  }
 }
 
 .hero h1 {
@@ -376,4 +394,10 @@ p.intro strong {
   color: #fff;
   animation: glowPulse 4s infinite ease-in-out;
   animation-delay: var(--delay, 0s); /* default = 0s if not set */
+}
+
+
+/* Smooth Movement Navigation Transition  */
+html {
+  scroll-behavior: smooth;
 }

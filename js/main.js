@@ -9,15 +9,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
-// Add scroll effect to navbar
-window.addEventListener('scroll', () => {
-  const nav = document.querySelector('nav');
-  if (!nav) return;
-  nav.style.background =
-    window.scrollY > 100
-      ? 'rgba(15, 15, 35, 0.16)'
-      : 'rgba(15, 15, 35, 0.9)';
-});
 
 console.log("Main.js initialized");
 
