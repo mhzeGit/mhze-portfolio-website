@@ -18,8 +18,7 @@ const blogPosts = {
       <p>I used Unity's Tilemap system combined with custom C# scripts to handle crop growth, soil states, and player interactions.</p>
       
       <h3>What I Learned</h3>
-      <p>The importance of player feedback loops and visual clarity in game mechanics cannot be overstated.</p>
-    `
+      <p>The importance of player feedback loops and visual clarity in game mechanics cannot be overstated.</p>`
   },
 
   'player-arm-animation': {
@@ -39,8 +38,7 @@ const blogPosts = {
       <p>Visual scares get attention, but audio creates lasting dread. Subtle ambient sounds and strategic silence are your best tools.</p>
       
       <h3>Less is More</h3>
-      <p>The most effective scares come from what players don't see, not what they do.</p>
-    `
+      <p>The most effective scares come from what players don't see, not what they do.</p>`
   },
 
   'blender-to-unity-workflow': {
@@ -60,8 +58,144 @@ const blogPosts = {
       <p>Always model with the target platform in mind. Mobile games need different considerations than PC games.</p>
       
       <h3>Export Settings That Matter</h3>
-      <p>These specific Blender export settings have saved me countless headaches in Unity...</p>
-    `
+      <p>These specific Blender export settings have saved me countless headaches in Unity...</p>`
+  },
+  'my-three-horror-games': {
+    title: 'My 3 Horror Games That Got Popular on Itch.io',
+    date: 'September 15, 2025',
+    readTime: '8 min read',
+    author: 'Mohammad Hassan',
+    image: '../assets/BlogsContent/BlogThumbnail_My3HorrorGames.png',
+
+    description: 'Step-by-step guide to my optimized pipeline for getting 3D assets from Blender into Unity efficiently.',
+    tags: ['Indie Games', 'Unity', 'Horror', 'Beginer Works', 'Portfolio'],
+    content: `
+      <h2>Streamlined Asset Pipeline</h2>
+      <p>After years of trial and error, I've developed a workflow that saves hours on every project.</p>
+      
+      <h3>Modeling Best Practices</h3>
+      <p>Always model with the target platform in mind. Mobile games need different considerations than PC games.</p>
+      
+      <h3>Export Settings That Matter</h3>
+      <p>These specific Blender export settings have saved me countless headaches in Unity...</p>`
+  },
+  'my-3d-modelling': {
+    title: '3D Game Ready Assets & Modelling',
+    date: 'September 15, 2025',
+    readTime: '8 min read',
+    author: 'Mohammad Hassan',
+    image: '../assets/BlogsContent/BlogThumbnail_My3dModels.png',
+
+    description: 'Step-by-step guide to my optimized pipeline for getting 3D assets from Blender into Unity efficiently.',
+    tags: ['Indie Games', 'Unity', 'Horror', 'Beginer Works', 'Portfolio'],
+    content: `
+      <h2>Streamlined Asset Pipeline</h2>
+      <p>After years of trial and error, I've developed a workflow that saves hours on every project.</p>
+      
+      <h3>Modeling Best Practices</h3>
+      <p>Always model with the target platform in mind. Mobile games need different considerations than PC games.</p>
+      
+      <h3>Export Settings That Matter</h3>
+      <p>These specific Blender export settings have saved me countless headaches in Unity...</p>`
+  },
+  'animation-works': {
+    title: 'My Expereince In Animation',
+    date: 'September 15, 2025',
+    readTime: '8 min read',
+    author: 'Mohammad Hassan',
+    image: '../assets/BlogsContent/BlogThumbnail_MyExpereinceIn3DAnimation.png',
+
+    description: 'Step-by-step guide to my optimized pipeline for getting 3D assets from Blender into Unity efficiently.',
+    tags: ['Indie Games', 'Unity', 'Horror', 'Beginer Works', 'Portfolio'],
+    content: `
+      <h2>Streamlined Asset Pipeline</h2>
+      <p>After years of trial and error, I've developed a workflow that saves hours on every project.</p>
+      
+      <h3>Modeling Best Practices</h3>
+      <p>Always model with the target platform in mind. Mobile games need different considerations than PC games.</p>
+      
+      <h3>Export Settings That Matter</h3>
+      <p>These specific Blender export settings have saved me countless headaches in Unity...</p>`
+  }
+  ,
+  'unfinished-projects-showcase': {
+    title: 'Unfinished Projects Showcase',
+    date: 'September 15, 2025',
+    readTime: '8 min read',
+    author: 'Mohammad Hassan',
+    image: '../assets/BlogsContent/BlogThumbnail_My3dModels.png',
+
+    description: 'Step-by-step guide to my optimized pipeline for getting 3D assets from Blender into Unity efficiently.',
+    tags: ['Indie Games', 'Unity', 'Horror', 'Beginer Works', 'Portfolio'],
+    content: `
+      <h2>Streamlined Asset Pipeline</h2>
+      <p>After years of trial and error, I've developed a workflow that saves hours on every project.</p>
+      
+      <h3>Modeling Best Practices</h3>
+      <p>Always model with the target platform in mind. Mobile games need different considerations than PC games.</p>
+      
+      <h3>Export Settings That Matter</h3>
+      <p>These specific Blender export settings have saved me countless headaches in Unity...</p>`
+  }
+  ,
+  'grass-optimization-techniques': {
+    title: 'Grass Optimization Techniques',
+    date: 'September 15, 2025',
+    readTime: '8 min read',
+    author: 'Mohammad Hassan',
+    image: '../assets/BlogsContent/BlogThumbnail_My3dModels.png',
+
+    description: 'Step-by-step guide to my optimized pipeline for getting 3D assets from Blender into Unity efficiently.',
+    tags: ['Indie Games', 'Unity', 'Horror', 'Beginer Works', 'Portfolio'],
+    content: `
+      <h2>Streamlined Asset Pipeline</h2>
+      <p>After years of trial and error, I've developed a workflow that saves hours on every project.</p>
+      
+      <h3>Modeling Best Practices</h3>
+      <p>Always model with the target platform in mind. Mobile games need different considerations than PC games.</p>
+      
+      <h3>Export Settings That Matter</h3>
+      <p>These specific Blender export settings have saved me countless headaches in Unity...</p>`
+  }
+  ,
+  'uvseams-the-ultimate-fix': {
+    title: 'UV Seams The Ultimate Fix!',
+    date: 'September 15, 2025',
+    readTime: '8 min read',
+    author: 'Mohammad Hassan',
+    image: '../assets/BlogsContent/BlogThumbnail_My3dModels.png',
+
+    description: 'Step-by-step guide to my optimized pipeline for getting 3D assets from Blender into Unity efficiently.',
+    tags: ['Indie Games', 'Unity', 'Horror', 'Beginer Works', 'Portfolio'],
+    content: `
+      <h2>Streamlined Asset Pipeline</h2>
+      <p>After years of trial and error, I've developed a workflow that saves hours on every project.</p>
+      
+      <h3>Modeling Best Practices</h3>
+      <p>Always model with the target platform in mind. Mobile games need different considerations than PC games.</p>
+      
+      <h3>Export Settings That Matter</h3>
+      <p>These specific Blender export settings have saved me countless headaches in Unity...</p>`
+  }
+  ,
+  'slime-tower-defence-project': {
+    title: 'Slime Tower Defence Project',
+    date: 'September 15, 2025',
+    readTime: '8 min read',
+    author: 'Mohammad Hassan',
+    image: '../assets/BlogsContent/BlogThumbnail_My3dModels.png',
+
+    description: 'Step-by-step guide to my optimized pipeline for getting 3D assets from Blender into Unity efficiently.',
+    tags: ['Indie Games', 'Unity', 'Horror', 'Beginer Works', 'Portfolio'],
+    content: `
+      <h2>Streamlined Asset Pipeline</h2>
+      <p>After years of trial and error, I've developed a workflow that saves hours on every project.</p>
+      
+      <h3>Modeling Best Practices</h3>
+      <p>Always model with the target platform in mind. Mobile games need different considerations than PC games.</p>
+      
+      <h3>Export Settings That Matter</h3>
+      <p>These specific Blender export settings have saved me countless headaches in Unity...</p>`
   }
 };
 
