@@ -20,7 +20,7 @@ function generateBlogCards() {
   
   blogGrid.innerHTML = posts.map(post => `
     <article class="blog-card" onclick="showBlogPost('${post.id}')">
-      <div class="blog-image">${post.image}</div>
+      <div class="blog-card-image" style="background-image: url(${post.image}); background-size: cover; background-position: center;"></div>
       <div class="blog-content">
         <div class="blog-meta">
           <span class="blog-date">${post.date}</span>
@@ -46,14 +46,17 @@ function showBlogPost(postId) {
 
   // Hide blog listing and show blog post
   document.getElementById('blog-listing').style.display = 'none';
-  document.getElementById('blog-post').style.display = 'block';
+  const blogPost = document.getElementById('blog-post');
+  blogPost.style.display = 'block';
+
+  // Update blog post content
+  document.getElementById('post-image').style.backgroundImage = `url(${post.image})`;
 
   // Populate post data
   document.getElementById('post-title').textContent = post.title;
   document.getElementById('post-date').textContent = post.date;
   document.getElementById('post-read-time').textContent = post.readTime;
   document.getElementById('post-author').textContent = `By ${post.author}`;
-  document.getElementById('post-image').textContent = post.image;
   document.getElementById('post-content').innerHTML = post.content;
 
   // Populate tags
