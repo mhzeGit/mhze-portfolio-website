@@ -4,7 +4,7 @@ const blogPosts = {
     date: 'September 27, 2025',
     readTime: '16 min read',
     author: 'Mohammad Hassan',
-    image: '../assets/BlogsContent/FarmingMechanics/BlogThumbnail_FarmingMechanic.png',
+    image: '../assets/BlogsContent/BlogThumbnail_FarmingMechanic.png',
     description: 'Deep dive into creating a farming system for my latest game project, including challenges and solutions.',
     tags: ['Game Mechanic', 'Farming', 'Devlog', 'Unity', 'C#'],
     content: `
@@ -27,7 +27,7 @@ const blogPosts = {
     date: 'September 20, 2025',
     readTime: '12 min read',
     author: 'Mohammad Hassan',
-    image: '../assets/BlogsContent/FarmingMechanics/BlogThumbnail_PlayerArmAnimation.png',
+    image: '../assets/BlogsContent/BlogThumbnail_PlayerArmAnimation.png',
 
     description: 'Techniques and lessons learned from developing four horror games that gained popularity on itch.io.',
     tags: ['Horror', 'Game Design', 'Atmosphere', 'Audio'],
@@ -48,7 +48,7 @@ const blogPosts = {
     date: 'September 15, 2025',
     readTime: '8 min read',
     author: 'Mohammad Hassan',
-    image: '../assets/BlogsContent/FarmingMechanics/BlogThumbnail_FarmingMechanic.png',
+    image: '../assets/BlogsContent/BlogThumbnail_BlenderToUnity.png',
 
     description: 'Step-by-step guide to my optimized pipeline for getting 3D assets from Blender into Unity efficiently.',
     tags: ['Blender', 'Unity', 'Workflow', '3D Modeling', 'Optimization'],

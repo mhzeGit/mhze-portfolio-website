@@ -62,14 +62,14 @@ nav {
   transition: all 0.3s ease-in-out;
 }
 
-.nav-links a:hover, .nav-links a.active {
+.nav-links a:hover {
   color: #bdbef4;
   text-shadow: 0 0 15px rgba(189, 190, 244, 0.4);
 }
 
 /* Hero Section */
 .hero {
-  min-height: 100vh;
+  min-height: 90vh;
   display: flex;
   align-items: center;
   justify-content: center;
