@@ -39,11 +39,11 @@ nav {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 1rem 2rem ;
+  padding: 1rem 2rem;
   max-width: 1200px;
-  margin: 10 auto;
+  margin: 0 auto;
+  width: 100%;
 }
-
 
 .nav-links {
   display: flex;
@@ -51,14 +51,8 @@ nav {
   list-style: none;
   justify-content: center;
   align-items: center;
-}
-
-
-.nav-links {
-  display: flex;
-  gap: 2rem;
-  list-style: none;
-  
+  width: 100%;
+  padding: 0.5rem 0;
 }
 
 .nav-links a {
@@ -339,8 +333,17 @@ footer {
 
 /* Responsive */
 @media (max-width: 768px) {
+  .nav-container {
+    padding: 0.75rem 1rem;
+  }
+
   .nav-links {
-    display: none;
+    gap: 1.5rem;
+    font-size: 1rem;
+  }
+
+  .nav-links a {
+    padding: 0.5rem 0;
   }
 
   .hero h1 {
