@@ -178,23 +178,28 @@ nav {
 /* About Section */
 .about-grid {
   display: grid;
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: 1fr 4fr;
   gap: 4rem;
   align-items: center;
 }
 
 .about-image {
-  background: linear-gradient(135deg, #6366f1, #8b5cf6);
-  border-radius: 20px;
+  background: url("../assets/SelfiOfMyself.jpg") center/cover no-repeat;
+  border-radius: 30px;
   aspect-ratio: 1;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 4rem;
+  font-size: 2rem;
   color: white;
   font-weight: bold;
-}
 
+  /* smooth shadow */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+
+  /* subtle outline */
+  outline: 1px solid rgba(255, 255, 255, 0.444);
+}
 .about-content h3 {
   font-size: 1.5rem;
   color: #6366f1;
@@ -398,7 +403,6 @@ p.intro strong {
   animation: glowPulse 4s infinite ease-in-out;
   animation-delay: var(--delay, 0s); /* default = 0s if not set */
 }
-
 
 /* Smooth Movement Navigation Transition  */
 html {
