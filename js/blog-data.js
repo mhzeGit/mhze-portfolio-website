@@ -19,33 +19,36 @@ const blogPosts = {
     <p>I started with digging since it seemed simpler. Instead of modifying the ground mesh directly, I went for a <strong>fake approach</strong> using models that look like dug soil without actually changing the terrain. Since farming only needs surface digging for seeds, this was enough.</p>
 
     
-    
-    <div class="blog-image-card right">
+
+    <p>In Blender, I created 3–4 stages of dug soil. My plan was to swap them in-engine as the player digs. <br>I kept everything <strong>non-destructive</strong>, leaving subdivision and displacement modifiers unapplied so I could easily generate variations later.</p>
+<div class="blog-image-card full">
         <img src="../assets/BlogsContent/Blog_FarmingMechanic/DiggedSoilStagesBlenderScreenshot.png" alt="Different stages of dug soil models">
-        <p class="image-caption">Different stages of dug soil, showing progression from first dig attempt to fully digged and then coverd by soil.</p>
+        <p class="image-caption">Different stages of dug soil, showing progression from first dig attempt to fully digged and then covered by soil.</p>
+    </div>
+    <p><strong>Interesting fact!</strong> The “holes” aren’t real. The illusion of depth comes from raising the edges, not lowering the center. That way I avoid touching the terrain mesh at all.</p>
+
+    <p>In Unity, I set up the hoe to spawn one of these models at the hit point. It worked, but something felt off. The dug soil looked separated from the terrain, even though the materials matched.</p>
+
+    
+    <p>After a closer look I realized the UVs of the dug soil didn’t line up with the terrain texture. This mismatch gave it a disconnected feeling. That means both the terrain and the dug soil share the same texture space, and the mismatch disappears.</p>
+    <p>Setting it up with Unity’s Shader Graph wasn’t too hard, and it instantly made the patches blend in naturally.</p>
+
+<div class="blog-image-card full">
+        <img src="../assets/BlogsContent/Blog_FarmingMechanic/TriplanerVsUvDiggedSoil.gif" alt="Different stages of dug soil models">
+        <p class="image-caption">Difference between triplaner vs defualt UV basedsoil material.</p>
     </div>
 
+    <p>But soon I noticed another issue. Even though the textures now looked seamless, the edges where the dug soil touched the terrain were still sharp. It was clear these were separate objects, and that ruined the effect.</p>
 
+    <p>More research showed me the fix. The normals of the contact vertices on the dug soil needed to point upward, matching the terrain. In Blender I solved this by using the <strong>Data Transfer</strong> modifier to transfer the ground’s normals onto the contact vertices of my dug soil models.</p>
 
-    <p><br>In Blender, I created 3–4 stages of dug soil. <br> My plan was to swap them in-engine as the player digs. <br><br>I kept everything <strong>non-destructive</strong>, leaving subdivision and displacement modifiers unapplied so I could easily generate variations later.</p>
-
-    <p><strong>Intresting fact!</strong> The “holes” aren’t real. The illusion of depth comes from raising the edges, not lowering the center. That way I avoid touching the terrain mesh at all.</p>
-
-
-    <p>In Unity, I set up the hoe to spawn one of these models at the hit point. It worked, but the models looked wrong, like they were floating above the ground. Same material, good UVs, but still off.</p>
-
-    <p>After checking closely, I found two issues:</p>
-    <ul>
-      <li>The UVs of the dug soil didn’t line up with the terrain.</li>
-      <li>The edges met the ground at sharp angles, making seams visible.</li>
-    </ul>
-
-    <p>These made the soil look disconnected, so fixing them became the next hurdle.</p>
+    <p>With that final change, the dug soil now blended with the terrain properly. No mismatched textures, no hard edges, and no separated feeling. The system finally looked natural and worked without problems.</p>
 
     <h2>Challenge 2: Watering</h2>
     <p>(continue here…)</p>
   `
   },
+
 
   'player-arm-animation': {
     title: "The Creation Of Player's Arm",
