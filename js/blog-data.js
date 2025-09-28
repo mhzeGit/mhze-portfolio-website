@@ -35,14 +35,25 @@ const blogPosts = {
 
 <div class="blog-image-card full">
         <img src="./assets/BlogsContent/Blog_FarmingMechanic/TriplanerVsUvDiggedSoil.gif" alt="Different stages of dug soil models">
-        <p class="image-caption">Difference between triplaner vs defualt UV basedsoil material.</p>
+        <p class="image-caption">Difference between triplaner VS defualt UV soil material.</p>
     </div>
+
+
 
     <p>But soon I noticed another issue. Even though the textures now looked seamless, the edges where the dug soil touched the terrain were still sharp. It was clear these were separate objects, and that ruined the effect.</p>
 
-    <p>More research showed me the fix. The normals of the contact vertices on the dug soil needed to point upward, matching the terrain. In Blender I solved this by using the <strong>Data Transfer</strong> modifier to transfer the ground’s normals onto the contact vertices of my dug soil models.</p>
+    <p>After some research, I realized why this was happening. By default, when two meshes are separate, their normals are calculated independently. This means that even if they align perfectly with the ground, they can still appear disconnected. The fix was to adjust the contact points of the dug soil and force their normals to point upward instead of relying on automatic calculation.</p>
 
-    <p>With that final change, the dug soil now blended with the terrain properly. No mismatched textures, no hard edges, and no separated feeling. The system finally looked natural and worked without problems.</p>
+<p>I achieved this using a Blender modifier called <strong>Data Transfer</strong>, which allows specific vertices of the 3D model to copy normal data directly from the ground mesh.</p>
+
+<p>The final result speaks for itself: the sharp separation is completely gone, and the dug soil now looks as if it naturally belongs to the terrain.</p>
+
+<div class="blog-image-card full">
+        <img src="./assets/BlogsContent/Blog_FarmingMechanic/DugSoilContactNormaBeforeVsAfter.png" alt="Different stages of dug soil models">
+        <p class="image-caption">Before and After fixing the contact points normal.</p>
+    </div>
+
+
 
     <h2>Challenge 2: Watering</h2>
     <p>(continue here…)</p>
