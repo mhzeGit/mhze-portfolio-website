@@ -113,7 +113,7 @@ const blogPosts = {
     date: 'September 15, 2025',
     readTime: '8 min read',
     author: 'Mohammad Hassan',
-    image: '../assets/BlogsContent/BlogThumbnail_My3dModels.png',
+    image: './assets/BlogsContent/BlogThumbnail_My3dModels.png',
 
     description: 'Step-by-step guide to my optimized pipeline for getting 3D assets from Blender into Unity efficiently.',
     tags: ['Indie Games', 'Unity', 'Horror', 'Beginer Works', 'Portfolio'],
@@ -172,7 +172,7 @@ const blogPosts = {
     date: 'September 15, 2025',
     readTime: '8 min read',
     author: 'Mohammad Hassan',
-    image: '../assets/BlogsContent/BlogThumbnail_My3dModels.png',
+    image: './assets/BlogsContent/BlogThumbnail_My3dModels.png',
 
     description: 'Step-by-step guide to my optimized pipeline for getting 3D assets from Blender into Unity efficiently.',
     tags: ['Indie Games', 'Unity', 'Horror', 'Beginer Works', 'Portfolio'],
