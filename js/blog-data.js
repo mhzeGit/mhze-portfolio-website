@@ -4,7 +4,7 @@ const blogPosts = {
     date: 'September 27, 2025',
     readTime: '16 min read',
     author: 'Mohammad Hassan',
-    image: 'assets/BlogsContent/Blog_FarmingMechanic/BlogThumbnail_FarmingMechanic.png',
+    image: './assets/BlogsContent/Blog_FarmingMechanic/BlogThumbnail_FarmingMechanic.png',
     description: 'Deep dive into creating a farming system for my latest game project, including challenges and solutions I went through.',
     tags: ['Game Mechanic', 'Farming', 'Devlog', 'Unity', 'C#'],
     content: `
@@ -22,7 +22,7 @@ const blogPosts = {
 
     <p>In Blender, I created 3–4 stages of dug soil. My plan was to swap them in-engine as the player digs. <br>I kept everything <strong>non-destructive</strong>, leaving subdivision and displacement modifiers unapplied so I could easily generate variations later.</p>
 <div class="blog-image-card full">
-        <img src="../assets/BlogsContent/Blog_FarmingMechanic/DiggedSoilStagesBlenderScreenshot.png" alt="Different stages of dug soil models">
+        <img src="./assets/BlogsContent/Blog_FarmingMechanic/DiggedSoilStagesBlenderScreenshot.png" alt="Different stages of dug soil models">
         <p class="image-caption">Different stages of dug soil, showing progression from first dig attempt to fully digged and then covered by soil.</p>
     </div>
     <p><strong>Interesting fact!</strong> The “holes” aren’t real. The illusion of depth comes from raising the edges, not lowering the center. That way I avoid touching the terrain mesh at all.</p>
@@ -34,7 +34,7 @@ const blogPosts = {
     <p>Setting it up with Unity’s Shader Graph wasn’t too hard, and it instantly made the patches blend in naturally.</p>
 
 <div class="blog-image-card full">
-        <img src="../assets/BlogsContent/Blog_FarmingMechanic/TriplanerVsUvDiggedSoil.gif" alt="Different stages of dug soil models">
+        <img src="./assets/BlogsContent/Blog_FarmingMechanic/TriplanerVsUvDiggedSoil.gif" alt="Different stages of dug soil models">
         <p class="image-caption">Difference between triplaner vs defualt UV basedsoil material.</p>
     </div>
 
@@ -55,7 +55,7 @@ const blogPosts = {
     date: 'September 20, 2025',
     readTime: '12 min read',
     author: 'Mohammad Hassan',
-    image: '../assets/BlogsContent/BlogThumbnail_PlayerArmAnimation.png',
+    image: './assets/BlogsContent/BlogThumbnail_PlayerArmAnimation.png',
 
     description: 'Techniques and lessons learned from developing four horror games that gained popularity on itch.io.',
     tags: ['Horror', 'Game Design', 'Atmosphere', 'Audio'],
@@ -75,7 +75,7 @@ const blogPosts = {
     date: 'September 15, 2025',
     readTime: '8 min read',
     author: 'Mohammad Hassan',
-    image: '../assets/BlogsContent/BlogThumbnail_BlenderToUnity.png',
+    image: './assets/BlogsContent/BlogThumbnail_BlenderToUnity.png',
 
     description: 'Step-by-step guide to my optimized pipeline for getting 3D assets from Blender into Unity efficiently.',
     tags: ['Blender', 'Unity', 'Workflow', '3D Modeling', 'Optimization'],
@@ -94,7 +94,7 @@ const blogPosts = {
     date: 'September 15, 2025',
     readTime: '8 min read',
     author: 'Mohammad Hassan',
-    image: '../assets/BlogsContent/BlogThumbnail_My3HorrorGames.png',
+    image: './assets/BlogsContent/BlogThumbnail_My3HorrorGames.png',
 
     description: 'Step-by-step guide to my optimized pipeline for getting 3D assets from Blender into Unity efficiently.',
     tags: ['Indie Games', 'Unity', 'Horror', 'Beginer Works', 'Portfolio'],
@@ -132,7 +132,7 @@ const blogPosts = {
     date: 'September 15, 2025',
     readTime: '8 min read',
     author: 'Mohammad Hassan',
-    image: '../assets/BlogsContent/BlogThumbnail_MyExpereinceIn3DAnimation.png',
+    image: './assets/BlogsContent/BlogThumbnail_MyExpereinceIn3DAnimation.png',
 
     description: 'Step-by-step guide to my optimized pipeline for getting 3D assets from Blender into Unity efficiently.',
     tags: ['Indie Games', 'Unity', 'Horror', 'Beginer Works', 'Portfolio'],
@@ -152,7 +152,7 @@ const blogPosts = {
     date: 'September 15, 2025',
     readTime: '8 min read',
     author: 'Mohammad Hassan',
-    image: '../assets/BlogsContent/BlogThumbnail_My3dModels.png',
+    image: './assets/BlogsContent/BlogThumbnail_My3dModels.png',
 
     description: 'Step-by-step guide to my optimized pipeline for getting 3D assets from Blender into Unity efficiently.',
     tags: ['Indie Games', 'Unity', 'Horror', 'Beginer Works', 'Portfolio'],
@@ -192,7 +192,7 @@ const blogPosts = {
     date: 'September 15, 2025',
     readTime: '8 min read',
     author: 'Mohammad Hassan',
-    image: '../assets/BlogsContent/BlogThumbnail_My3dModels.png',
+    image: './assets/BlogsContent/BlogThumbnail_My3dModels.png',
 
     description: 'Step-by-step guide to my optimized pipeline for getting 3D assets from Blender into Unity efficiently.',
     tags: ['Indie Games', 'Unity', 'Horror', 'Beginer Works', 'Portfolio'],
@@ -212,7 +212,7 @@ const blogPosts = {
     date: 'September 15, 2025',
     readTime: '8 min read',
     author: 'Mohammad Hassan',
-    image: '../assets/BlogsContent/BlogThumbnail_My3dModels.png',
+    image: './assets/BlogsContent/BlogThumbnail_My3dModels.png',
 
     description: 'Step-by-step guide to my optimized pipeline for getting 3D assets from Blender into Unity efficiently.',
     tags: ['Indie Games', 'Unity', 'Horror', 'Beginer Works', 'Portfolio'],
