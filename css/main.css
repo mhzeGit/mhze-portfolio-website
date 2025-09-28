@@ -26,9 +26,7 @@ nav {
   position: fixed;
   top: 0px;
   width: 100%;
-  /* background: rgba(15, 15, 35, 0.9);  */
-  background: rgba(16, 13, 19, 0.4); 
-
+  background: rgba(16, 13, 19, 0.4);
   backdrop-filter: blur(10px);
   z-index: 1000;
   border-bottom: 1px solid rgba(99, 102, 241, 0.2);
@@ -43,6 +41,61 @@ nav {
   max-width: 1200px;
   margin: 0 auto;
   width: 100%;
+  position: relative;
+}
+
+.mobile-menu-button {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1001;
+}
+
+.menu-icon {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background-color: #aaa5d0;
+  position: relative;
+  transition: background-color 0.3s;
+}
+
+.menu-icon::before,
+.menu-icon::after {
+  content: '';
+  position: absolute;
+  width: 24px;
+  height: 2px;
+  background-color: #aaa5d0;
+  transition: transform 0.3s;
+}
+
+.menu-icon::before {
+  top: -6px;
+}
+
+.menu-icon::after {
+  bottom: -6px;
+}
+
+.mobile-menu-button.active .menu-icon {
+  background-color: transparent;
+}
+
+.mobile-menu-button.active .menu-icon::before {
+  transform: rotate(45deg);
+  top: 0;
+}
+
+.mobile-menu-button.active .menu-icon::after {
+  transform: rotate(-45deg);
+  bottom: 0;
 }
 
 .nav-links {
@@ -53,6 +106,7 @@ nav {
   align-items: center;
   width: 100%;
   padding: 0.1rem 0;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
 }
 
 .nav-links a {
@@ -65,6 +119,50 @@ nav {
 .nav-links a:hover {
   color: #bdbef4;
   text-shadow: 0 0 15px rgba(189, 190, 244, 0.4);
+}
+
+@media (max-width: 768px) {
+  .nav-container {
+    padding: 0.75rem 1rem;
+  }
+
+  .mobile-menu-button {
+    display: block;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(16, 13, 19, 0.95);
+    backdrop-filter: blur(10px);
+    flex-direction: column;
+    padding: 5rem 2rem 2rem;
+    gap: 1.5rem;
+    transform: translateY(-100%);
+    opacity: 0;
+    pointer-events: none;
+    height: auto;
+    border-bottom: 1px solid rgba(99, 102, 241, 0.2);
+  }
+
+  .nav-links.active {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .nav-links li {
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav-links a {
+    display: block;
+    padding: 0.75rem 0;
+    font-size: 1.1rem;
+  }
 }
 
 /* Hero Section */
