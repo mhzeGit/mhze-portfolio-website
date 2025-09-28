@@ -397,7 +397,7 @@ nav {
 
 /* Contact Section */
 .contact {
-  background: rgba(30, 41, 59, 0.3);
+  background: rgba(0, 0, 0, 0.15);
   border-radius: 20px;
   padding: 3rem;
   text-align: center;
