@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,6 +8,7 @@
   <link rel="stylesheet" href="css/main.css" />
   <link rel="stylesheet" href="css/blog.css" />
 </head>
+
 <body>
   <!-- Navigation Placeholder -->
   <div id="nav-placeholder"></div>
@@ -31,13 +33,13 @@
   <div id="blog-post" style="display: none;">
     <section class="blog-post">
       <a href="#" class="back-link" onclick="showBlogListing()">← Back to Blog</a>
-      
+
       <header class="blog-post-header">
         <h1 class="blog-post-title" id="post-title">Blog Post Title</h1>
         <div class="blog-post-meta">
-          <span id="post-date">March 15, 2025</span>
-          <span id="post-read-time">5 min read</span>
-          <span id="post-author">By Mohammad Hassan</span>
+          <span class="date"></span>
+          <span class="read-time"></span>
+          <span class="author"></span>
         </div>
         <div class="blog-tags" id="post-tags"></div>
       </header>
@@ -54,4 +56,5 @@
   <script src="js/blog-data.js"></script>
   <script src="js/blog.js"></script>
 </body>
+
 </html>

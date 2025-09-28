@@ -49,6 +49,11 @@ function showBlogPost(postId) {
   const blogPost = document.getElementById('blog-post');
   blogPost.style.display = 'block';
 
+  // Update the meta information
+  blogPost.querySelector('.date').textContent = post.date;
+  blogPost.querySelector('.read-time').textContent = post.readTime;
+  blogPost.querySelector('.author').textContent = post.author;
+
   // Update blog post content
   document.getElementById('post-image').style.backgroundImage = `url(${post.image})`;
 
