@@ -4,7 +4,7 @@ const blogPosts = {
     date: 'September 27, 2025',
     readTime: '16 min read',
     author: 'Mohammad Hassan',
-    image: '../assets/BlogsContent/Blog_FarmingMechanic/BlogThumbnail_FarmingMechanic.png',
+    image: 'assets/BlogsContent/Blog_FarmingMechanic/BlogThumbnail_FarmingMechanic.png',
     description: 'Deep dive into creating a farming system for my latest game project, including challenges and solutions I went through.',
     tags: ['Game Mechanic', 'Farming', 'Devlog', 'Unity', 'C#'],
     content: `
