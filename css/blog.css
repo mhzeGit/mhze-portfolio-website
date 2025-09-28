@@ -230,6 +230,13 @@
   color: #cbd5e1;
 }
 
+.back-link-container {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
 .back-link {
   display: inline-flex;
   align-items: center;
@@ -239,6 +246,7 @@
   font-weight: 600;
   margin-bottom: 2rem;
   transition: color 0.3s ease;
+  margin-left: calc(1% - 10rem); /* Adjusts position from left edge */
 }
 
 .back-link:hover {
@@ -247,6 +255,14 @@
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
+  .back-link-container {
+    padding: 1 1rem;
+  }
+
+  .back-link {
+    margin-left: 0;
+  }
+
   .blog-post-meta {
   display: flex;
   justify-content: center;

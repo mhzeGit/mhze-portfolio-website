@@ -29,7 +29,7 @@ const blogPosts = {
 
     <p><br>In Blender, I created 3–4 stages of dug soil. <br> My plan was to swap them in-engine as the player digs. <br><br>I kept everything <strong>non-destructive</strong>, leaving subdivision and displacement modifiers unapplied so I could easily generate variations later.</p>
 
-    <p><strong>Important detail:</strong> the “holes” aren’t real. The illusion of depth comes from raising the edges, not lowering the center. That way I avoid touching the terrain mesh at all.</p>
+    <p><strong>Intresting fact!</strong> The “holes” aren’t real. The illusion of depth comes from raising the edges, not lowering the center. That way I avoid touching the terrain mesh at all.</p>
 
 
     <p>In Unity, I set up the hoe to spawn one of these models at the hit point. It worked, but the models looked wrong, like they were floating above the ground. Same material, good UVs, but still off.</p>

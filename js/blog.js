@@ -3,6 +3,22 @@
 // Initialize blog when page loads
 document.addEventListener('DOMContentLoaded', function() {
   initializeBlog();
+  
+  // Handle browser back/forward buttons
+  window.addEventListener('popstate', function(event) {
+    if (event.state && event.state.postId) {
+      showBlogPost(event.state.postId, false);
+    } else {
+      showBlogListing(false);
+    }
+  });
+
+  // Check if we should show a specific post based on URL
+  const urlParams = new URLSearchParams(window.location.search);
+  const postId = urlParams.get('post');
+  if (postId) {
+    showBlogPost(postId, false);
+  }
 });
 
 // Initialize the blog system
@@ -18,7 +34,8 @@ function generateBlogCards() {
 
   const posts = getAllBlogPosts();
   
-  blogGrid.innerHTML = posts.map(post => `
+  blogGrid.innerHTML = posts.map(post => {
+    return `
     <article class="blog-card" onclick="showBlogPost('${post.id}')">
       <div class="blog-card-image" style="background-image: url(${post.image}); background-size: cover; background-position: center;"></div>
       <div class="blog-content">
@@ -33,15 +50,25 @@ function generateBlogCards() {
         </div>
       </div>
     </article>
-  `).join('');
+  `;
+  }).join('');
 }
 
 // Show individual blog post
-function showBlogPost(postId) {
+function showBlogPost(postId, updateHistory = true) {
+  console.log('Showing post:', postId);
   const post = getBlogPost(postId);
   if (!post) {
     console.error(`Blog post with id "${postId}" not found`);
     return;
+  }
+  console.log('Post data:', post);
+
+  // Update URL and browser history
+  if (updateHistory) {
+    const url = new URL(window.location);
+    url.searchParams.set('post', postId);
+    window.history.pushState({ postId: postId }, '', url);
   }
 
   // Hide blog listing and show blog post
@@ -59,9 +86,6 @@ function showBlogPost(postId) {
 
   // Populate post data
   document.getElementById('post-title').textContent = post.title;
-  document.getElementById('post-date').textContent = post.date;
-  document.getElementById('post-read-time').textContent = post.readTime;
-  document.getElementById('post-author').textContent = `By ${post.author}`;
   document.getElementById('post-content').innerHTML = post.content;
 
   // Populate tags
@@ -78,7 +102,14 @@ function showBlogPost(postId) {
 }
 
 // Show blog listing page
-function showBlogListing() {
+function showBlogListing(updateHistory = true) {
+  // Update URL and browser history
+  if (updateHistory) {
+    const url = new URL(window.location);
+    url.searchParams.delete('post');
+    window.history.pushState({ postId: null }, '', url);
+  }
+
   document.getElementById('blog-post').style.display = 'none';
   document.getElementById('blog-listing').style.display = 'block';
   
