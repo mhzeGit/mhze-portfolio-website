@@ -97,15 +97,8 @@ const blogPosts = {
 
     description: 'Techniques and lessons learned from developing four horror games that gained popularity on itch.io.',
     tags: ['Horror', 'Game Design', 'Atmosphere', 'Audio'],
-    content: `
-      <h2>The Art of Fear</h2>
-      <p>After releasing four horror games, I've learned that atmosphere is everything in horror game design.</p>
-      
-      <h3>Sound Design is King</h3>
-      <p>Visual scares get attention, but audio creates lasting dread. Subtle ambient sounds and strategic silence are your best tools.</p>
-      
-      <h3>Less is More</h3>
-      <p>The most effective scares come from what players don't see, not what they do.</p>`
+    content: 
+      `<p>This blog post is currently under construction. In the meantime, check out my other available blogs. Thanks for your patience!</p>`
   },
 
   'blender-to-unity-workflow': {
@@ -117,15 +110,7 @@ const blogPosts = {
 
     description: 'Step-by-step guide to my optimized pipeline for getting 3D assets from Blender into Unity efficiently.',
     tags: ['Blender', 'Unity', 'Workflow', '3D Modeling', 'Optimization'],
-    content: `
-      <h2>Streamlined Asset Pipeline</h2>
-      <p>After years of trial and error, I've developed a workflow that saves hours on every project.</p>
-      
-      <h3>Modeling Best Practices</h3>
-      <p>Always model with the target platform in mind. Mobile games need different considerations than PC games.</p>
-      
-      <h3>Export Settings That Matter</h3>
-      <p>These specific Blender export settings have saved me countless headaches in Unity...</p>`
+    content: `<p>This blog post is currently under construction. In the meantime, check out my other available blogs. Thanks for your patience!</p>`
   },
   'my-three-horror-games': {
     title: 'My 3 Horror Games That Got Popular on Itch.io',
@@ -136,15 +121,7 @@ const blogPosts = {
 
     description: 'Step-by-step guide to my optimized pipeline for getting 3D assets from Blender into Unity efficiently.',
     tags: ['Indie Games', 'Unity', 'Horror', 'Beginer Works', 'Portfolio'],
-    content: `
-      <h2>Streamlined Asset Pipeline</h2>
-      <p>After years of trial and error, I've developed a workflow that saves hours on every project.</p>
-      
-      <h3>Modeling Best Practices</h3>
-      <p>Always model with the target platform in mind. Mobile games need different considerations than PC games.</p>
-      
-      <h3>Export Settings That Matter</h3>
-      <p>These specific Blender export settings have saved me countless headaches in Unity...</p>`
+    content: `<p>This blog post is currently under construction. In the meantime, check out my other available blogs. Thanks for your patience!</p>`
   },
   'my-3d-modelling': {
     title: '3D Game Ready Assets & Modelling',
@@ -155,15 +132,7 @@ const blogPosts = {
 
     description: 'Step-by-step guide to my optimized pipeline for getting 3D assets from Blender into Unity efficiently.',
     tags: ['Indie Games', 'Unity', 'Horror', 'Beginer Works', 'Portfolio'],
-    content: `
-      <h2>Streamlined Asset Pipeline</h2>
-      <p>After years of trial and error, I've developed a workflow that saves hours on every project.</p>
-      
-      <h3>Modeling Best Practices</h3>
-      <p>Always model with the target platform in mind. Mobile games need different considerations than PC games.</p>
-      
-      <h3>Export Settings That Matter</h3>
-      <p>These specific Blender export settings have saved me countless headaches in Unity...</p>`
+    content: `<p>This blog post is currently under construction. In the meantime, check out my other available blogs. Thanks for your patience!</p>`
   },
   'animation-works': {
     title: 'My Expereince In Animation',
@@ -174,15 +143,7 @@ const blogPosts = {
 
     description: 'Step-by-step guide to my optimized pipeline for getting 3D assets from Blender into Unity efficiently.',
     tags: ['Indie Games', 'Unity', 'Horror', 'Beginer Works', 'Portfolio'],
-    content: `
-      <h2>Streamlined Asset Pipeline</h2>
-      <p>After years of trial and error, I've developed a workflow that saves hours on every project.</p>
-      
-      <h3>Modeling Best Practices</h3>
-      <p>Always model with the target platform in mind. Mobile games need different considerations than PC games.</p>
-      
-      <h3>Export Settings That Matter</h3>
-      <p>These specific Blender export settings have saved me countless headaches in Unity...</p>`
+    content: `<p>This blog post is currently under construction. In the meantime, check out my other available blogs. Thanks for your patience!</p>`
   }
   ,
   'unfinished-projects-showcase': {
@@ -194,15 +155,7 @@ const blogPosts = {
 
     description: 'Step-by-step guide to my optimized pipeline for getting 3D assets from Blender into Unity efficiently.',
     tags: ['Indie Games', 'Unity', 'Horror', 'Beginer Works', 'Portfolio'],
-    content: `
-      <h2>Streamlined Asset Pipeline</h2>
-      <p>After years of trial and error, I've developed a workflow that saves hours on every project.</p>
-      
-      <h3>Modeling Best Practices</h3>
-      <p>Always model with the target platform in mind. Mobile games need different considerations than PC games.</p>
-      
-      <h3>Export Settings That Matter</h3>
-      <p>These specific Blender export settings have saved me countless headaches in Unity...</p>`
+    content: `<p>This blog post is currently under construction. In the meantime, check out my other available blogs. Thanks for your patience!</p>`
   }
   ,
   'grass-optimization-techniques': {
@@ -214,15 +167,7 @@ const blogPosts = {
 
     description: 'Step-by-step guide to my optimized pipeline for getting 3D assets from Blender into Unity efficiently.',
     tags: ['Indie Games', 'Unity', 'Horror', 'Beginer Works', 'Portfolio'],
-    content: `
-      <h2>Streamlined Asset Pipeline</h2>
-      <p>After years of trial and error, I've developed a workflow that saves hours on every project.</p>
-      
-      <h3>Modeling Best Practices</h3>
-      <p>Always model with the target platform in mind. Mobile games need different considerations than PC games.</p>
-      
-      <h3>Export Settings That Matter</h3>
-      <p>These specific Blender export settings have saved me countless headaches in Unity...</p>`
+    content: `<p>This blog post is currently under construction. In the meantime, check out my other available blogs. Thanks for your patience!</p>`
   }
   ,
   'uvseams-the-ultimate-fix': {
@@ -234,15 +179,7 @@ const blogPosts = {
 
     description: 'Step-by-step guide to my optimized pipeline for getting 3D assets from Blender into Unity efficiently.',
     tags: ['Indie Games', 'Unity', 'Horror', 'Beginer Works', 'Portfolio'],
-    content: `
-      <h2>Streamlined Asset Pipeline</h2>
-      <p>After years of trial and error, I've developed a workflow that saves hours on every project.</p>
-      
-      <h3>Modeling Best Practices</h3>
-      <p>Always model with the target platform in mind. Mobile games need different considerations than PC games.</p>
-      
-      <h3>Export Settings That Matter</h3>
-      <p>These specific Blender export settings have saved me countless headaches in Unity...</p>`
+    content: `<p>This blog post is currently under construction. In the meantime, check out my other available blogs. Thanks for your patience!</p>`
   }
   ,
   'slime-tower-defence-project': {
@@ -254,15 +191,7 @@ const blogPosts = {
 
     description: 'Step-by-step guide to my optimized pipeline for getting 3D assets from Blender into Unity efficiently.',
     tags: ['Indie Games', 'Unity', 'Horror', 'Beginer Works', 'Portfolio'],
-    content: `
-      <h2>Streamlined Asset Pipeline</h2>
-      <p>After years of trial and error, I've developed a workflow that saves hours on every project.</p>
-      
-      <h3>Modeling Best Practices</h3>
-      <p>Always model with the target platform in mind. Mobile games need different considerations than PC games.</p>
-      
-      <h3>Export Settings That Matter</h3>
-      <p>These specific Blender export settings have saved me countless headaches in Unity...</p>`
+    content: `<p>This blog post is currently under construction. In the meantime, check out my other available blogs. Thanks for your patience!</p>`
   }
 };
 

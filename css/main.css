@@ -511,3 +511,27 @@ p.intro strong {
 html {
   scroll-behavior: smooth;
 }
+
+/* More Blogs Button Container */
+.more-blogs-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+  width: 100%;
+}
+
+.more-blogs-container .btn {
+  min-width: 150px;
+}
+
+/* Section Subtitle */
+.section-subtitle {
+  text-align: center;
+  font-size: 1rem;
+  color: #94a3b8;
+  margin-top: -1.5rem;
+  margin-bottom: 3rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
