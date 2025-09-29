@@ -25,24 +25,42 @@ const blogPosts = {
         <img src="./assets/BlogsContent/Blog_FarmingMechanic/DiggedSoilStagesBlenderScreenshot.png" alt="Different stages of dug soil models">
         <p class="image-caption">Different stages of dug soil, showing progression from first dig attempt to fully digged and then covered by soil.</p>
     </div>
-    <p><strong>Interesting fact!</strong> The “holes” aren’t real. The illusion of depth comes from raising the edges, not lowering the center. That way I avoid touching the terrain mesh at all.</p>
+    <p><strong>Interesting fact!</strong> The “holes” aren’t real. The <strong>illusion</strong> of depth comes from raising the edges, not lowering the center. That way I avoid touching the terrain mesh at all.</p>
 
-    <p>In Unity, I set up the hoe to spawn one of these models at the hit point. It worked, but something felt off. The dug soil looked separated from the terrain, even though the materials matched.</p>
+    <p>In Unity, I set up the hoe to spawn one of these models at the hit point. It worked, but something <strong>felt off</strong>. The dug soil looked <strong>separated</strong> from the terrain, even though the materials matched.</p>
 
-    
-    <p>After a closer look I realized the UVs of the dug soil didn’t line up with the terrain texture. This mismatch gave it a disconnected feeling. That means both the terrain and the dug soil share the same texture space, and the mismatch disappears.</p>
-    <p>Setting it up with Unity’s Shader Graph wasn’t too hard, and it instantly made the patches blend in naturally.</p>
+    <div class="blog-image-card full">
+        <img src="./assets/BlogsContent/Blog_FarmingMechanic/DiggingGround_V1.gif" alt="Different stages of dug soil models">
+        <p class="image-caption">Using the hoe to dig, by spawning the dug soil.</p>
+    </div>
+
+    <h3>Seamless Textures Using Triplaner Projection</h3>
+
+     <p> After a closer look I noticed how the dug soil and the ground feel like clearly seprate objects. I realized the <strong>UVs</strong> of the dug soil didn’t line up with the terrain texture. 
+
+     <div> This mismatch gave it a disconnected feeling. This was because the soil texture was being <strong>projected to the UV map</strong> of each indivisual model, the ground mesh having its own and the dug soils also each have their own.</p>
+
+     <p> Practiculy there is not much I could do in blender, since the dug soils position is <strong>varient</strong>, it's <strong>imposible</strong> to pre UV map the models insdie blender and expect it to look perfect in the game engine. I could have simply <strong>give up</strong> at this stage as this is not a very important feature, many other farming games have ignored such detials and no one blames them for it. </p>
+
+
+     <p> <strong>However</strong>, that wasen't the case for me, I saw this as not just a issue that could be ignored, but rather as a <strong>challenge</strong> that acomplishing it may not grasticly change the experience of the players, but rather a challenge for myself, <strong>learn</strong> and <strong>imporve my skills!</strong> </p>
+
+     <p> I had a bit of background to the solotion of this challange from <strong>unreal engine</strong>, the solution was to use a <strong>triplaner projection shader</strong> for the dug soil. This technique projects the texture from three directions (X, Y, and Z axes) based on <strong>world coordinates</strong>, rather than relying on UV maps. </p>
+
+     <p> The only problem was I didn't know how to implement it in Unity. After some research, I found that Unity’s Shader Graph supports <strong>triplaner projection</strong>. I created a simple shader that uses the world position of the dug soil models to project the texture, ensuring it aligns perfectly with the terrain texture.</p>
+
+     <p> That means both the terrain and the dug soil share the same texture space, and the mismatch disappears. \\\\Setting it up with Unity’s Shader Graph wasn’t too hard, and it instantly made the patches blend in naturally.</p>
 
 <div class="blog-image-card full">
         <img src="./assets/BlogsContent/Blog_FarmingMechanic/TriplanerVsUvDiggedSoil.gif" alt="Different stages of dug soil models">
         <p class="image-caption">Difference between triplaner VS defualt UV soil material.</p>
     </div>
 
-
+<h3>Fixing the Contact Point's Normal</h3>
 
     <p>But soon I noticed another issue. Even though the textures now looked seamless, the edges where the dug soil touched the terrain were still sharp. It was clear these were separate objects, and that ruined the effect.</p>
 
-    <p>After some research, I realized why this was happening. By default, when two meshes are separate, their normals are calculated independently. This means that even if they align perfectly with the ground, they can still appear disconnected. The fix was to adjust the contact points of the dug soil and force their normals to point upward instead of relying on automatic calculation.</p>
+    <p>After some research, I realized why this was happening. By default, when two meshes are separate, their normals are calculated independently. This means that even if they align perfectly with the ground, they can still appear disconnected.<div> The fix was to adjust the contact points of the dug soil and force their normals to point upward instead of relying on automatic calculation. This would result in a smooth normal blend between the dug soils and the ground, making the transition completely seamless!</p>
 
 <p>I achieved this using a Blender modifier called <strong>Data Transfer</strong>, which allows specific vertices of the 3D model to copy normal data directly from the ground mesh.</p>
 
