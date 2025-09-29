@@ -1,11 +1,11 @@
 const blogPosts = {
   'farming-challenge-devlog': {
-    title: 'Farming Challenge | The Game Mechanic Devlog',
+    title: 'Farming Challenges | The Digging Soil Mechanic',
     date: 'September 27, 2025',
-    readTime: '16 min read',
+    readTime: '5 min read',
     author: 'Mohammad Hassan',
     image: './assets/BlogsContent/Blog_FarmingMechanic/BlogThumbnail_FarmingMechanic.png',
-    description: 'Deep dive into creating a farming system for my latest game project, including challenges and solutions I went through.',
+    description: 'Deep dive into how I created soil digging system for my latest farming game project, including challenges and solutions I went through.',
     tags: ['Game Mechanic', 'Farming', 'Devlog', 'Unity', 'C#'],
     content: `
     <h2>Introduction</h2>
@@ -49,7 +49,7 @@ const blogPosts = {
 
      <p> The only problem was I didn't know how to implement it in Unity. After some research, I found that Unity’s Shader Graph supports <strong>triplaner projection</strong>. I created a simple shader that uses the world position of the dug soil models to project the texture, ensuring it aligns perfectly with the terrain texture.</p>
 
-     <p> That means both the terrain and the dug soil share the same texture space, and the mismatch disappears. \\\\Setting it up with Unity’s Shader Graph wasn’t too hard, and it instantly made the patches blend in naturally.</p>
+     <p> That means both the terrain and the dug soil share the same texture space, and the mismatch disappears. Setting it up with Unity’s Shader Graph wasn’t too hard, and it instantly made the patches blend in naturally.</p>
 
 <div class="blog-image-card full">
         <img src="./assets/BlogsContent/Blog_FarmingMechanic/TriplanerVsUvDiggedSoil.gif" alt="Different stages of dug soil models">
@@ -64,18 +64,27 @@ const blogPosts = {
 
 <p>I achieved this using a Blender modifier called <strong>Data Transfer</strong>, which allows specific vertices of the 3D model to copy normal data directly from the ground mesh.</p>
 
-<p>The final result speaks for itself: the sharp separation is completely gone, and the dug soil now looks as if it naturally belongs to the terrain.</p>
+<h3>The Final Result</h3>
+
+<p>The final result speaks for itself: the sharp separation is completely gone, and the dug soil now looks as if it naturally belongs to the terrain. You can take a look at the short video I have provided, showing how the dug soil look like after all those changes.</p>
 
 <div class="blog-image-card full">
-        <img src="./assets/BlogsContent/Blog_FarmingMechanic/DugSoilContactNormaBeforeVsAfter.png" alt="Different stages of dug soil models">
-        <p class="image-caption">Before and After fixing the contact points normal.</p>
-    </div>
+    <iframe 
+        width="100%" 
+        height="350" 
+        src="https://www.youtube.com/embed/LxDhOIBII0k" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allowfullscreen
+        style="max-width: 600px; display: block; margin: 0 auto;">
+    </iframe>
+    <p class="image-caption">Final results of digging the soil.</p>
+</div>
 
-
-
-    <h2>Challenge 2: Watering</h2>
-    <p>(continue here…)</p>
+<p>In the future I will be providing more updates on other side of my farming game such as watering and planting, if you are intrested you can check out my other blogs <a href="./blog.html">here</a>.</p>
   `
+
+  
   },
 
 
