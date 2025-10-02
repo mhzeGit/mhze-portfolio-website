@@ -248,11 +248,11 @@ nav {
 }
 
 .btn-primary {
-  background: linear-gradient(45deg, rgba(61, 78, 103, 0.4), rgba(85, 106, 136, 0.4));
+  background: linear-gradient(45deg, rgba(85, 75, 120, 0.4), rgba(105, 95, 140, 0.4));
   color: white;
   backdrop-filter: blur(15px);
-  border: 1px solid rgba(209, 167, 255, 0.15);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(169, 149, 255, 0.2);
+  box-shadow: 0 4px 20px rgba(139, 92, 246, 0.1);
   position: relative;
   overflow: hidden;
 }
@@ -274,9 +274,9 @@ nav {
 
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
-  background: linear-gradient(45deg, rgba(71, 85, 105, 0.6), rgba(100, 116, 139, 0.6));
-  border-color: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 30px rgba(139, 92, 246, 0.15);
+  background: linear-gradient(45deg, rgba(95, 85, 130, 0.6), rgba(115, 105, 150, 0.6));
+  border-color: rgba(169, 149, 255, 0.3);
 }
 
 .btn-secondary {
