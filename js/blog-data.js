@@ -1,12 +1,13 @@
 const blogPosts = {
+  //#region Farming Mechanic Blog
   'farming-challenge-devlog': {
-    title: 'Farming Challenges | The Digging Soil Mechanic',
+    title: 'Farming Challenges | Digging Mechanic',
     date: 'September 27, 2025',
     readTime: '5 min read',
     author: 'Mohammad Hassan',
     image: './assets/BlogsContent/Blog_FarmingMechanic/BlogThumbnail_FarmingMechanic.png',
-    description: 'Deep dive into how I created soil digging system for my latest farming game project, including challenges and solutions I went through.',
-    tags: ['Game Mechanic', 'Farming', 'Devlog', 'Unity', 'C#'],
+    description: 'Deep dive into soil digging mechanic for my latest farming game project and challenges I went through.',
+    tags: ['Challenge', 'Problem Solving', 'Difficult', 'Game Mechanic', 'Unity', 'C#'],
     content: `
     <h2>Introduction</h2>
     <p>In this post I’ll go over how I built my new farming mechanic and the main <strong>challenges</strong> I ran into. I’ll skip the basics like the first-person controller, pickup, and interaction systems, and focus on the interesting parts.</p>
@@ -83,23 +84,171 @@ const blogPosts = {
 
 <p>In the future I will be providing more updates on other side of my farming game such as watering and planting, if you are intrested you can check out my other blogs <a href="./blog.html">here</a>.</p>
   `
-
-  
   },
 
+  //#endregion
 
+  //#region Player Arm Animation Blog
   'player-arm-animation': {
-    title: "The Creation Of Player's Arm",
+    title: "The Creation of Player's Arm",
     date: 'September 20, 2025',
     readTime: '12 min read',
     author: 'Mohammad Hassan',
-    image: './assets/BlogsContent/BlogThumbnail_PlayerArmAnimation.png',
+    image: './assets/BlogsContent/Blog_PlayerArmAnimation/BlogThumbnail_PlayerArmAnimation.png',
 
-    description: 'Techniques and lessons learned from developing four horror games that gained popularity on itch.io.',
-    tags: ['Horror', 'Game Design', 'Atmosphere', 'Audio'],
-    content: 
-      `<p>This blog post is currently under construction. In the meantime, check out my other available blogs. Thanks for your patience!</p>`
+    description: 'Tips and Techniques I used making first person arm for my indie game and the challanges I faced.',
+    tags: ['Technical Animation', 'Problem Solving', 'First Person', 'Efficency', 'Blender', 'Unreal Engine', 'Blueprints'],
+    content:
+      `<h2>Introduction</h2>
+      
+
+      <p>In this blog I will go through something I ran into while working on <strong>Blah Blah Family</strong> (a horror adventure game I've been developing).</p> 
+      <p>Sometimes the smallest details end up taking the most time to solve. In this case, it was making the first person character hold different item types in a way that actually looked good and believable.</p>
+
+      <div class="blog-image-card full">
+      <img src="./assets/BlogsContent/Blog_PlayerArmAnimation/PlayerHoldingRockGameScreenshot.png" alt="Blah Blah Family game">
+      <p class="image-caption">Blah Blah Family - A Creepy Stylized Game.</p>
+      </div>
+
+      <h2>The Problem: Inconsistent Item Holding</h2>
+
+      <p>The issue started when I was testing the pickup system. Everything worked functionally, the player could grab objects, the hand would close around them, and the items would follow the hand correctly. But visually, something was clearly off.</p>
+
+      <p>The character would pick up a tiny key with a specific hand pose, then immediately pick up a massive boulder and hold it in exactly the same way. Same finger position, same grip angle, same everything. A delicate wooden stick? Same pose. A heavy metal crowbar? You guessed it, same pose again.</p>
+
+      <p>It didn't look right at all. The hand felt robotic and lifeless, like it couldn't actually feel or respond to what it was holding.</p>
+
+<div class="blog-image-card full">
+  <img src="./assets/BlogsContent/Blog_PlayerArm/AwkwardHolding.gif" alt="Awkward item holding">
+  <p class="image-caption">Side-by-side comparison showing the awkward same-hand-position problem.</p>
+</div>
+
+      <p>This is actually a common challenge in game development. As indie developers with limited budgets and time, we simply can't create individual animations for every possible item interaction. </p>
+
+      <p>Even AAA studios with their massive budgets don't spend resources creating unique animations for every single holding scenario. Instead, they use various techniques to optimize their animation workflow. In this blog, I'll walk you through the solution I came up with to tackle this problem efficiently.</p>
+
+
+<h2>The Common Solution (And Its Limitations)</h2>
+
+<p>The typical indie approach is to create one generic "holding" animation and use it for everything. Every item uses the same animation, which saves a lot of time. The problem is that it's immediately noticeable, and it breaks immersion.</p>
+
+<p>I needed something that looked natural but didn't require animating every item individually.</p>
+
+<div class="blog-image-card full">
+  <img src="./assets/BlogsContent/Blog_PlayerArm/GenericAnimation.png" alt="Generic animation example">
+  <p class="image-caption">Examples showing the generic animation issue.</p>
+</div>
+
+
+
+<h2>My Solution: The Two-Category System</h2>
+
+<p>After analyzing the different items in the game, I realized that most objects can be grouped into just <strong>two</strong> categories based on how you'd naturally hold them:</p>
+
+<p><strong>1. Palm-Holding Items</strong><br>
+These are things that sit in your palm, like keys (more on keys later), coins, small rocks, apples, that sort of stuff. Your fingers curl around them, but they're resting in your hand.</p>
+
+<p><strong>2. Stick-Holding Items</strong><br>
+These are things you grip like a handle, sticks (obviously), swords, crowbars, flashlights, baseball bats. You're grabbing onto them, not cradling them.</p>
+
+<div class="blog-image-card full">
+  <img src="./assets/BlogsContent/Blog_PlayerArm/TwoCategories.png" alt="Palm vs Stick holding">
+  <p class="image-caption">Visual comparison of palm-holding vs stick-holding items.</p>
+</div>
+
+<p>Just by sorting items into these two groups, I reduced the animation work significantly. Instead of dozens of animations, I only needed two base animations.</p>
+
+<p>But there was still room for improvement.</p>
+
+<h2>Adding Hand Pressure</h2>
+
+<p>Even within the same category, not everything should look identical. In real life, you don't hold a tiny key the same way you hold a heavy stone, even though they're both palm-held items. Your fingers naturally adjust based on the object's size and weight.</p>
+
+<p>That's when I implemented what I call <strong>hand pressure</strong>.</p>
+
+<div class="blog-image-card full">
+  <img src="./assets/BlogsContent/Blog_PlayerArm/HandPressure.gif" alt="Hand pressure demonstration">
+  <p class="image-caption">Hand pressure in action with different objects.</p>
+</div>
+
+<p>I defined hand pressure as a value that represents how tightly the fingers grip something, measured on a scale from 0% to 100%:</p>
+
+<ul>
+  <li><strong>0% pressure</strong> = The hand is completely open with the palm flat and fingers extended. This would be used for the moment right before you pick something up.</li>
+  <li><strong>50% pressure</strong> = Fingers are moderately curled, suitable for medium-sized objects.</li>
+  <li><strong>100% pressure</strong> = Full fist with fingers completely closed, used for very small objects that require the fingers to curl all the way in.</li>
+</ul>
+
+<p>Here's how this translates to actual items in the game based on their size:</p>
+
+<ul>
+  <li>A small coin or key? Around 80-90% hand pressure. The object is tiny, so your fingers need to curl in significantly to grip it properly.</li>
+  <li>A medium-sized apple or baseball? Around 50-60% pressure. The object fits comfortably in your hand with a moderate finger curl.</li>
+  <li>A large rock or thick book? Around 20-30% pressure. The object is big enough that your fingers don't need to curl much, they just wrap around the edges.</li>
+</ul>
+<p>The same logic applies to stick-holding items. Gripping a thick sword handle needs more finger curl than holding a thin stick. Meaning the tick sword would possibly go with something about 40% where as a thin stick would go with 90%</p>
+
+<div class="blog-image-card full">
+  <img src="./assets/BlogsContent/Blog_PlayerArm/HandPressureComparison.png" alt="Hand pressure comparison">
+  <p class="image-caption">Side-by-side comparison showing different hand pressures on various items.</p>
+</div>
+
+<h2>How It Actually Works in the Game</h2>
+
+<p>The system I built is surprisingly simple:</p>
+
+<ol>
+  <li>Each item in the game is tagged with two properties: its <strong>category</strong> (palm or stick) and its <strong>hand pressure</strong> (0-100%)</li>
+  <li>When the player picks up an item, the game reads these properties</li>
+  <li>The hand animation smoothly adjusts to match the pressure value</li>
+  <li>The result is a natural-looking pickup that took seconds to set up instead of hours to animate</li>
+</ol>
+
+<div class="blog-image-card full">
+  <iframe 
+    width="100%" 
+    height="350" 
+    src="https://www.youtube.com/embed/YOUR_VIDEO_ID" 
+    frameborder="0" 
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+    allowfullscreen
+    style="max-width: 600px; display: block; margin: 0 auto;">
+  </iframe>
+  <p class="image-caption">Short clip showing the character picking up different items with different hand pressures.</p>
+</div>
+
+
+<h2>Why This Matters</h2>
+
+<p>This might seem like a small detail, and most players won't consciously notice it. But that's the point.</p>
+
+<p>Good game design comes from all those little details that players don't notice because everything feels right. When animations look natural, players stay immersed in the world. When things look off, it breaks the experience.</p>
+
+<div class="blog-image-card full">
+  <img src="./assets/BlogsContent/Blog_PlayerArm/BeforeAfter.png" alt="Before and after comparison">
+  <p class="image-caption">Before and after comparison of the pickup system.</p>
+</div>
+
+<p>This system also saved a significant amount of development time. Instead of creating unique animations for every item, I can add a new object to the game in under a minute, just assign it a category and a pressure value.</p>
+
+<h2>The Results</h2>
+
+<p>I'm happy with how this system turned out. The pickup animations in Blah Blah Family look more polished, and the development time stayed manageable.</p>
+
+<p>It's a good example of finding a balance between quality and efficiency. Sometimes the best solution isn't the most complex one, it's about finding what works without overcomplicating things.</p>
+
+<div class="blog-image-card full">
+  <img src="./assets/BlogsContent/Blog_PlayerArm/FinalMontage.gif" alt="Final system montage">
+  <p class="image-caption">Montage of the character picking up various items, showing off the system.</p>
+</div>
+
+<p><strong>If you're working on your own game and dealing with similar issues, hopefully this approach helps.</strong> You can see this system in action in Blah Blah Family <a href="./blahblahfamily.html">here</a>.</p>
+
+<p>Feel free to share your thoughts or similar challenges you've faced in the comments, or check out my other blogs <a href="./blog.html">here</a>.</p>`
   },
+  //#endregion
+
+  //#region blender to unity workflow blog
 
   'blender-to-unity-workflow': {
     title: 'My Blender to Unity Workflow',
@@ -112,6 +261,10 @@ const blogPosts = {
     tags: ['Blender', 'Unity', 'Workflow', '3D Modeling', 'Optimization'],
     content: `<p>This blog post is currently under construction. In the meantime, check out my other available blogs. Thanks for your patience!</p>`
   },
+  //#endregion
+
+  //#region My three horror games blog
+
   'my-three-horror-games': {
     title: 'My 3 Horror Games That Got Popular on Itch.io',
     date: 'September 15, 2025',
@@ -123,6 +276,10 @@ const blogPosts = {
     tags: ['Indie Games', 'Unity', 'Horror', 'Beginer Works', 'Portfolio'],
     content: `<p>This blog post is currently under construction. In the meantime, check out my other available blogs. Thanks for your patience!</p>`
   },
+  //#endregion
+
+  //#region My 3d modelling blog
+
   'my-3d-modelling': {
     title: '3D Game Ready Assets & Modelling',
     date: 'September 15, 2025',
@@ -134,6 +291,10 @@ const blogPosts = {
     tags: ['Indie Games', 'Unity', 'Horror', 'Beginer Works', 'Portfolio'],
     content: `<p>This blog post is currently under construction. In the meantime, check out my other available blogs. Thanks for your patience!</p>`
   },
+  //#endregion
+
+  //#region animation works blog
+
   'animation-works': {
     title: 'My Expereince In Animation',
     date: 'September 15, 2025',
@@ -145,6 +306,10 @@ const blogPosts = {
     tags: ['Indie Games', 'Unity', 'Horror', 'Beginer Works', 'Portfolio'],
     content: `<p>This blog post is currently under construction. In the meantime, check out my other available blogs. Thanks for your patience!</p>`
   }
+  //#endregion
+
+  //#region  unfinished projects blog
+
   ,
   'unfinished-projects-showcase': {
     title: 'Unfinished Projects Showcase',
@@ -157,6 +322,10 @@ const blogPosts = {
     tags: ['Indie Games', 'Unity', 'Horror', 'Beginer Works', 'Portfolio'],
     content: `<p>This blog post is currently under construction. In the meantime, check out my other available blogs. Thanks for your patience!</p>`
   }
+  //#endregion
+
+  //#region grass optimization blog
+
   ,
   'grass-optimization-techniques': {
     title: 'Grass Optimization Techniques',
@@ -169,6 +338,10 @@ const blogPosts = {
     tags: ['Indie Games', 'Unity', 'Horror', 'Beginer Works', 'Portfolio'],
     content: `<p>This blog post is currently under construction. In the meantime, check out my other available blogs. Thanks for your patience!</p>`
   }
+  //#endregion
+
+  //#region uvseams the ultimate fix blog
+
   ,
   'uvseams-the-ultimate-fix': {
     title: 'UV Seams The Ultimate Fix!',
@@ -181,6 +354,9 @@ const blogPosts = {
     tags: ['Indie Games', 'Unity', 'Horror', 'Beginer Works', 'Portfolio'],
     content: `<p>This blog post is currently under construction. In the meantime, check out my other available blogs. Thanks for your patience!</p>`
   }
+  //#endregion
+
+  //#region  slime tower defence project blog
   ,
   'slime-tower-defence-project': {
     title: 'Slime Tower Defence Project',
@@ -193,6 +369,7 @@ const blogPosts = {
     tags: ['Indie Games', 'Unity', 'Horror', 'Beginer Works', 'Portfolio'],
     content: `<p>This blog post is currently under construction. In the meantime, check out my other available blogs. Thanks for your patience!</p>`
   }
+  //#endregion
 };
 
 // Export the blog posts data
