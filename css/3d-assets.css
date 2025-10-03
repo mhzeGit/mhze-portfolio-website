@@ -22,7 +22,7 @@ body::before {
 
 /* Hero Section for 3D Assets */
 .hero-3d {
-  min-height: 70vh;
+  min-height: 50vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -332,12 +332,24 @@ body::before {
   font-size: 1.5rem;
   z-index: 10;
   transition: all 0.3s ease;
+  line-height: 0;
+  font-family: Arial, sans-serif;
+  font-weight: normal;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  vertical-align: middle;
 }
 
 .modal-close:hover {
   background: rgba(239, 68, 68, 0.3);
   border-color: rgba(239, 68, 68, 0.6);
   transform: scale(1.1);
+  line-height: 0;
+  font-family: Arial, sans-serif;
+  font-weight: normal;
+  text-align: center;
+  vertical-align: middle;
 }
 
 /* Navigation Arrows - Independent Overlay Elements */
@@ -364,6 +376,7 @@ body::before {
   user-select: none;
   opacity: 0;
   pointer-events: none;
+  font-family: Arial, sans-serif;
 }
 
 .modal-nav:hover {
@@ -389,9 +402,13 @@ body::before {
 .modal-prev::before {
   content: '‹';
   font-size: 2rem;
-  line-height: 1;
-  margin-left: -2px; /* Slight optical adjustment */
+  line-height: 0;
+  font-family: Arial, sans-serif;
+  font-weight: normal;
+  display: block;
+  transform: translateY(-2px) translateX(1px);
 }
+
 
 .modal-next {
   right: 5%;
@@ -400,8 +417,11 @@ body::before {
 .modal-next::before {
   content: '›';
   font-size: 2rem;
-  line-height: 1;
-  margin-right: -2px; /* Slight optical adjustment */
+  line-height: 0;
+  font-family: Arial, sans-serif;
+  font-weight: normal;
+  display: block;
+  transform: translateY(-2px) translateX(-1px);
 }
 
 /* Hide arrows when disabled */
