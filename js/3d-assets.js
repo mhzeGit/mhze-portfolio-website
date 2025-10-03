@@ -220,23 +220,30 @@ function updateNavigationArrows() {
     const nextBtn = document.getElementById('modal-next');
     
     if (filteredAssets.length <= 1) {
+        prevBtn.classList.remove('visible');
+        nextBtn.classList.remove('visible');
         prevBtn.disabled = true;
         nextBtn.disabled = true;
-        prevBtn.style.display = 'none';
-        nextBtn.style.display = 'none';
     } else {
+        prevBtn.classList.add('visible');
+        nextBtn.classList.add('visible');
         prevBtn.disabled = false;
         nextBtn.disabled = false;
-        prevBtn.style.display = 'flex';
-        nextBtn.style.display = 'flex';
     }
 }
 
 // Close asset modal
 function closeAssetModal() {
     const modal = document.getElementById('asset-modal');
+    const prevBtn = document.getElementById('modal-prev');
+    const nextBtn = document.getElementById('modal-next');
+    
     modal.classList.remove('active');
     document.body.style.overflow = 'auto';
+    
+    // Hide navigation arrows when modal is closed
+    prevBtn.classList.remove('visible');
+    nextBtn.classList.remove('visible');
 }
 
 // Navigate to previous asset

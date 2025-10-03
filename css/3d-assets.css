@@ -278,7 +278,7 @@ body {
   position: relative;
   background: linear-gradient(135deg, rgba(30, 41, 59, 0.95) 0%, rgba(15, 23, 42, 0.95) 100%);
   border-radius: 20px;
-  max-width: 90vw;
+  max-width: 80vw;
   max-height: 90vh;
   overflow-y: auto;
   border: 1px solid rgba(99, 102, 241, 0.3);
@@ -324,75 +324,119 @@ body {
   transform: scale(1.1);
 }
 
-/* Modal Navigation Arrows - REDESIGNED AS OVERLAY BUTTONS */
+/* Navigation Arrows - Independent Overlay Elements */
 .modal-nav {
-  position: absolute;
+  position: fixed;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(16, 16, 28, 0.90);
-  border: 2px solid rgba(99, 102, 241, 0.6);
-  color: #ffffff;
-  width: 50px;
-  height: 50px;
-  border-radius: 8px;
+  width: 60px;
+  height: 60px;
+  background: rgba(30, 41, 59, 0.9);
+  border: 2px solid rgba(99, 102, 241, 0.4);
+  border-radius: 50%;
+  color: #f1f5f9;
+  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
   font-size: 1.5rem;
   font-weight: bold;
-  z-index: 10003;
+  z-index: 10001; /* Higher than modal */
   transition: all 0.3s ease;
-  backdrop-filter: blur(20px);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
   user-select: none;
-  opacity: 0.8;
-}
-
-.modal-prev {
-  left: 20px; /* Inside the modal on the left */
-}
-
-.modal-prev::after {
-  content: '←';
-  font-size: 1.5rem;
-  line-height: 1;
-}
-
-.modal-next {
-  right: 20px; /* Inside the modal on the right */
-}
-
-.modal-next::after {
-  content: '→';
-  font-size: 1.5rem;
-  line-height: 1;
-}
-
-.modal-nav:hover {
-  background: rgba(99, 102, 241, 0.6);
-  border-color: rgba(99, 102, 241, 0.9);
-  transform: translateY(-50%) scale(1.1);
-  color: #ffffff;
-  box-shadow: 0 6px 25px rgba(99, 102, 241, 0.4);
-  opacity: 1;
-}
-
-.modal-nav:disabled {
-  opacity: 0.2;
-  cursor: not-allowed;
-  background: rgba(30, 41, 59, 0.5);
-  border-color: rgba(99, 102, 241, 0.2);
+  opacity: 0;
   pointer-events: none;
 }
 
-.modal-nav:disabled:hover {
-  transform: translateY(-50%);
-  background: rgba(30, 41, 59, 0.5);
-  border-color: rgba(99, 102, 241, 0.2);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-  color: #64748b;
-  opacity: 0.2;
+.modal-nav:hover {
+  background: rgba(99, 102, 241, 0.2);
+  border-color: rgba(99, 102, 241, 0.8);
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 6px 25px rgba(99, 102, 241, 0.3);
+}
+
+.modal-nav:active {
+  transform: translateY(-50%) scale(0.95);
+}
+
+.modal-nav.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal-prev {
+  left: 5%;
+}
+
+.modal-prev::before {
+  content: '‹';
+  font-size: 2rem;
+  line-height: 1;
+  margin-left: -2px; /* Slight optical adjustment */
+}
+
+.modal-next {
+  right: 5%;
+}
+
+.modal-next::before {
+  content: '›';
+  font-size: 2rem;
+  line-height: 1;
+  margin-right: -2px; /* Slight optical adjustment */
+}
+
+/* Hide arrows when disabled */
+.modal-nav:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Responsive design for navigation arrows */
+@media (max-width: 640px) {
+  .modal-nav {
+    width: 50px;
+    height: 50px;
+    font-size: 1.2rem;
+  }
+  
+  .modal-prev {
+    left: 3%;
+  }
+  
+  .modal-next {
+    right: 3%;
+  }
+  
+  .modal-prev::before,
+  .modal-next::before {
+    font-size: 1.5rem;
+  }
+}
+
+/* Hide arrows on very small screens */
+@media (max-width: 480px) {
+  .modal-nav {
+    width: 45px;
+    height: 45px;
+    font-size: 1rem;
+  }
+  
+  .modal-prev {
+    left: 2%;
+  }
+  
+  .modal-next {
+    right: 2%;
+  }
+  
+  .modal-prev::before,
+  .modal-next::before {
+    font-size: 1.3rem;
+  }
 }
 
 .modal-body {
@@ -637,21 +681,6 @@ body {
     padding: 1.25rem;
   }
 
-  /* Mobile navigation arrows - smaller and positioned inside */
-  .modal-nav {
-    width: 40px;
-    height: 40px;
-    font-size: 1.2rem;
-  }
-
-  .modal-prev {
-    left: 15px;
-  }
-
-  .modal-next {
-    right: 15px;
-  }
-
   /* Mobile image controls */
   .image-controls {
     flex-wrap: wrap;
@@ -678,36 +707,8 @@ body {
   .filter-btn {
     width: 200px;
   }
-
-  /* Very small arrows on mobile */
-  .modal-nav {
-    width: 35px;
-    height: 35px;
-    font-size: 1rem;
-  }
-
-  .modal-prev {
-    left: 10px;
-  }
-
-  .modal-next {
-    right: 10px;
-  }
 }
 
 @media (max-width: 360px) {
-  /* Keep arrows but make them even smaller on tiny screens */
-  .modal-nav {
-    width: 30px;
-    height: 30px;
-    font-size: 0.9rem;
-  }
-
-  .modal-prev {
-    left: 8px;
-  }
-
-  .modal-next {
-    right: 8px;
-  }
+  /* Additional responsive adjustments for very small screens can go here */
 }
