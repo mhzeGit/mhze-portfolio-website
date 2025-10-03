@@ -583,7 +583,7 @@ nav {
   display: flex;
   justify-content: center;
   gap: 2rem;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
 }
 
 .contact-links a {
@@ -605,6 +605,7 @@ nav {
   height: 48px;
   transition: all 0.3s ease;
   filter: brightness(0.8);
+  flex-shrink: 0;
 }
 
 .contact-icon:hover {
@@ -650,14 +651,21 @@ footer {
   }
 
   .contact-links {
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: center;
     align-items: center;
-    gap: 1.5rem;
+    gap: 1.2rem;
+    flex-wrap: nowrap;
+  }
+
+  .contact {
+    padding: 2rem 1rem;
   }
 
   .contact-icon {
-    width: 32px;
-    height: 32px;
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
   }
 
   .contact-icon:hover {
@@ -673,11 +681,17 @@ footer {
 @media (max-width: 480px) {
   .contact-links {
     gap: 1rem;
+    flex-wrap: nowrap;
+  }
+
+  .contact {
+    padding: 1.5rem 0.5rem;
   }
 
   .contact-icon {
-    width: 28px;
-    height: 28px;
+    width: 36px;
+    height: 36px;
+    flex-shrink: 0;
   }
 
   .contact-icon:hover {
