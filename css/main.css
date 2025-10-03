@@ -656,8 +656,8 @@ footer {
   }
 
   .contact-icon {
-    width: 40px;
-    height: 40px;
+    width: 32px;
+    height: 32px;
   }
 
   .contact-icon:hover {
@@ -666,6 +666,22 @@ footer {
 
   .container {
     padding: 0 1rem;
+  }
+}
+
+/* Extra mobile styles for very small screens */
+@media (max-width: 480px) {
+  .contact-links {
+    gap: 1rem;
+  }
+
+  .contact-icon {
+    width: 28px;
+    height: 28px;
+  }
+
+  .contact-icon:hover {
+    transform: scale(1.03);
   }
 }
 
