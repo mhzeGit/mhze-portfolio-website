@@ -93,23 +93,20 @@ function filterAssets(category) {
         filteredAssets = Object.values(window.assetsData).filter(asset => asset.category === category);
     }
     
-    // Step 1: Hide all cards first
+    // Instantly show/hide cards
     assetCards.forEach(card => {
-        card.classList.add('filtered-out');
-        card.classList.remove('filtered-in');
+        const cardCategory = card.getAttribute('data-category');
+        
+        if (category === 'all' || cardCategory === category) {
+            // Card should be shown
+            card.classList.remove('filtered-out');
+            card.classList.add('filtered-in');
+        } else {
+            // Card should be hidden
+            card.classList.add('filtered-out');
+            card.classList.remove('filtered-in');
+        }
     });
-    
-    // Step 2: Wait for hide animation, then show relevant cards
-    setTimeout(() => {
-        assetCards.forEach(card => {
-            const cardCategory = card.getAttribute('data-category');
-            
-            if (category === 'all' || cardCategory === category) {
-                card.classList.remove('filtered-out');
-                card.classList.add('filtered-in');
-            }
-        });
-    }, 200); // Increased delay for smoother transition
 }
 
 // Initialize modal functionality

@@ -2,9 +2,22 @@
 
 /* Consistent background for entire page */
 body {
-  background: linear-gradient(135deg, #10101c 0%, #291a2e 50%, #16213e 100%) !important;
-  background-attachment: fixed;
+  position: relative;
   min-height: 100vh;
+  background: transparent !important;
+}
+
+/* Fixed gradient background using pseudo-element */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(135deg, #10101c 0%, #291a2e 50%, #16213e 100%);
+  z-index: -1;
+  pointer-events: none;
 }
 
 /* Hero Section for 3D Assets */
@@ -608,20 +621,13 @@ body {
 
 /* Filter Animation */
 .asset-card.filtered-out {
-  opacity: 0;
-  transform: scale(0.7) translateY(20px);
-  pointer-events: none;
-  position: absolute;
-  z-index: -1;
-  visibility: hidden;
+  display: none;
 }
 
 .asset-card.filtered-in {
   opacity: 1;
   transform: scale(1) translateY(0);
   pointer-events: auto;
-  position: relative;
-  z-index: 1;
   visibility: visible;
 }
 
