@@ -98,61 +98,61 @@ function generatePortfolioCards() {
       {
         title: 'My Created 3D Assets',
         description: 'A collection of my best 3D models and assets created for games and other projects.',
-        image: './assets/BlogsContent/BlogThumbnail_My3DModels.png',
+        image: './assets/blog-content/blog-thumbnail-my-3d-models.png',
         link: 'my-3d-assets.html'
       },
       {
         title: 'Game Project: Blah Blah Family',
         description: 'A creepy stylized horror adventure game with unique mechanics and story.',
-        image: './assets/BlogsContent/Blog_PlayerArmAnimation/BlogThumbnail_PlayerArmAnimation.png',
+        image: './assets/my-work-content/blah-blah-family-game-thumbnail.png',
         link: 'blahblahfamily.html'
       },
       {
         title: 'Game Project: Slime Defence Game',
         description: 'A fun and strategic tower defense game featuring slimes and creative mechanics.',
-        image: './assets/BlogsContent/BlogThumbnail_My3DModels.png',
+        image: './assets/my-work-content/slime-defence-game-thumbnail.png',
         link: 'slime-defence.html'
       },
       {
         title: 'Game Project: Farming Game',
         description: 'A farming simulation game with innovative digging and soil mechanics.',
-        image: './assets/BlogsContent/Blog_FarmingMechanic/BlogThumbnail_FarmingMechanic.png',
+        image: './assets/blog-content/blog-farming-mechanic/blog-thumbnail-farming-mechanic.png',
         link: 'farming-game.html'
       },
       {
         title: 'Horror Game: Midnight Terrors',
         description: 'A spine-chilling horror experience with atmospheric environments and terrifying encounters.',
-        image: './assets/BlogsContent/BlogThumbnail_My3HorrorGames.png',
+        image: './assets/blog-content/blog-thumbnail-my-3-horror-games.png',
         link: 'midnight-terrors.html'
       },
       {
         title: 'RPG Project: Fantasy Realms',
         description: 'An open-world RPG featuring rich storytelling and immersive gameplay mechanics.',
-        image: './assets/BlogsContent/BlogThumbnail_MyExpereinceIn3DAnimation.png',
+        image: './assets/blog-content/blog-thumbnail-my-experience-in-3d-animation.png',
         link: 'fantasy-realms.html'
       },
       {
         title: 'Action Game: Combat Arena',
         description: 'Fast-paced action combat game with dynamic environments and fluid controls.',
-        image: './assets/BlogsContent/BlogThumbnail_BlenderToUnity.png',
+        image: './assets/blog-content/blog-thumbnail-blender-to-unity.png',
         link: 'combat-arena.html'
       },
       {
         title: 'Puzzle Game: Mind Bender',
         description: 'A challenging puzzle game that tests your logic and problem-solving skills.',
-        image: './assets/BlogsContent/BlogThumbnail_My3DModels.png',
+        image: './assets/blog-content/blog-thumbnail-my-3d-models.png',
         link: 'mind-bender.html'
       },
       {
         title: 'Simulation: City Builder Pro',
         description: 'A comprehensive city building simulation with realistic economic systems.',
-        image: './assets/BlogsContent/Blog_FarmingMechanic/BlogThumbnail_FarmingMechanic.png',
+        image: './assets/blog-content/blog-farming-mechanic/blog-thumbnail-farming-mechanic.png',
         link: 'city-builder.html'
       },
       {
         title: 'Adventure: Lost Kingdoms',
         description: 'An epic adventure through mysterious lands filled with secrets and treasures.',
-        image: './assets/BlogsContent/BlogThumbnail_MyExpereinceIn3DAnimation.png',
+        image: './assets/blog-content/blog-thumbnail-my-experience-in-3d-animation.png',
         link: 'lost-kingdoms.html'
       }
     ];
