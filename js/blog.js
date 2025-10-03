@@ -27,7 +27,6 @@ document.addEventListener('DOMContentLoaded', function() {
 // Initialize the blog system
 function initializeBlog() {
   generateBlogCards();
-  console.log("Blog system initialized");
 }
 
 // Generate blog cards from data with pagination
@@ -79,13 +78,10 @@ function generateBlogCards() {
 
 // Show individual blog post
 function showBlogPost(postId, updateHistory = true) {
-  console.log('Showing post:', postId);
   const post = getBlogPost(postId);
   if (!post) {
-    console.error(`Blog post with id "${postId}" not found`);
     return;
   }
-  console.log('Post data:', post);
 
   // Update URL and browser history
   if (updateHistory) {
@@ -170,7 +166,6 @@ function checkUrlOnLoad() {
 function initializeBlog() {
   generateBlogCards();
   checkUrlOnLoad();
-  console.log("Blog system initialized");
 }
 
 // Smooth scrolling for navigation links (inherited from main.js pattern)

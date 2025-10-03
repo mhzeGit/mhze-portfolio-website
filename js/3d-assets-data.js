@@ -166,7 +166,6 @@ const assetsData = {
     downloadUrl: '#'
   },
 
-  // Additional assets for pagination testing
   'sci-fi-rifle': {
     id: 'sci-fi-rifle',
     title: 'Sci-Fi Plasma Rifle',

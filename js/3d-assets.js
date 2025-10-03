@@ -5,8 +5,6 @@ let currentImageType = 'render';
 let assetsPaginationManager;
 
 document.addEventListener('DOMContentLoaded', function() {
-    console.log('3D Assets page initialized');
-    
     // Initialize the page
     initializeAssets();
     initializeFilters();
@@ -17,7 +15,6 @@ document.addEventListener('DOMContentLoaded', function() {
 function initializeAssets() {
     const assetsGrid = document.getElementById('assets-grid');
     if (!assetsGrid || !window.assetsData) {
-        console.error('Assets grid or data not found');
         return;
     }
 
@@ -157,7 +154,6 @@ function initializeModal() {
 function openAssetModal(assetId) {
     const asset = window.assetsData[assetId];
     if (!asset) {
-        console.error('Asset not found:', assetId);
         return;
     }
 
@@ -299,5 +295,3 @@ function searchAssets(query) {
         asset.tags.some(tag => tag.toLowerCase().includes(query.toLowerCase()))
     );
 }
-
-console.log('3D Assets JavaScript loaded successfully');

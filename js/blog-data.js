@@ -371,8 +371,6 @@ These are things you grip like a handle, sticks (obviously), swords, crowbars, f
   }
   //#endregion
 
-  //#region Additional test blogs for pagination
-
   ,
   'unity-optimization-tips': {
     title: 'Unity Optimization Tips & Tricks',

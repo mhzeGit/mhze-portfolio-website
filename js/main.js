@@ -9,8 +9,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
-console.log("Main.js initialized");
-
 // JS: split each strong into per-letter spans and set a per-letter index (--i)
 document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('p.intro strong').forEach(el => {
@@ -172,8 +170,6 @@ function generatePortfolioCards() {
       }
     });
   }
-
-  console.log(`Generated portfolio cards with pagination for Blogs (${posts.length} items) and Works sections`);
 }
 
 // Get all blog posts as an array
