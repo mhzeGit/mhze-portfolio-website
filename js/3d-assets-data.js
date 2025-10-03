@@ -11,8 +11,8 @@ const assetsData = {
     images: {
       render: './assets/3d-assets/weird-fish/weird-fish-full-render.png',
       wireframe: './assets/3d-assets/weird-fish/weird-fish-wireframe.png',
-      matcap: './assets/3d-assets/weird-fish/weird-fish-full-render.png',
-      basecolor: './assets/3d-assets/weird-fish/weird-fish-full-render.png'
+      matcap: './assets/3d-assets/weird-fish/weird-fish-matcap.png',
+      basecolor: './assets/3d-assets/weird-fish/weird-fish-base-color.png'
     },
     polyCount: '2,840 tris',
     textureResolution: '1024x1024',

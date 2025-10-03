@@ -137,7 +137,7 @@ body::before {
   /* FORCE EQUAL HEIGHTS */
   display: flex;
   flex-direction: column;
-  height: 450px !important; /* Fixed height for ALL cards */
+  height: 400px !important; /* Fixed height for ALL cards */
 }
 
 .asset-card::before {
@@ -147,7 +147,7 @@ body::before {
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(135deg, rgba(99, 102, 241, 0.05) 0%, rgba(168, 85, 247, 0.05) 100%);
+  background: linear-gradient(135deg, rgba(241, 241, 99, 0.05) 0%, rgba(168, 85, 247, 0.05) 100%);
   opacity: 0;
   transition: opacity 0.3s ease;
   z-index: 1;
@@ -167,7 +167,7 @@ body::before {
 }
 
 .asset-image {
-  height: 200px; /* Fixed image height */
+  height: 320px; /* Increased image height for larger preview */
   background: linear-gradient(45deg, #374151, #4b5563);
   background-size: cover;
   background-position: center;
@@ -177,24 +177,23 @@ body::before {
 }
 
 .asset-image::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 60px;
-  background: linear-gradient(transparent, rgba(30, 41, 59, 0.8));
+  display: none; /* Remove gradient completely */
 }
 
 .asset-content {
-  padding: 1.5rem;
+  padding: 1rem;
   position: relative;
   z-index: 2;
   display: flex;
   flex-direction: column;
   flex: 1; /* Take remaining space */
-  height: 250px; /* Fixed content height = 450 - 200 */
+  height: 130px; /* Reduced content height = 450 - 320 */
   overflow: hidden;
+  /* Smooth non-directional shadow casting over the image */
+  box-shadow: 
+    0 -8px 16px rgba(0, 0, 0, 0.3),
+    0 -4px 8px rgba(0, 0, 0, 0.083),
+    0 -2px 4px rgba(0, 0, 0, 0);
 }
 
 .asset-header {
@@ -227,27 +226,11 @@ body::before {
 }
 
 .asset-description {
-  color: #94a3b8;
-  font-size: 0.95rem;
-  line-height: 1.5;
-  margin-bottom: 1rem;
-  flex: 1; /* Take available space */
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  line-clamp: 3;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  height: 4.5rem; /* Fixed height for 3 lines */
+  display: none; /* Hide description on small cards */
 }
 
 .asset-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.4rem;
-  margin-top: auto;
-  padding-top: 0.5rem;
-  height: 2.5rem; /* Fixed height for tags area */
-  overflow: hidden;
+  display: none; /* Hide tags on small cards */
 }
 
 .asset-tag {
