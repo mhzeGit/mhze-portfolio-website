@@ -5,7 +5,7 @@ const blogPosts = {
     date: 'September 27, 2025',
     readTime: '5 min read',
     author: 'Mohammad Hassan',
-    image: './assets/blog-content/blog-farming-mechanic/blog-thumbnail-farming-mechanic.png',
+    image: './assets/blog-content/blog-farming-mechanic/blog-thumbnail-farming-mechanic.webp',
     description: 'Deep dive into soil digging mechanic for my latest farming game project and challenges I went through.',
     tags: ['Challenge', 'Problem Solving', 'Difficult', 'Game Mechanic', 'Unity', 'C#'],
     content: `
@@ -23,7 +23,7 @@ const blogPosts = {
 
     <p>In Blender, I created 3–4 stages of dug soil. My plan was to swap them in-engine as the player digs. <br>I kept everything <strong>non-destructive</strong>, leaving subdivision and displacement modifiers unapplied so I could easily generate variations later.</p>
 <div class="blog-image-card full">
-        <img src="./assets/blog-content/blog-farming-mechanic/digged-soil-stages-blender-screenshot.png" alt="Different stages of dug soil models">
+        <img src="./assets/blog-content/blog-farming-mechanic/digged-soil-stages-blender-screenshot.webp" alt="Different stages of dug soil models">
         <p class="image-caption">Different stages of dug soil, showing progression from first dig attempt to fully digged and then covered by soil.</p>
     </div>
     <p><strong>Interesting fact!</strong> The “holes” aren’t real. The <strong>illusion</strong> of depth comes from raising the edges, not lowering the center. That way I avoid touching the terrain mesh at all.</p>
@@ -94,7 +94,7 @@ const blogPosts = {
     date: 'September 20, 2025',
     readTime: '12 min read',
     author: 'Mohammad Hassan',
-    image: './assets/blog-content/blog-player-arm-animation/blog-thumbnail-player-arm-animation.png',
+    image: './assets/blog-content/blog-player-arm-animation/blog-thumbnail-player-arm-animation.webp',
 
     description: 'Tips and Techniques I used making first person arm for my indie game and the challanges I faced.',
     tags: ['Technical Animation', 'Problem Solving', 'First Person', 'Efficency', 'Blender', 'Unreal Engine', 'Blueprints'],
@@ -106,7 +106,7 @@ const blogPosts = {
       <p>Sometimes the smallest details end up taking the most time to solve. In this case, it was making the first person character hold different item types in a way that actually looked good and believable.</p>
 
       <div class="blog-image-card full">
-      <img src="./assets/blog-content/blog-player-arm-animation/player-holding-rock-game-screenshot.png" alt="Blah Blah Family game">
+      <img src="./assets/blog-content/blog-player-arm-animation/player-holding-rock-game-screenshot.webp" alt="Blah Blah Family game">
       <p class="image-caption">Blah Blah Family - A Creepy Stylized Game.</p>
       </div>
 
@@ -119,7 +119,7 @@ const blogPosts = {
       <p>It didn't look right at all. The hand felt robotic and lifeless, like it couldn't actually feel or respond to what it was holding.</p>
 
 <div class="blog-image-card full">
-  <img src="./assets/blog-content/blog-player-arm-animation/player-holding-rock-game-screenshot.png" alt="Awkward item holding">
+  <img src="./assets/blog-content/blog-player-arm-animation/player-holding-rock-game-screenshot.webp" alt="Awkward item holding">
   <p class="image-caption">Side-by-side comparison showing the awkward same-hand-position problem.</p>
 </div>
 
@@ -135,7 +135,7 @@ const blogPosts = {
 <p>I needed something that looked natural but didn't require animating every item individually.</p>
 
 <div class="blog-image-card full">
-  <img src="./assets/blog-content/blog-player-arm-animation/player-holding-rock-game-screenshot.png" alt="Generic animation example">
+  <img src="./assets/blog-content/blog-player-arm-animation/player-holding-rock-game-screenshot.webp" alt="Generic animation example">
   <p class="image-caption">Examples showing the generic animation issue.</p>
 </div>
 
@@ -152,7 +152,7 @@ These are things that sit in your palm, like keys (more on keys later), coins, s
 These are things you grip like a handle, sticks (obviously), swords, crowbars, flashlights, baseball bats. You're grabbing onto them, not cradling them.</p>
 
 <div class="blog-image-card full">
-  <img src="./assets/blog-content/blog-player-arm-animation/player-holding-rock-game-screenshot.png" alt="Palm vs Stick holding">
+  <img src="./assets/blog-content/blog-player-arm-animation/player-holding-rock-game-screenshot.webp" alt="Palm vs Stick holding">
   <p class="image-caption">Visual comparison of palm-holding vs stick-holding items.</p>
 </div>
 
@@ -167,7 +167,7 @@ These are things you grip like a handle, sticks (obviously), swords, crowbars, f
 <p>That's when I implemented what I call <strong>hand pressure</strong>.</p>
 
 <div class="blog-image-card full">
-  <img src="./assets/blog-content/blog-player-arm-animation/player-holding-rock-game-screenshot.png" alt="Hand pressure demonstration">
+  <img src="./assets/blog-content/blog-player-arm-animation/player-holding-rock-game-screenshot.webp" alt="Hand pressure demonstration">
   <p class="image-caption">Hand pressure in action with different objects.</p>
 </div>
 
@@ -189,7 +189,7 @@ These are things you grip like a handle, sticks (obviously), swords, crowbars, f
 <p>The same logic applies to stick-holding items. Gripping a thick sword handle needs more finger curl than holding a thin stick. Meaning the tick sword would possibly go with something about 40% where as a thin stick would go with 90%</p>
 
 <div class="blog-image-card full">
-  <img src="./assets/blog-content/blog-player-arm-animation/player-holding-rock-game-screenshot.png" alt="Hand pressure comparison">
+  <img src="./assets/blog-content/blog-player-arm-animation/player-holding-rock-game-screenshot.webp" alt="Hand pressure comparison">
   <p class="image-caption">Side-by-side comparison showing different hand pressures on various items.</p>
 </div>
 
@@ -225,7 +225,7 @@ These are things you grip like a handle, sticks (obviously), swords, crowbars, f
 <p>Good game design comes from all those little details that players don't notice because everything feels right. When animations look natural, players stay immersed in the world. When things look off, it breaks the experience.</p>
 
 <div class="blog-image-card full">
-  <img src="./assets/blog-content/blog-player-arm-animation/player-holding-rock-game-screenshot.png" alt="Before and after comparison">
+  <img src="./assets/blog-content/blog-player-arm-animation/player-holding-rock-game-screenshot.webp" alt="Before and after comparison">
   <p class="image-caption">Before and after comparison of the pickup system.</p>
 </div>
 
@@ -238,7 +238,7 @@ These are things you grip like a handle, sticks (obviously), swords, crowbars, f
 <p>It's a good example of finding a balance between quality and efficiency. Sometimes the best solution isn't the most complex one, it's about finding what works without overcomplicating things.</p>
 
 <div class="blog-image-card full">
-  <img src="./assets/blog-content/blog-player-arm-animation/player-holding-rock-game-screenshot.png" alt="Final system montage">
+  <img src="./assets/blog-content/blog-player-arm-animation/player-holding-rock-game-screenshot.webp" alt="Final system montage">
   <p class="image-caption">Montage of the character picking up various items, showing off the system.</p>
 </div>
 
@@ -255,7 +255,7 @@ These are things you grip like a handle, sticks (obviously), swords, crowbars, f
     date: 'September 15, 2025',
     readTime: '8 min read',
     author: 'Mohammad Hassan',
-    image: './assets/blog-content/blog-thumbnail-blender-to-unity.png',
+    image: './assets/blog-content/blog-thumbnail-blender-to-unity.webp',
 
     description: 'Step-by-step guide to my optimized pipeline for getting 3D assets from Blender into Unity efficiently.',
     tags: ['Blender', 'Unity', 'Workflow', '3D Modeling', 'Optimization'],
@@ -270,7 +270,7 @@ These are things you grip like a handle, sticks (obviously), swords, crowbars, f
     date: 'September 15, 2025',
     readTime: '8 min read',
     author: 'Mohammad Hassan',
-    image: './assets/blog-content/blog-thumbnail-my-3-horror-games.png',
+    image: './assets/blog-content/blog-thumbnail-my-3-horror-games.webp',
 
     description: 'Step-by-step guide to my optimized pipeline for getting 3D assets from Blender into Unity efficiently.',
     tags: ['Indie Games', 'Unity', 'Horror', 'Beginer Works', 'Portfolio'],
@@ -285,7 +285,7 @@ These are things you grip like a handle, sticks (obviously), swords, crowbars, f
     date: 'September 15, 2025',
     readTime: '8 min read',
     author: 'Mohammad Hassan',
-    image: './assets/blog-content/blog-thumbnail-my-3d-models.png',
+    image: './assets/blog-content/blog-thumbnail-my-3d-models.webp',
 
     description: 'Step-by-step guide to my optimized pipeline for getting 3D assets from Blender into Unity efficiently.',
     tags: ['Indie Games', 'Unity', 'Horror', 'Beginer Works', 'Portfolio'],
@@ -300,7 +300,7 @@ These are things you grip like a handle, sticks (obviously), swords, crowbars, f
     date: 'September 15, 2025',
     readTime: '8 min read',
     author: 'Mohammad Hassan',
-    image: './assets/blog-content/blog-thumbnail-my-experience-in-3d-animation.png',
+    image: './assets/blog-content/blog-thumbnail-my-experience-in-3d-animation.webp',
 
     description: 'Step-by-step guide to my optimized pipeline for getting 3D assets from Blender into Unity efficiently.',
     tags: ['Indie Games', 'Unity', 'Horror', 'Beginer Works', 'Portfolio'],
@@ -316,7 +316,7 @@ These are things you grip like a handle, sticks (obviously), swords, crowbars, f
     date: 'September 15, 2025',
     readTime: '8 min read',
     author: 'Mohammad Hassan',
-    image: './assets/blog-content/blog-thumbnail-my-3d-models.png',
+    image: './assets/blog-content/blog-thumbnail-my-3d-models.webp',
 
     description: 'Step-by-step guide to my optimized pipeline for getting 3D assets from Blender into Unity efficiently.',
     tags: ['Indie Games', 'Unity', 'Horror', 'Beginer Works', 'Portfolio'],
@@ -332,7 +332,7 @@ These are things you grip like a handle, sticks (obviously), swords, crowbars, f
     date: 'September 15, 2025',
     readTime: '8 min read',
     author: 'Mohammad Hassan',
-    image: './assets/blog-content/blog-thumbnail-my-3d-models.png',
+    image: './assets/blog-content/blog-thumbnail-my-3d-models.webp',
 
     description: 'Step-by-step guide to my optimized pipeline for getting 3D assets from Blender into Unity efficiently.',
     tags: ['Indie Games', 'Unity', 'Horror', 'Beginer Works', 'Portfolio'],
@@ -348,7 +348,7 @@ These are things you grip like a handle, sticks (obviously), swords, crowbars, f
     date: 'September 15, 2025',
     readTime: '8 min read',
     author: 'Mohammad Hassan',
-    image: './assets/blog-content/blog-thumbnail-my-3d-models.png',
+    image: './assets/blog-content/blog-thumbnail-my-3d-models.webp',
 
     description: 'Step-by-step guide to my optimized pipeline for getting 3D assets from Blender into Unity efficiently.',
     tags: ['Indie Games', 'Unity', 'Horror', 'Beginer Works', 'Portfolio'],
@@ -363,7 +363,7 @@ These are things you grip like a handle, sticks (obviously), swords, crowbars, f
     date: 'September 15, 2025',
     readTime: '8 min read',
     author: 'Mohammad Hassan',
-    image: './assets/blog-content/blog-thumbnail-my-3d-models.png',
+    image: './assets/blog-content/blog-thumbnail-my-3d-models.webp',
 
     description: 'Step-by-step guide to my optimized pipeline for getting 3D assets from Blender into Unity efficiently.',
     tags: ['Indie Games', 'Unity', 'Horror', 'Beginer Works', 'Portfolio'],
@@ -377,7 +377,7 @@ These are things you grip like a handle, sticks (obviously), swords, crowbars, f
     date: 'September 10, 2025',
     readTime: '6 min read',
     author: 'Mohammad Hassan',
-    image: './assets/blog-content/blog-thumbnail-blender-to-unity.png',
+    image: './assets/blog-content/blog-thumbnail-blender-to-unity.webp',
     description: 'Essential optimization techniques to improve performance in Unity games.',
     tags: ['Unity', 'Optimization', 'Performance', 'Tips'],
     content: `<p>This blog post is currently under construction. In the meantime, check out my other available blogs. Thanks for your patience!</p>`
@@ -387,7 +387,7 @@ These are things you grip like a handle, sticks (obviously), swords, crowbars, f
     date: 'September 8, 2025',
     readTime: '10 min read',
     author: 'Mohammad Hassan',
-    image: './assets/blog-content/blog-thumbnail-my-3d-models.png',
+    image: './assets/blog-content/blog-thumbnail-my-3d-models.webp',
     description: 'Understanding the basics of shader programming for game development.',
     tags: ['Shaders', 'Graphics', 'Programming', 'Technical'],
     content: `<p>This blog post is currently under construction. In the meantime, check out my other available blogs. Thanks for your patience!</p>`
@@ -397,7 +397,7 @@ These are things you grip like a handle, sticks (obviously), swords, crowbars, f
     date: 'September 5, 2025',
     readTime: '7 min read',
     author: 'Mohammad Hassan',
-    image: './assets/blog-content/blog-thumbnail-my-experience-in-3d-animation.png',
+    image: './assets/blog-content/blog-thumbnail-my-experience-in-3d-animation.webp',
     description: 'Key principles and techniques for creating engaging game levels.',
     tags: ['Level Design', 'Game Design', 'Indie', 'Principles'],
     content: `<p>This blog post is currently under construction. In the meantime, check out my other available blogs. Thanks for your patience!</p>`
@@ -407,7 +407,7 @@ These are things you grip like a handle, sticks (obviously), swords, crowbars, f
     date: 'September 3, 2025',
     readTime: '9 min read',
     author: 'Mohammad Hassan',
-    image: './assets/blog-content/blog-thumbnail-my-3-horror-games.png',
+    image: './assets/blog-content/blog-thumbnail-my-3-horror-games.webp',
     description: 'Creating atmospheric and terrifying soundscapes for horror games.',
     tags: ['Sound Design', 'Horror', 'Audio', 'Atmosphere'],
     content: `<p>This blog post is currently under construction. In the meantime, check out my other available blogs. Thanks for your patience!</p>`
@@ -417,7 +417,7 @@ These are things you grip like a handle, sticks (obviously), swords, crowbars, f
     date: 'September 1, 2025',
     readTime: '5 min read',
     author: 'Mohammad Hassan',
-    image: './assets/blog-content/blog-thumbnail-blender-to-unity.png',
+    image: './assets/blog-content/blog-thumbnail-blender-to-unity.webp',
     description: 'Best practices for version control in small game development teams.',
     tags: ['Version Control', 'Git', 'Workflow', 'Team'],
     content: `<p>This blog post is currently under construction. In the meantime, check out my other available blogs. Thanks for your patience!</p>`

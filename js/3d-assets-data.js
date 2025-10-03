@@ -2,10 +2,10 @@
 // Helper function to generate image paths automatically
 function generateImagePaths(basePath, assetName) {
   return {
-    render: `${basePath}/${assetName}-full-render.png`,
-    wireframe: `${basePath}/${assetName}-wireframe.png`,
-    matcap: `${basePath}/${assetName}-matcap.png`,
-    basecolor: `${basePath}/${assetName}-base-color.png`
+    render: `${basePath}/${assetName}-full-render.webp`,
+    wireframe: `${basePath}/${assetName}-wireframe.webp`,
+    matcap: `${basePath}/${assetName}-matcap.webp`,
+    basecolor: `${basePath}/${assetName}-base-color.webp`
   };
 }
 
@@ -63,7 +63,7 @@ const assetsData = {
     category: 'props',
     description: 'A complete set of farming tools including hoe, shovel, and watering can. Optimized for first-person gameplay.',
     detailedDescription: 'This comprehensive farming tools set was created for my farming game project. Each tool is optimized for first-person view with high-detail areas where the player will see them most. The set includes proper pivot points for realistic handling animations.',
-    image: './assets/blog-content/blog-farming-mechanic/blog-thumbnail-farming-mechanic.png',
+    image: './assets/blog-content/blog-farming-mechanic/blog-thumbnail-farming-mechanic.webp',
     polyCount: '800-1200 tris each',
     textureResolution: '512x512',
     engines: 'Unity, Unreal',
@@ -78,7 +78,7 @@ const assetsData = {
     category: 'props',
     description: 'An atmospheric lantern with flickering light effects. Features rust and damage details for horror environments.',
     detailedDescription: 'This vintage lantern was designed to enhance the atmospheric tension in horror games. The model features carefully crafted rust patterns, scratches, and wear marks that tell a story. The glass is designed to work with various lighting setups for dynamic shadow casting.',
-    image: './assets/blog-content/blog-thumbnail-my-3d-models.png',
+    image: './assets/blog-content/blog-thumbnail-my-3d-models.webp',
     polyCount: '1,450 tris',
     textureResolution: '1024x1024',
     engines: 'Unity, Unreal',
@@ -94,7 +94,7 @@ const assetsData = {
     category: 'weapons',
     description: 'A magical sword with crystal elements and glowing effects. Designed for fantasy RPG games.',
     detailedDescription: 'This enchanted sword combines traditional metalwork with magical crystal elements. The blade features intricate engravings and the crystal components are designed to support emission mapping for glowing effects. The model includes a detailed scabbard and is perfectly balanced for combat animations.',
-    image: './assets/blog-content/blog-thumbnail-my-experience-in-3d-animation.png',
+    image: './assets/blog-content/blog-thumbnail-my-experience-in-3d-animation.webp',
     polyCount: '2,100 tris',
     textureResolution: '1024x1024',
     engines: 'Unity, Unreal, Godot',
@@ -109,7 +109,7 @@ const assetsData = {
     category: 'weapons',
     description: 'A realistic modern handgun with detailed mechanics. Perfect for action and shooter games.',
     detailedDescription: 'This tactical handgun features accurate proportions and realistic mechanical details. The model includes separate moving parts for the slide and trigger, enabling realistic reload animations. Every component is meticulously modeled based on real firearm references.',
-    image: './assets/blog-content/blog-thumbnail-blender-to-unity.png',
+    image: './assets/blog-content/blog-thumbnail-blender-to-unity.webp',
     polyCount: '3,200 tris',
     textureResolution: '2048x2048',
     engines: 'Unity, Unreal',
@@ -125,7 +125,7 @@ const assetsData = {
     category: 'environments',
     description: 'A detailed horror environment with atmospheric props and lighting setup. Modular design for easy customization.',
     detailedDescription: 'This abandoned hospital room captures the eerie atmosphere perfect for horror games. The environment includes modular wall pieces, detailed medical equipment, and various props that can be rearranged. Every surface tells a story of decay and abandonment through carefully crafted textures.',
-    image: './assets/blog-content/blog-thumbnail-my-3-horror-games.png',
+    image: './assets/blog-content/blog-thumbnail-my-3-horror-games.webp',
     polyCount: '15,000-20,000 tris',
     textureResolution: '2048x2048',
     engines: 'Unity, Unreal',
@@ -140,7 +140,7 @@ const assetsData = {
     category: 'environments',
     description: 'A serene farming environment with fields, barn, and various agricultural elements. Optimized for open-world games.',
     detailedDescription: 'This farmland environment was designed to create a peaceful, productive atmosphere for farming gameplay. The scene includes optimized terrain with different soil types, modular fence systems, and a variety of crops and vegetation. The lighting setup emphasizes the natural beauty of rural life.',
-    image: './assets/blog-content/blog-farming-mechanic/blog-thumbnail-farming-mechanic.png',
+    image: './assets/blog-content/blog-farming-mechanic/blog-thumbnail-farming-mechanic.webp',
     polyCount: '25,000-30,000 tris',
     textureResolution: '1024x1024 tiling',
     engines: 'Unity, Unreal',
@@ -155,7 +155,7 @@ const assetsData = {
     category: 'environments',
     description: 'A dark medieval dungeon with modular pieces. Features torch lighting and atmospheric details.',
     detailedDescription: 'This medieval dungeon corridor system provides a foundation for creating expansive underground environments. The modular design allows for countless layout combinations while maintaining visual consistency. Stone textures show years of wear, and the lighting setup creates dramatic shadows and atmosphere.',
-    image: './assets/blog-content/blog-thumbnail-my-3d-models.png',
+    image: './assets/blog-content/blog-thumbnail-my-3d-models.webp',
     polyCount: '8,000-12,000 tris per section',
     textureResolution: '1024x1024',
     engines: 'Unity, Unreal, Godot',
@@ -170,7 +170,7 @@ const assetsData = {
     category: 'weapons',
     description: 'A futuristic plasma rifle with glowing energy components and modular attachments.',
     detailedDescription: 'This sci-fi plasma rifle features advanced energy containment systems and modular design. The weapon includes animated energy flows and particle effects support for muzzle flashes and energy discharge.',
-    image: './assets/blog-content/blog-thumbnail-blender-to-unity.png',
+    image: './assets/blog-content/blog-thumbnail-blender-to-unity.webp',
     polyCount: '3,800 tris',
     textureResolution: '2048x2048',
     engines: 'Unity, Unreal',
@@ -185,7 +185,7 @@ const assetsData = {
     category: 'weapons',
     description: 'An ornate magic staff with crystal focus and intricate runic engravings.',
     detailedDescription: 'This ancient magic staff was designed for high-fantasy RPG games. The crystal focus supports emission mapping for magical effects, while the runic engravings tell a story of ancient power.',
-    image: './assets/blog-content/blog-thumbnail-my-experience-in-3d-animation.png',
+    image: './assets/blog-content/blog-thumbnail-my-experience-in-3d-animation.webp',
     polyCount: '1,900 tris',
     textureResolution: '1024x1024',
     engines: 'Unity, Unreal, Godot',
@@ -200,7 +200,7 @@ const assetsData = {
     category: 'characters',
     description: 'A friendly AI companion robot with expressive LED displays and articulated joints.',
     detailedDescription: 'This AI companion robot features a modular design with interchangeable parts. The LED displays can show various emotions and status indicators, making it perfect for narrative-driven games.',
-    image: './assets/blog-content/blog-thumbnail-my-3d-models.png',
+    image: './assets/blog-content/blog-thumbnail-my-3d-models.webp',
     polyCount: '3,500 tris',
     textureResolution: '1024x1024',
     engines: 'Unity, Unreal',
@@ -215,7 +215,7 @@ const assetsData = {
     category: 'props',
     description: 'An eerie Victorian-era chair with supernatural wear and ghostly influences.',
     detailedDescription: 'This haunted chair shows signs of supernatural activity with mysterious wear patterns and ethereal energy. Perfect for horror environments, it includes support for particle effects and dynamic lighting.',
-    image: './assets/blog-content/blog-thumbnail-my-3-horror-games.png',
+    image: './assets/blog-content/blog-thumbnail-my-3-horror-games.webp',
     polyCount: '2,200 tris',
     textureResolution: '1024x1024',
     engines: 'Unity, Unreal',
@@ -230,7 +230,7 @@ const assetsData = {
     category: 'environments',
     description: 'A modular space station environment with advanced life support systems.',
     detailedDescription: 'This space station module provides a complete sci-fi environment with detailed control panels, life support systems, and modular connection points for building larger stations.',
-    image: './assets/blog-content/blog-thumbnail-blender-to-unity.png',
+    image: './assets/blog-content/blog-thumbnail-blender-to-unity.webp',
     polyCount: '18,000-22,000 tris',
     textureResolution: '2048x2048',
     engines: 'Unity, Unreal',
@@ -246,7 +246,7 @@ Object.keys(assetsData).forEach(assetId => {
   
   // If asset has assetFolder, generate the image paths automatically
   if (asset.assetFolder) {
-    asset.image = `${asset.assetFolder}/${assetId}-full-render.png`;
+    asset.image = `${asset.assetFolder}/${assetId}-full-render.webp`;
     asset.images = generateImagePaths(asset.assetFolder, assetId);
   }
   

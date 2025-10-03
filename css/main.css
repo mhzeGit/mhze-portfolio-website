@@ -401,7 +401,7 @@ nav {
 }
 
 .about-image {
-  background: url("../assets/profile-photo.jpg") center/cover no-repeat;
+  background: url("../assets/profile-photo.webp") center/cover no-repeat;
   border-radius: 30px;
   aspect-ratio: 1;
   display: flex;
