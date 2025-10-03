@@ -1,0 +1,171 @@
+// 3D Assets Data
+const assetsData = {
+  // Characters
+  'stylized-warrior': {
+    id: 'stylized-warrior',
+    title: 'Stylized Fantasy Warrior',
+    category: 'characters',
+    description: 'A low-poly stylized warrior character designed for mobile and indie games. Features hand-painted textures and optimized topology.',
+    detailedDescription: 'This stylized fantasy warrior was created with a focus on readability and performance. The character features a unique art style that balances detail with optimization, making it perfect for real-time applications. The model includes multiple LODs and is rigged for animation.',
+    image: './assets/BlogsContent/BlogThumbnail_My3DModels.png',
+    images: {
+      render: './assets/BlogsContent/BlogThumbnail_My3DModels.png',
+      wireframe: './assets/3D-Assets/stylized-warrior-wireframe.jpg',
+      matcap: './assets/3D-Assets/stylized-warrior-matcap.jpg',
+      basecolor: './assets/3D-Assets/stylized-warrior-basecolor.jpg'
+    },
+    polyCount: '2,840 tris',
+    textureResolution: '1024x1024',
+    engines: 'Unity, Unreal, Godot',
+    tags: ['Character', 'Fantasy', 'Low-Poly', 'Rigged'],
+    sketchfabUrl: 'https://sketchfab.com/Mhze',
+    downloadUrl: '#'
+  },
+
+  'horror-creature': {
+    id: 'horror-creature',
+    title: 'Creepy Horror Creature',
+    category: 'characters',
+    description: 'A detailed horror creature designed for my horror game projects. Features advanced normal mapping and multiple texture variations.',
+    detailedDescription: 'This horror creature was specifically designed for my "Blah Blah Family" game series. The model incorporates disturbing anatomical features while maintaining optimization for real-time rendering. Multiple texture variants allow for different environmental adaptations.',
+    image: './assets/BlogsContent/BlogThumbnail_My3HorrorGames.png',
+    images: {
+      render: './assets/BlogsContent/BlogThumbnail_My3HorrorGames.png',
+      wireframe: './assets/3D-Assets/horror-creature-wireframe.jpg',
+      matcap: './assets/3D-Assets/horror-creature-matcap.jpg',
+      basecolor: './assets/3D-Assets/horror-creature-basecolor.jpg'
+    },
+    polyCount: '4,250 tris',
+    textureResolution: '2048x2048',
+    engines: 'Unity, Unreal',
+    tags: ['Horror', 'Creature', 'Detailed', 'Game-Ready'],
+    sketchfabUrl: 'https://sketchfab.com/Mhze',
+    downloadUrl: '#'
+  },
+
+  // Props
+  'medieval-chest': {
+    id: 'medieval-chest',
+    title: 'Medieval Treasure Chest',
+    category: 'props',
+    description: 'A detailed medieval chest with interactive opening mechanism. Perfect for RPG and adventure games.',
+    detailedDescription: 'This medieval treasure chest features intricate metalwork details and weathered wood textures. The model is designed with separate parts for the lid and base, allowing for smooth opening animations. PBR materials ensure realistic lighting in modern game engines.',
+    image: './assets/BlogsContent/BlogThumbnail_BlenderToUnity.png',
+    polyCount: '1,680 tris',
+    textureResolution: '1024x1024',
+    engines: 'Unity, Unreal, Blender',
+    tags: ['Medieval', 'Interactive', 'PBR', 'Prop'],
+    sketchfabUrl: 'https://sketchfab.com/Mhze',
+    downloadUrl: '#'
+  },
+
+  'farming-tools': {
+    id: 'farming-tools',
+    title: 'Farming Tools Set',
+    category: 'props',
+    description: 'A complete set of farming tools including hoe, shovel, and watering can. Optimized for first-person gameplay.',
+    detailedDescription: 'This comprehensive farming tools set was created for my farming game project. Each tool is optimized for first-person view with high-detail areas where the player will see them most. The set includes proper pivot points for realistic handling animations.',
+    image: './assets/BlogsContent/Blog_FarmingMechanic/BlogThumbnail_FarmingMechanic.png',
+    polyCount: '800-1200 tris each',
+    textureResolution: '512x512',
+    engines: 'Unity, Unreal',
+    tags: ['Farming', 'Tools', 'First-Person', 'Set'],
+    sketchfabUrl: 'https://sketchfab.com/Mhze',
+    downloadUrl: '#'
+  },
+
+  'horror-lantern': {
+    id: 'horror-lantern',
+    title: 'Vintage Horror Lantern',
+    category: 'props',
+    description: 'An atmospheric lantern with flickering light effects. Features rust and damage details for horror environments.',
+    detailedDescription: 'This vintage lantern was designed to enhance the atmospheric tension in horror games. The model features carefully crafted rust patterns, scratches, and wear marks that tell a story. The glass is designed to work with various lighting setups for dynamic shadow casting.',
+    image: './assets/BlogsContent/BlogThumbnail_My3DModels.png',
+    polyCount: '1,450 tris',
+    textureResolution: '1024x1024',
+    engines: 'Unity, Unreal',
+    tags: ['Horror', 'Atmospheric', 'Lighting', 'Vintage'],
+    sketchfabUrl: 'https://sketchfab.com/Mhze',
+    downloadUrl: '#'
+  },
+
+  // Weapons
+  'fantasy-sword': {
+    id: 'fantasy-sword',
+    title: 'Enchanted Crystal Sword',
+    category: 'weapons',
+    description: 'A magical sword with crystal elements and glowing effects. Designed for fantasy RPG games.',
+    detailedDescription: 'This enchanted sword combines traditional metalwork with magical crystal elements. The blade features intricate engravings and the crystal components are designed to support emission mapping for glowing effects. The model includes a detailed scabbard and is perfectly balanced for combat animations.',
+    image: './assets/BlogsContent/BlogThumbnail_MyExpereinceIn3DAnimation.png',
+    polyCount: '2,100 tris',
+    textureResolution: '1024x1024',
+    engines: 'Unity, Unreal, Godot',
+    tags: ['Fantasy', 'Magic', 'Sword', 'Glowing'],
+    sketchfabUrl: 'https://sketchfab.com/Mhze',
+    downloadUrl: '#'
+  },
+
+  'modern-pistol': {
+    id: 'modern-pistol',
+    title: 'Tactical Handgun',
+    category: 'weapons',
+    description: 'A realistic modern handgun with detailed mechanics. Perfect for action and shooter games.',
+    detailedDescription: 'This tactical handgun features accurate proportions and realistic mechanical details. The model includes separate moving parts for the slide and trigger, enabling realistic reload animations. Every component is meticulously modeled based on real firearm references.',
+    image: './assets/BlogsContent/BlogThumbnail_BlenderToUnity.png',
+    polyCount: '3,200 tris',
+    textureResolution: '2048x2048',
+    engines: 'Unity, Unreal',
+    tags: ['Modern', 'Realistic', 'Tactical', 'Detailed'],
+    sketchfabUrl: 'https://sketchfab.com/Mhze',
+    downloadUrl: '#'
+  },
+
+  // Environments
+  'horror-room': {
+    id: 'horror-room',
+    title: 'Abandoned Hospital Room',
+    category: 'environments',
+    description: 'A detailed horror environment with atmospheric props and lighting setup. Modular design for easy customization.',
+    detailedDescription: 'This abandoned hospital room captures the eerie atmosphere perfect for horror games. The environment includes modular wall pieces, detailed medical equipment, and various props that can be rearranged. Every surface tells a story of decay and abandonment through carefully crafted textures.',
+    image: './assets/BlogsContent/BlogThumbnail_My3HorrorGames.png',
+    polyCount: '15,000-20,000 tris',
+    textureResolution: '2048x2048',
+    engines: 'Unity, Unreal',
+    tags: ['Horror', 'Environment', 'Modular', 'Atmospheric'],
+    sketchfabUrl: 'https://sketchfab.com/Mhze',
+    downloadUrl: '#'
+  },
+
+  'farmland-scene': {
+    id: 'farmland-scene',
+    title: 'Peaceful Farmland Environment',
+    category: 'environments',
+    description: 'A serene farming environment with fields, barn, and various agricultural elements. Optimized for open-world games.',
+    detailedDescription: 'This farmland environment was designed to create a peaceful, productive atmosphere for farming gameplay. The scene includes optimized terrain with different soil types, modular fence systems, and a variety of crops and vegetation. The lighting setup emphasizes the natural beauty of rural life.',
+    image: './assets/BlogsContent/Blog_FarmingMechanic/BlogThumbnail_FarmingMechanic.png',
+    polyCount: '25,000-30,000 tris',
+    textureResolution: '1024x1024 tiling',
+    engines: 'Unity, Unreal',
+    tags: ['Farming', 'Peaceful', 'Open-World', 'Nature'],
+    sketchfabUrl: 'https://sketchfab.com/Mhze',
+    downloadUrl: '#'
+  },
+
+  'dungeon-corridor': {
+    id: 'dungeon-corridor',
+    title: 'Medieval Dungeon Corridor',
+    category: 'environments',
+    description: 'A dark medieval dungeon with modular pieces. Features torch lighting and atmospheric details.',
+    detailedDescription: 'This medieval dungeon corridor system provides a foundation for creating expansive underground environments. The modular design allows for countless layout combinations while maintaining visual consistency. Stone textures show years of wear, and the lighting setup creates dramatic shadows and atmosphere.',
+    image: './assets/BlogsContent/BlogThumbnail_My3DModels.png',
+    polyCount: '8,000-12,000 tris per section',
+    textureResolution: '1024x1024',
+    engines: 'Unity, Unreal, Godot',
+    tags: ['Medieval', 'Dungeon', 'Modular', 'Dark'],
+    sketchfabUrl: 'https://sketchfab.com/Mhze',
+    downloadUrl: '#'
+  }
+};
+
+// Export the assets data
+window.assetsData = assetsData;

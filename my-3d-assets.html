@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My 3D Assets - MHZE Portfolio</title>
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/3d-assets.css" />
+</head>
+
+<body>
+  <!-- Navigation Placeholder -->
+  <div id="nav-placeholder"></div>
+
+  <!-- Hero Section -->
+  <section class="hero-3d">
+    <div class="hero-content">
+      <h1 class="floating">My 3D Assets</h1>
+      <p class="subtitle">A collection of game-ready 3D models and assets crafted for various projects</p>
+      <p class="intro">From stylized characters to detailed environments, each asset is meticulously designed and optimized for real-time rendering in game engines.</p>
+    </div>
+  </section>
+
+  <!-- Filter Section -->
+  <section class="filter-section">
+    <div class="container">
+      <div class="filter-buttons">
+        <button class="filter-btn active" data-filter="all">All Assets</button>
+        <button class="filter-btn" data-filter="characters">Characters</button>
+        <button class="filter-btn" data-filter="props">Props</button>
+        <button class="filter-btn" data-filter="environments">Environments</button>
+        <button class="filter-btn" data-filter="weapons">Weapons</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Assets Gallery -->
+  <section class="assets-gallery">
+    <div class="container">
+      <div class="assets-grid" id="assets-grid">
+        <!-- Assets will be dynamically generated here -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Asset Modal -->
+  <div class="asset-modal" id="asset-modal">
+    <div class="modal-overlay" id="modal-overlay"></div>
+    <div class="modal-content">
+      <button class="modal-close" id="modal-close">&times;</button>
+      <button class="modal-nav modal-prev" id="modal-prev"></button>
+      <button class="modal-nav modal-next" id="modal-next"></button>
+      <div class="modal-body">
+        <div class="modal-image">
+          <img id="modal-img" src="" alt="">
+          <div class="image-controls">
+            <button class="image-btn active" data-type="render">Render</button>
+            <button class="image-btn" data-type="wireframe">Wireframe</button>
+            <button class="image-btn" data-type="matcap">Matcap</button>
+            <button class="image-btn" data-type="basecolor">Base Color</button>
+          </div>
+        </div>
+        <div class="modal-info">
+          <h2 id="modal-title"></h2>
+          <p class="modal-category" id="modal-category"></p>
+          <div class="modal-description">
+            <p id="modal-description"></p>
+          </div>
+          <div class="modal-specs">
+            <h3>Technical Specifications</h3>
+            <div class="specs-grid">
+              <div class="spec-item">
+                <span class="spec-label">Poly Count:</span>
+                <span class="spec-value" id="modal-polycount"></span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Texture Resolution:</span>
+                <span class="spec-value" id="modal-textures"></span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Engine Compatibility:</span>
+                <span class="spec-value" id="modal-engines"></span>
+              </div>
+            </div>
+          </div>
+          <div class="modal-tags">
+            <div class="tech-stack" id="modal-tags"></div>
+          </div>
+          <div class="modal-actions">
+            <a id="modal-sketchfab" href="#" target="_blank" class="btn btn-primary">View on Sketchfab</a>
+            <button class="btn btn-secondary" id="modal-download">Download Asset</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer Placeholder -->
+  <div id="footer-placeholder"></div>
+
+  <script src="js/components.js"></script>
+  <script src="js/3d-assets-data.js"></script>
+  <script src="js/3d-assets.js"></script>
+</body>
+
+</html>
