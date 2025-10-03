@@ -164,6 +164,82 @@ const assetsData = {
     tags: ['Medieval', 'Dungeon', 'Modular', 'Dark'],
     sketchfabUrl: 'https://sketchfab.com/Mhze',
     downloadUrl: '#'
+  },
+
+  // Additional assets for pagination testing
+  'sci-fi-rifle': {
+    id: 'sci-fi-rifle',
+    title: 'Sci-Fi Plasma Rifle',
+    category: 'weapons',
+    description: 'A futuristic plasma rifle with glowing energy components and modular attachments.',
+    detailedDescription: 'This sci-fi plasma rifle features advanced energy containment systems and modular design. The weapon includes animated energy flows and particle effects support for muzzle flashes and energy discharge.',
+    image: './assets/BlogsContent/BlogThumbnail_BlenderToUnity.png',
+    polyCount: '3,800 tris',
+    textureResolution: '2048x2048',
+    engines: 'Unity, Unreal',
+    tags: ['Sci-Fi', 'Energy', 'Modular', 'Animated'],
+    sketchfabUrl: 'https://sketchfab.com/Mhze',
+    downloadUrl: '#'
+  },
+
+  'magic-staff': {
+    id: 'magic-staff',
+    title: 'Ancient Magic Staff',
+    category: 'weapons',
+    description: 'An ornate magic staff with crystal focus and intricate runic engravings.',
+    detailedDescription: 'This ancient magic staff was designed for high-fantasy RPG games. The crystal focus supports emission mapping for magical effects, while the runic engravings tell a story of ancient power.',
+    image: './assets/BlogsContent/BlogThumbnail_MyExpereinceIn3DAnimation.png',
+    polyCount: '1,900 tris',
+    textureResolution: '1024x1024',
+    engines: 'Unity, Unreal, Godot',
+    tags: ['Fantasy', 'Magic', 'Ancient', 'Ornate'],
+    sketchfabUrl: 'https://sketchfab.com/Mhze',
+    downloadUrl: '#'
+  },
+
+  'robot-companion': {
+    id: 'robot-companion',
+    title: 'AI Robot Companion',
+    category: 'characters',
+    description: 'A friendly AI companion robot with expressive LED displays and articulated joints.',
+    detailedDescription: 'This AI companion robot features a modular design with interchangeable parts. The LED displays can show various emotions and status indicators, making it perfect for narrative-driven games.',
+    image: './assets/BlogsContent/BlogThumbnail_My3DModels.png',
+    polyCount: '3,500 tris',
+    textureResolution: '1024x1024',
+    engines: 'Unity, Unreal',
+    tags: ['Sci-Fi', 'Companion', 'AI', 'Expressive'],
+    sketchfabUrl: 'https://sketchfab.com/Mhze',
+    downloadUrl: '#'
+  },
+
+  'haunted-chair': {
+    id: 'haunted-chair',
+    title: 'Haunted Victorian Chair',
+    category: 'props',
+    description: 'An eerie Victorian-era chair with supernatural wear and ghostly influences.',
+    detailedDescription: 'This haunted chair shows signs of supernatural activity with mysterious wear patterns and ethereal energy. Perfect for horror environments, it includes support for particle effects and dynamic lighting.',
+    image: './assets/BlogsContent/BlogThumbnail_My3HorrorGames.png',
+    polyCount: '2,200 tris',
+    textureResolution: '1024x1024',
+    engines: 'Unity, Unreal',
+    tags: ['Horror', 'Victorian', 'Haunted', 'Atmospheric'],
+    sketchfabUrl: 'https://sketchfab.com/Mhze',
+    downloadUrl: '#'
+  },
+
+  'space-station-module': {
+    id: 'space-station-module',
+    title: 'Space Station Module',
+    category: 'environments',
+    description: 'A modular space station environment with advanced life support systems.',
+    detailedDescription: 'This space station module provides a complete sci-fi environment with detailed control panels, life support systems, and modular connection points for building larger stations.',
+    image: './assets/BlogsContent/BlogThumbnail_BlenderToUnity.png',
+    polyCount: '18,000-22,000 tris',
+    textureResolution: '2048x2048',
+    engines: 'Unity, Unreal',
+    tags: ['Sci-Fi', 'Space', 'Modular', 'Technical'],
+    sketchfabUrl: 'https://sketchfab.com/Mhze',
+    downloadUrl: '#'
   }
 };
 

@@ -1,5 +1,15 @@
 /* Blog-specific styles that extend main.css */
 
+/* Blog pagination styles */
+.blog-section .pagination-container {
+  margin: 4rem 0 2rem 0;
+}
+
+.blog-section .pagination {
+  background: rgba(30, 41, 59, 0.8);
+  border: 1px solid rgba(99, 102, 241, 0.3);
+}
+
 /* Page Header */
 .page-header {
   padding: 8rem 0 4rem;

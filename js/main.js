@@ -28,13 +28,15 @@ document.addEventListener('DOMContentLoaded', () => {
   generatePortfolioCards();
 });
 
-// Generate portfolio cards from blog data
+// Pagination managers for homepage sections
+let blogsPaginationManager;
+let worksPaginationManager;
 
+// Generate portfolio cards from blog data
 function generatePortfolioCards() {
-  // Helper to render cards into a grid
-  function renderCards(gridElement, posts) {
-    if (!gridElement) return;
-    gridElement.innerHTML = posts.map(post => `
+  // Blog card render function
+  function renderBlogCard(post) {
+    return `
       <div class="portfolio-card" onclick="window.location.href='blog.html?post=${post.id}'">
         <div class="card-image" style="background-image: url('${post.image}'); background-size: cover; background-position: center;"></div>
         <div class="card-content">
@@ -45,22 +47,53 @@ function generatePortfolioCards() {
           </div>
         </div>
       </div>
-    `).join('');
+    `;
+  }
+
+  // Work card render function
+  function renderWorkCard(work) {
+    return `
+      <div class="portfolio-card mywork-card" onclick="window.location.href='${work.link}'" style="cursor:pointer;">
+        <div class="card-image" style="background-image: url('${work.image}'); background-size: cover; background-position: center;"></div>
+        <div class="card-content">
+          <h3>${work.title}</h3>
+          <p>${work.description}</p>
+        </div>
+      </div>
+    `;
   }
 
   if (!window.blogPosts) return;
+  
+  // Get all blog posts
   const posts = Object.keys(window.blogPosts).map(id => ({
     id,
     ...window.blogPosts[id]
   }));
-  const displayPosts = posts.slice(0, 6);
 
-  // Portfolio section (My Blogs)
+  // Portfolio section (My Blogs) with pagination
   const portfolioGrid = document.querySelector('#portfolio .portfolio-grid');
-  renderCards(portfolioGrid, displayPosts);
+  if (portfolioGrid && posts.length > 0) {
+    // Ensure the grid has an ID for pagination
+    if (!portfolioGrid.id) {
+      portfolioGrid.id = 'portfolio-grid';
+    }
+    
+    blogsPaginationManager = new PaginationManager({
+      containerId: portfolioGrid.id,
+      paginationId: 'blogs-pagination',
+      items: posts,
+      renderItemFunction: renderBlogCard,
+      onPageChange: (pageItems, currentPage) => {
+        // Re-add click handlers for cards
+        portfolioGrid.querySelectorAll('.portfolio-card').forEach(card => {
+          card.style.cursor = 'pointer';
+        });
+      }
+    });
+  }
 
-
-  // My Works section (custom cards)
+  // My Works section (custom cards) with pagination
   const myWorksGrid = document.getElementById('my-works-grid');
   if (myWorksGrid) {
     const works = [
@@ -87,28 +120,60 @@ function generatePortfolioCards() {
         description: 'A farming simulation game with innovative digging and soil mechanics.',
         image: './assets/BlogsContent/Blog_FarmingMechanic/BlogThumbnail_FarmingMechanic.png',
         link: 'farming-game.html'
+      },
+      {
+        title: 'Horror Game: Midnight Terrors',
+        description: 'A spine-chilling horror experience with atmospheric environments and terrifying encounters.',
+        image: './assets/BlogsContent/BlogThumbnail_My3HorrorGames.png',
+        link: 'midnight-terrors.html'
+      },
+      {
+        title: 'RPG Project: Fantasy Realms',
+        description: 'An open-world RPG featuring rich storytelling and immersive gameplay mechanics.',
+        image: './assets/BlogsContent/BlogThumbnail_MyExpereinceIn3DAnimation.png',
+        link: 'fantasy-realms.html'
+      },
+      {
+        title: 'Action Game: Combat Arena',
+        description: 'Fast-paced action combat game with dynamic environments and fluid controls.',
+        image: './assets/BlogsContent/BlogThumbnail_BlenderToUnity.png',
+        link: 'combat-arena.html'
+      },
+      {
+        title: 'Puzzle Game: Mind Bender',
+        description: 'A challenging puzzle game that tests your logic and problem-solving skills.',
+        image: './assets/BlogsContent/BlogThumbnail_My3DModels.png',
+        link: 'mind-bender.html'
+      },
+      {
+        title: 'Simulation: City Builder Pro',
+        description: 'A comprehensive city building simulation with realistic economic systems.',
+        image: './assets/BlogsContent/Blog_FarmingMechanic/BlogThumbnail_FarmingMechanic.png',
+        link: 'city-builder.html'
+      },
+      {
+        title: 'Adventure: Lost Kingdoms',
+        description: 'An epic adventure through mysterious lands filled with secrets and treasures.',
+        image: './assets/BlogsContent/BlogThumbnail_MyExpereinceIn3DAnimation.png',
+        link: 'lost-kingdoms.html'
       }
     ];
-    myWorksGrid.innerHTML = works.map(work => `
-      <div class="portfolio-card mywork-card" onclick="window.location.href='${work.link}'" style="cursor:pointer;">
-        <div class="card-image" style="background-image: url('${work.image}'); background-size: cover; background-position: center;"></div>
-        <div class="card-content">
-          <h3>${work.title}</h3>
-          <p>${work.description}</p>
-        </div>
-      </div>
-    `).join('');
+
+    worksPaginationManager = new PaginationManager({
+      containerId: 'my-works-grid',
+      paginationId: 'works-pagination',
+      items: works,
+      renderItemFunction: renderWorkCard,
+      onPageChange: (pageItems, currentPage) => {
+        // Re-add click handlers for cards
+        myWorksGrid.querySelectorAll('.portfolio-card').forEach(card => {
+          card.style.cursor = 'pointer';
+        });
+      }
+    });
   }
 
-  // Add "More Blogs?" button if there are more than 6 posts (only for Blogs section)
-  if (posts.length > 6 && portfolioGrid) {
-    const moreButton = document.createElement('div');
-    moreButton.className = 'more-blogs-container';
-    moreButton.innerHTML = '<a href="blog.html" class="btn btn-primary">More Blogs?</a>';
-    portfolioGrid.parentElement.appendChild(moreButton);
-  }
-
-  console.log(`Generated ${displayPosts.length} portfolio cards for both Blogs and My Works sections`);
+  console.log(`Generated portfolio cards with pagination for Blogs (${posts.length} items) and Works sections`);
 }
 
 // Get all blog posts as an array

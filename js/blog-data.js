@@ -370,6 +370,61 @@ These are things you grip like a handle, sticks (obviously), swords, crowbars, f
     content: `<p>This blog post is currently under construction. In the meantime, check out my other available blogs. Thanks for your patience!</p>`
   }
   //#endregion
+
+  //#region Additional test blogs for pagination
+
+  ,
+  'unity-optimization-tips': {
+    title: 'Unity Optimization Tips & Tricks',
+    date: 'September 10, 2025',
+    readTime: '6 min read',
+    author: 'Mohammad Hassan',
+    image: './assets/BlogsContent/BlogThumbnail_BlenderToUnity.png',
+    description: 'Essential optimization techniques to improve performance in Unity games.',
+    tags: ['Unity', 'Optimization', 'Performance', 'Tips'],
+    content: `<p>This blog post is currently under construction. In the meantime, check out my other available blogs. Thanks for your patience!</p>`
+  },
+  'shader-fundamentals': {
+    title: 'Shader Fundamentals for Game Developers',
+    date: 'September 8, 2025',
+    readTime: '10 min read',
+    author: 'Mohammad Hassan',
+    image: './assets/BlogsContent/BlogThumbnail_My3DModels.png',
+    description: 'Understanding the basics of shader programming for game development.',
+    tags: ['Shaders', 'Graphics', 'Programming', 'Technical'],
+    content: `<p>This blog post is currently under construction. In the meantime, check out my other available blogs. Thanks for your patience!</p>`
+  },
+  'level-design-principles': {
+    title: 'Level Design Principles for Indie Games',
+    date: 'September 5, 2025',
+    readTime: '7 min read',
+    author: 'Mohammad Hassan',
+    image: './assets/BlogsContent/BlogThumbnail_MyExpereinceIn3DAnimation.png',
+    description: 'Key principles and techniques for creating engaging game levels.',
+    tags: ['Level Design', 'Game Design', 'Indie', 'Principles'],
+    content: `<p>This blog post is currently under construction. In the meantime, check out my other available blogs. Thanks for your patience!</p>`
+  },
+  'sound-design-horror': {
+    title: 'Sound Design for Horror Games',
+    date: 'September 3, 2025',
+    readTime: '9 min read',
+    author: 'Mohammad Hassan',
+    image: './assets/BlogsContent/BlogThumbnail_My3HorrorGames.png',
+    description: 'Creating atmospheric and terrifying soundscapes for horror games.',
+    tags: ['Sound Design', 'Horror', 'Audio', 'Atmosphere'],
+    content: `<p>This blog post is currently under construction. In the meantime, check out my other available blogs. Thanks for your patience!</p>`
+  },
+  'version-control-indie': {
+    title: 'Version Control for Indie Game Development',
+    date: 'September 1, 2025',
+    readTime: '5 min read',
+    author: 'Mohammad Hassan',
+    image: './assets/BlogsContent/BlogThumbnail_BlenderToUnity.png',
+    description: 'Best practices for version control in small game development teams.',
+    tags: ['Version Control', 'Git', 'Workflow', 'Team'],
+    content: `<p>This blog post is currently under construction. In the meantime, check out my other available blogs. Thanks for your patience!</p>`
+  }
+  //#endregion
 };
 
 // Export the blog posts data

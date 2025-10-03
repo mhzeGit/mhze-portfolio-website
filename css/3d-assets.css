@@ -1,4 +1,14 @@
-/* 3D Assets Page Specific Styles */
+/* 3D Assets Page Styles */
+
+/* 3D Assets pagination styles */
+.assets-gallery .pagination-container {
+  margin: 4rem 0 2rem 0;
+}
+
+.assets-gallery .pagination {
+  background: rgba(16, 16, 30, 0.8);
+  border: 1px solid rgba(139, 92, 246, 0.3);
+}
 
 /* Consistent background for entire page */
 body {
@@ -22,7 +32,7 @@ body::before {
 
 /* Hero Section for 3D Assets */
 .hero-3d {
-  min-height: 50vh;
+  min-height: vh;
   display: flex;
   align-items: center;
   justify-content: center;

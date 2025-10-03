@@ -1,5 +1,8 @@
 // Blog functionality - handles display and navigation
 
+// Pagination manager for blog page
+let blogPaginationManager;
+
 // Initialize blog when page loads
 document.addEventListener('DOMContentLoaded', function() {
   initializeBlog();
@@ -27,31 +30,51 @@ function initializeBlog() {
   console.log("Blog system initialized");
 }
 
-// Generate blog cards from data
+// Generate blog cards from data with pagination
 function generateBlogCards() {
   const blogGrid = document.getElementById('blog-grid');
   if (!blogGrid) return;
 
   const posts = getAllBlogPosts();
   
-  blogGrid.innerHTML = posts.map(post => {
+  // Blog card render function
+  function renderBlogCard(post) {
     return `
-    <article class="blog-card" onclick="showBlogPost('${post.id}')">
-      <div class="blog-card-image" style="background-image: url(${post.image}); background-size: cover; background-position: center;"></div>
-      <div class="blog-content">
-        <div class="blog-meta">
-          <span class="blog-date">${post.date}</span>
-          <span class="read-time">${post.readTime}</span>
+      <article class="blog-card" onclick="showBlogPost('${post.id}')">
+        <div class="blog-card-image" style="background-image: url(${post.image}); background-size: cover; background-position: center;"></div>
+        <div class="blog-content">
+          <div class="blog-meta">
+            <span class="blog-date">${post.date}</span>
+            <span class="read-time">${post.readTime}</span>
+          </div>
+          <h3>${post.title}</h3>
+          <p>${post.description}</p>
+          <div class="blog-tags">
+            ${post.tags.map(tag => `<span class="blog-tag">${tag}</span>`).join('')}
+          </div>
         </div>
-        <h3>${post.title}</h3>
-        <p>${post.description}</p>
-        <div class="blog-tags">
-          ${post.tags.map(tag => `<span class="blog-tag">${tag}</span>`).join('')}
-        </div>
-      </div>
-    </article>
-  `;
-  }).join('');
+      </article>
+    `;
+  }
+
+  // Initialize pagination for blog posts
+  if (posts.length > 0) {
+    blogPaginationManager = new PaginationManager({
+      containerId: 'blog-grid',
+      paginationId: 'blog-pagination',
+      items: posts,
+      renderItemFunction: renderBlogCard,
+      onPageChange: (pageItems, currentPage) => {
+        // Re-add click handlers for cards since they're re-rendered
+        document.querySelectorAll('.blog-card').forEach(card => {
+          card.style.cursor = 'pointer';
+        });
+      }
+    });
+  } else {
+    // Fallback to non-paginated rendering if no posts
+    blogGrid.innerHTML = '<p class="no-posts">No blog posts available.</p>';
+  }
 }
 
 // Show individual blog post

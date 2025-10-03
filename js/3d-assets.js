@@ -2,6 +2,7 @@
 let currentAssetIndex = 0;
 let filteredAssets = [];
 let currentImageType = 'render';
+let assetsPaginationManager;
 
 document.addEventListener('DOMContentLoaded', function() {
     console.log('3D Assets page initialized');
@@ -22,36 +23,48 @@ function initializeAssets() {
 
     const assets = Object.values(window.assetsData);
     filteredAssets = assets; // Initialize filtered assets
-    renderAssets(assets);
-}
-
-// Render assets to the grid
-function renderAssets(assets) {
-    const assetsGrid = document.getElementById('assets-grid');
     
-    assetsGrid.innerHTML = assets.map(asset => `
-        <div class="asset-card filtered-in" data-category="${asset.category}" data-asset-id="${asset.id}">
-            <div class="asset-image" style="background-image: url('${asset.image}')"></div>
-            <div class="asset-content">
-                <div class="asset-header">
-                    <div class="asset-category">${getCategoryDisplayName(asset.category)}</div>
-                    <h3 class="asset-title">${asset.title}</h3>
-                </div>
-                <p class="asset-description">${asset.description}</p>
-                <div class="asset-tags">
-                    ${asset.tags.map(tag => `<span class="asset-tag">${tag}</span>`).join('')}
+    // Asset card render function
+    function renderAssetCard(asset) {
+        return `
+            <div class="asset-card filtered-in" data-category="${asset.category}" data-asset-id="${asset.id}">
+                <div class="asset-image" style="background-image: url('${asset.image}')"></div>
+                <div class="asset-content">
+                    <div class="asset-header">
+                        <div class="asset-category">${getCategoryDisplayName(asset.category)}</div>
+                        <h3 class="asset-title">${asset.title}</h3>
+                    </div>
+                    <p class="asset-description">${asset.description}</p>
+                    <div class="asset-tags">
+                        ${asset.tags.map(tag => `<span class="asset-tag">${tag}</span>`).join('')}
+                    </div>
                 </div>
             </div>
-        </div>
-    `).join('');
+        `;
+    }
 
-    // Add click listeners to asset cards
-    document.querySelectorAll('.asset-card').forEach(card => {
-        card.addEventListener('click', () => {
-            const assetId = card.getAttribute('data-asset-id');
-            openAssetModal(assetId);
-        });
+    // Initialize pagination for assets
+    assetsPaginationManager = new PaginationManager({
+        containerId: 'assets-grid',
+        paginationId: 'assets-pagination',
+        items: assets,
+        renderItemFunction: renderAssetCard,
+        onPageChange: (pageItems, currentPage) => {
+            // Re-add click listeners to asset cards
+            document.querySelectorAll('.asset-card').forEach(card => {
+                card.addEventListener('click', () => {
+                    const assetId = card.getAttribute('data-asset-id');
+                    openAssetModal(assetId);
+                });
+            });
+        }
     });
+}
+
+// Render assets to the grid (deprecated - now handled by pagination)
+function renderAssets(assets) {
+    // This function is kept for compatibility but pagination handles rendering now
+    console.log('renderAssets called with', assets.length, 'assets');
 }
 
 // Get display name for categories
@@ -84,29 +97,17 @@ function initializeFilters() {
 
 // Filter assets by category
 function filterAssets(category) {
-    const assetCards = document.querySelectorAll('.asset-card');
-    
-    // Get filtered assets for modal navigation
+    // Get filtered assets for modal navigation and pagination
     if (category === 'all') {
         filteredAssets = Object.values(window.assetsData);
     } else {
         filteredAssets = Object.values(window.assetsData).filter(asset => asset.category === category);
     }
     
-    // Instantly show/hide cards
-    assetCards.forEach(card => {
-        const cardCategory = card.getAttribute('data-category');
-        
-        if (category === 'all' || cardCategory === category) {
-            // Card should be shown
-            card.classList.remove('filtered-out');
-            card.classList.add('filtered-in');
-        } else {
-            // Card should be hidden
-            card.classList.add('filtered-out');
-            card.classList.remove('filtered-in');
-        }
-    });
+    // Update pagination with filtered assets
+    if (assetsPaginationManager) {
+        assetsPaginationManager.updateItems(filteredAssets);
+    }
 }
 
 // Initialize modal functionality
