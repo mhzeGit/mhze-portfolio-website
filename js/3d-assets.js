@@ -2,7 +2,17 @@
 let currentAssetIndex = 0;
 let filteredAssets = [];
 let currentImageType = 'render';
+let currentImageTypeIndex = 0;
 let assetsPaginationManager;
+
+// Image types array
+const imageTypes = ['render', 'basecolor', 'wireframe', 'matcap'];
+const imageTypeDisplayNames = {
+    'render': 'Render',
+    'basecolor': 'Base Color',
+    'wireframe': 'Wireframe',
+    'matcap': 'Matcap'
+};
 
 document.addEventListener('DOMContentLoaded', function() {
     // Initialize the page
@@ -123,17 +133,26 @@ function initializeModal() {
     modalPrev.addEventListener('click', showPreviousAsset);
     modalNext.addEventListener('click', showNextAsset);
     
-    // Image type buttons
-    const imageButtons = document.querySelectorAll('.image-btn');
-    imageButtons.forEach(btn => {
-        btn.addEventListener('click', () => {
-            const imageType = btn.getAttribute('data-type');
-            switchImageType(imageType);
-            
-            // Update active button
-            imageButtons.forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-        });
+    // Image type navigation handlers
+    const imagePrevBtn = document.getElementById('image-prev');
+    const imageNextBtn = document.getElementById('image-next');
+    const currentImageTypeBtn = document.getElementById('current-image-type');
+    
+    // Image navigation functions
+    imagePrevBtn.addEventListener('click', () => {
+        currentImageTypeIndex = (currentImageTypeIndex - 1 + imageTypes.length) % imageTypes.length;
+        updateImageTypeDisplay();
+    });
+    
+    imageNextBtn.addEventListener('click', () => {
+        currentImageTypeIndex = (currentImageTypeIndex + 1) % imageTypes.length;
+        updateImageTypeDisplay();
+    });
+    
+    currentImageTypeBtn.addEventListener('click', () => {
+        // Optional: clicking the center button could cycle forward too
+        currentImageTypeIndex = (currentImageTypeIndex + 1) % imageTypes.length;
+        updateImageTypeDisplay();
     });
     
     // Close with Escape key
@@ -160,11 +179,15 @@ function openAssetModal(assetId) {
     // Find current asset index in filtered assets
     currentAssetIndex = filteredAssets.findIndex(a => a.id === assetId);
     currentImageType = 'render'; // Reset to render view
+    currentImageTypeIndex = 0; // Reset to first image type
     
     const modal = document.getElementById('asset-modal');
     
     // Populate modal content
     populateModalContent(asset);
+    
+    // Reset and update image type display
+    updateImageTypeDisplay();
     
     // Show modal
     modal.classList.add('active');
@@ -200,9 +223,9 @@ function populateModalContent(asset) {
         }
     };
     
-    // Reset image type buttons
-    document.querySelectorAll('.image-btn').forEach(btn => btn.classList.remove('active'));
-    document.querySelector('.image-btn[data-type="render"]').classList.add('active');
+    // Reset image type display to "Render"
+    currentImageTypeIndex = 0;
+    updateImageTypeDisplay();
     
     // Update navigation arrow states
     updateNavigationArrows();
@@ -263,6 +286,22 @@ function switchImageType(imageType) {
     currentImageType = imageType;
     const currentAsset = filteredAssets[currentAssetIndex];
     document.getElementById('modal-img').src = getImagePath(currentAsset, imageType);
+}
+
+// Update image type display for new button design
+function updateImageTypeDisplay() {
+    const typeName = imageTypes[currentImageTypeIndex];
+    const currentImageTypeBtn = document.getElementById('current-image-type');
+    if (currentImageTypeBtn) {
+        currentImageTypeBtn.textContent = imageTypeDisplayNames[typeName];
+    }
+    currentImageType = typeName;
+    
+    // Update the modal image
+    const currentAsset = filteredAssets[currentAssetIndex];
+    if (currentAsset) {
+        document.getElementById('modal-img').src = getImagePath(currentAsset, currentImageType);
+    }
 }
 
 // Get image path based on type

@@ -1,4 +1,14 @@
 // 3D Assets Data
+// Helper function to generate image paths automatically
+function generateImagePaths(basePath, assetName) {
+  return {
+    render: `${basePath}/${assetName}-full-render.png`,
+    wireframe: `${basePath}/${assetName}-wireframe.png`,
+    matcap: `${basePath}/${assetName}-matcap.png`,
+    basecolor: `${basePath}/${assetName}-base-color.png`
+  };
+}
+
 const assetsData = {
   // Characters
   'weird-fish': {
@@ -7,13 +17,7 @@ const assetsData = {
     category: 'characters',
     description: 'A low-poly stylized fish character designed for mobile and indie games. Features hand-painted textures and optimized topology.',
     detailedDescription: 'This stylized fish was created with a focus on readability and performance. The character features a unique art style that balances detail with optimization, making it perfect for real-time applications. The model includes multiple LODs and is rigged for animation.',
-    image: './assets/3d-assets/weird-fish/weird-fish-full-render.png',
-    images: {
-      render: './assets/3d-assets/weird-fish/weird-fish-full-render.png',
-      wireframe: './assets/3d-assets/weird-fish/weird-fish-wireframe.png',
-      matcap: './assets/3d-assets/weird-fish/weird-fish-matcap.png',
-      basecolor: './assets/3d-assets/weird-fish/weird-fish-base-color.png'
-    },
+    assetFolder: './assets/3d-assets/weird-fish',
     polyCount: '2,840 tris',
     textureResolution: '1024x1024',
     engines: 'Unity, Unreal, Godot',
@@ -22,19 +26,13 @@ const assetsData = {
     downloadUrl: '#'
   },
 
-  'horror-creature': {
-    id: 'horror-creature',
-    title: 'Creepy Horror Creature',
-    category: 'characters',
-    description: 'A detailed horror creature designed for my horror game projects. Features advanced normal mapping and multiple texture variations.',
-    detailedDescription: 'This horror creature was specifically designed for my "Blah Blah Family" game series. The model incorporates disturbing anatomical features while maintaining optimization for real-time rendering. Multiple texture variants allow for different environmental adaptations.',
-    image: './assets/blog-content/blog-thumbnail-my-3-horror-games.png',
-    images: {
-      render: './assets/blog-content/blog-thumbnail-my-3-horror-games.png',
-      wireframe: './assets/3d-assets/horror-creature-wireframe.jpg',
-      matcap: './assets/3d-assets/horror-creature-matcap.jpg',
-      basecolor: './assets/3d-assets/horror-creature-basecolor.jpg'
-    },
+  'toaster-gun': {
+    id: 'toaster-gun',
+    title: 'Toaster Gun',
+    category: 'weapons',
+    description: 'A quirky toaster gun that shoots slices of bread. Perfect for comedic game scenarios.',
+    detailedDescription: 'This toaster gun features a unique design with exaggerated proportions. The model is fully animated and includes a variety of bread types as projectiles. Ideal for adding humor to your game.',
+    assetFolder: './assets/3d-assets/toaster-gun',
     polyCount: '4,250 tris',
     textureResolution: '2048x2048',
     engines: 'Unity, Unreal',
@@ -44,14 +42,14 @@ const assetsData = {
   },
 
   // Props
-  'medieval-chest': {
-    id: 'medieval-chest',
-    title: 'Medieval Treasure Chest',
-    category: 'props',
-    description: 'A detailed medieval chest with interactive opening mechanism. Perfect for RPG and adventure games.',
-    detailedDescription: 'This medieval treasure chest features intricate metalwork details and weathered wood textures. The model is designed with separate parts for the lid and base, allowing for smooth opening animations. PBR materials ensure realistic lighting in modern game engines.',
-    image: './assets/blog-content/blog-thumbnail-blender-to-unity.png',
-    polyCount: '1,680 tris',
+  'berreta-m9': {
+    id: 'berreta-m9',
+    title: 'Berreta M9',
+    category: 'weapons',
+    description: 'A detailed Berreta M9 pistol model. Perfect for FPS games.',
+    detailedDescription: 'This Berreta M9 model features realistic details and is optimized for use in first-person shooter games. The model includes separate parts for the slide, trigger, and magazine, allowing for detailed animations.',
+    assetFolder: './assets/3d-assets/berreta-m9',
+    polyCount: '1,200 tris',
     textureResolution: '1024x1024',
     engines: 'Unity, Unreal, Blender',
     tags: ['Medieval', 'Interactive', 'PBR', 'Prop'],
@@ -241,6 +239,22 @@ const assetsData = {
     downloadUrl: '#'
   }
 };
+
+// Process assets to generate image paths automatically
+Object.keys(assetsData).forEach(assetId => {
+  const asset = assetsData[assetId];
+  
+  // If asset has assetFolder, generate the image paths automatically
+  if (asset.assetFolder) {
+    asset.image = `${asset.assetFolder}/${assetId}-full-render.png`;
+    asset.images = generateImagePaths(asset.assetFolder, assetId);
+  }
+  
+  // For assets without assetFolder (using blog thumbnails), keep the existing image
+  if (!asset.image && !asset.assetFolder) {
+    console.warn(`Asset ${assetId} is missing both image and assetFolder properties`);
+  }
+});
 
 // Export the assets data
 window.assetsData = assetsData;
