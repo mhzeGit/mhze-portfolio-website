@@ -591,10 +591,25 @@ nav {
   text-decoration: none;
   font-weight: 600;
   transition: color 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .contact-links a:hover {
   color: #8b5cf6;
+}
+
+.contact-icon {
+  width: 48px;
+  height: 48px;
+  transition: all 0.3s ease;
+  filter: brightness(0.8);
+}
+
+.contact-icon:hover {
+  transform: scale(1.1);
+  filter: brightness(1.2);
 }
 
 /* Footer */
