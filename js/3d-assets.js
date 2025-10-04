@@ -33,9 +33,12 @@ function initializeAssets() {
     
     // Asset card render function
     function renderAssetCard(asset) {
+        const backgroundStyle = asset.backgroundImage ? `background-image: url('${asset.backgroundImage}');` : '';
         return `
             <div class="asset-card filtered-in" data-category="${asset.category}" data-asset-id="${asset.id}">
-                <div class="asset-image" style="background-image: url('${asset.image}')"></div>
+                <div class="asset-image" style="${backgroundStyle}">
+                    <img src="${asset.image}" alt="${asset.title}" class="asset-model-image">
+                </div>
                 <div class="asset-content">
                     <div class="asset-header">
                         <div class="asset-category">${getCategoryDisplayName(asset.category)}</div>
@@ -100,6 +103,11 @@ function initializeFilters() {
             filterAssets(filterCategory);
         });
     });
+    
+    // Apply initial backgrounds to asset cards
+    setTimeout(() => {
+        applyAssetCardBackgrounds();
+    }, 100); // Small delay to ensure DOM is ready
 }
 
 // Filter assets by category
@@ -114,6 +122,10 @@ function filterAssets(category) {
     // Update pagination with filtered assets
     if (assetsPaginationManager) {
         assetsPaginationManager.updateItems(filteredAssets);
+        // Apply backgrounds after filtering
+        setTimeout(() => {
+            applyAssetCardBackgrounds();
+        }, 100);
     }
 }
 
@@ -138,18 +150,37 @@ function initializeModal() {
     const imageNextBtn = document.getElementById('image-next');
     const currentImageTypeBtn = document.getElementById('current-image-type');
     
+    // Verify elements exist
+    if (!imagePrevBtn || !imageNextBtn || !currentImageTypeBtn) {
+        console.error('Image control elements not found:', {
+            imagePrevBtn: !!imagePrevBtn,
+            imageNextBtn: !!imageNextBtn,
+            currentImageTypeBtn: !!currentImageTypeBtn
+        });
+        return;
+    }
+    
     // Image navigation functions
-    imagePrevBtn.addEventListener('click', () => {
+    imagePrevBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        console.log('Previous image clicked');
         currentImageTypeIndex = (currentImageTypeIndex - 1 + imageTypes.length) % imageTypes.length;
         updateImageTypeDisplay();
     });
     
-    imageNextBtn.addEventListener('click', () => {
+    imageNextBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        console.log('Next image clicked');
         currentImageTypeIndex = (currentImageTypeIndex + 1) % imageTypes.length;
         updateImageTypeDisplay();
     });
     
-    currentImageTypeBtn.addEventListener('click', () => {
+    currentImageTypeBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        console.log('Center button clicked');
         // Optional: clicking the center button could cycle forward too
         currentImageTypeIndex = (currentImageTypeIndex + 1) % imageTypes.length;
         updateImageTypeDisplay();
@@ -167,6 +198,25 @@ function initializeModal() {
             }
         }
     });
+}
+
+// Test function to verify image controls are working
+function testImageControls() {
+    console.log('Testing image controls...');
+    const imagePrevBtn = document.getElementById('image-prev');
+    const imageNextBtn = document.getElementById('image-next');
+    const currentImageTypeBtn = document.getElementById('current-image-type');
+    
+    console.log('Elements found:', {
+        imagePrevBtn: !!imagePrevBtn,
+        imageNextBtn: !!imageNextBtn,
+        currentImageTypeBtn: !!currentImageTypeBtn
+    });
+    
+    if (imagePrevBtn) {
+        console.log('imagePrevBtn styles:', window.getComputedStyle(imagePrevBtn).getPropertyValue('pointer-events'));
+        console.log('imagePrevBtn z-index:', window.getComputedStyle(imagePrevBtn).getPropertyValue('z-index'));
+    }
 }
 
 // Open asset modal with detailed information
@@ -192,12 +242,31 @@ function openAssetModal(assetId) {
     // Show modal
     modal.classList.add('active');
     document.body.style.overflow = 'hidden';
+    
+    // Test image controls after modal opens
+    setTimeout(() => {
+        testImageControls();
+    }, 100);
 }
 
 // Populate modal with asset data
 function populateModalContent(asset) {
-    document.getElementById('modal-img').src = getImagePath(asset, currentImageType);
-    document.getElementById('modal-img').alt = asset.title;
+    const modalImg = document.getElementById('modal-img');
+    const modalImageContainer = document.querySelector('.modal-image');
+    
+    modalImg.src = getImagePath(asset, currentImageType);
+    modalImg.alt = asset.title;
+    
+    // Apply background to modal image container
+    if (asset.backgroundImage) {
+        modalImageContainer.style.backgroundImage = `url('${asset.backgroundImage}')`;
+        modalImageContainer.style.backgroundSize = 'cover';
+        modalImageContainer.style.backgroundPosition = 'center';
+        modalImageContainer.style.backgroundRepeat = 'no-repeat';
+    } else {
+        modalImageContainer.style.backgroundImage = '';
+    }
+    
     document.getElementById('modal-title').textContent = asset.title;
     document.getElementById('modal-category').textContent = getCategoryDisplayName(asset.category);
     document.getElementById('modal-description').textContent = asset.detailedDescription || asset.description;
@@ -300,7 +369,17 @@ function updateImageTypeDisplay() {
     // Update the modal image
     const currentAsset = filteredAssets[currentAssetIndex];
     if (currentAsset) {
-        document.getElementById('modal-img').src = getImagePath(currentAsset, currentImageType);
+        const modalImg = document.getElementById('modal-img');
+        modalImg.src = getImagePath(currentAsset, currentImageType);
+        
+        // Keep the background consistent for all image types
+        const modalImageContainer = document.querySelector('.modal-image');
+        if (currentAsset.backgroundImage) {
+            modalImageContainer.style.backgroundImage = `url('${currentAsset.backgroundImage}')`;
+            modalImageContainer.style.backgroundSize = 'cover';
+            modalImageContainer.style.backgroundPosition = 'center';
+            modalImageContainer.style.backgroundRepeat = 'no-repeat';
+        }
     }
 }
 

@@ -9,6 +9,16 @@ function generateImagePaths(basePath, assetName) {
   };
 }
 
+// Available background images
+const availableBackgrounds = {
+  'black': './assets/3d-assets/backgrounds/background-black.webp',
+  'blue': './assets/3d-assets/backgrounds/background-blue.webp',
+  'dark-green': './assets/3d-assets/backgrounds/background-dark-green.webp',
+  'green': './assets/3d-assets/backgrounds/background-green.webp',
+  'purple': './assets/3d-assets/backgrounds/background-purple.webp',
+  'red': './assets/3d-assets/backgrounds/background-red.webp'
+};
+
 const assetsData = {
   // Characters
   'weird-fish': {
@@ -23,7 +33,8 @@ const assetsData = {
     engines: 'Unity, Unreal, Godot',
     tags: ['Character', 'Fantasy', 'Low-Poly', 'Rigged'],
     sketchfabUrl: 'https://sketchfab.com/Mhze',
-    downloadUrl: '#'
+    downloadUrl: '#',
+    preferredBackground: 'dark-green' // Fish looks good against blue background
   },
 
   'toaster-gun': {
@@ -38,7 +49,8 @@ const assetsData = {
     engines: 'Unity, Unreal',
     tags: ['Horror', 'Creature', 'Detailed', 'Game-Ready'],
     sketchfabUrl: 'https://sketchfab.com/Mhze',
-    downloadUrl: '#'
+    downloadUrl: '#',
+    preferredBackground: 'blue' // Quirky weapon suits purple background
   },
 
   // Props
@@ -54,7 +66,8 @@ const assetsData = {
     engines: 'Unity, Unreal, Blender',
     tags: ['Medieval', 'Interactive', 'PBR', 'Prop'],
     sketchfabUrl: 'https://sketchfab.com/Mhze',
-    downloadUrl: '#'
+    downloadUrl: '#',
+    preferredBackground: 'black' // Realistic weapon looks good on black
   },
 
   'farming-tools': {
@@ -69,7 +82,8 @@ const assetsData = {
     engines: 'Unity, Unreal',
     tags: ['Farming', 'Tools', 'First-Person', 'Set'],
     sketchfabUrl: 'https://sketchfab.com/Mhze',
-    downloadUrl: '#'
+    downloadUrl: '#',
+    preferredBackground: 'green' // Farming tools suit natural green background
   },
 
   'horror-lantern': {
@@ -84,7 +98,8 @@ const assetsData = {
     engines: 'Unity, Unreal',
     tags: ['Horror', 'Atmospheric', 'Lighting', 'Vintage'],
     sketchfabUrl: 'https://sketchfab.com/Mhze',
-    downloadUrl: '#'
+    downloadUrl: '#',
+    preferredBackground: 'black' // Horror lantern looks ominous on black
   },
 
   // Weapons
@@ -100,7 +115,8 @@ const assetsData = {
     engines: 'Unity, Unreal, Godot',
     tags: ['Fantasy', 'Magic', 'Sword', 'Glowing'],
     sketchfabUrl: 'https://sketchfab.com/Mhze',
-    downloadUrl: '#'
+    downloadUrl: '#',
+    preferredBackground: 'purple' // Magical sword suits mystical purple background
   },
 
   'modern-pistol': {
@@ -115,7 +131,8 @@ const assetsData = {
     engines: 'Unity, Unreal',
     tags: ['Modern', 'Realistic', 'Tactical', 'Detailed'],
     sketchfabUrl: 'https://sketchfab.com/Mhze',
-    downloadUrl: '#'
+    downloadUrl: '#',
+    preferredBackground: 'black' // Tactical weapon looks professional on black
   },
 
   // Environments
@@ -131,7 +148,8 @@ const assetsData = {
     engines: 'Unity, Unreal',
     tags: ['Horror', 'Environment', 'Modular', 'Atmospheric'],
     sketchfabUrl: 'https://sketchfab.com/Mhze',
-    downloadUrl: '#'
+    downloadUrl: '#',
+    preferredBackground: 'red' // Horror environment suits dramatic red background
   },
 
   'farmland-scene': {
@@ -146,7 +164,8 @@ const assetsData = {
     engines: 'Unity, Unreal',
     tags: ['Farming', 'Peaceful', 'Open-World', 'Nature'],
     sketchfabUrl: 'https://sketchfab.com/Mhze',
-    downloadUrl: '#'
+    downloadUrl: '#',
+    preferredBackground: 'green' // Farmland environment suits natural green
   },
 
   'dungeon-corridor': {
@@ -161,7 +180,8 @@ const assetsData = {
     engines: 'Unity, Unreal, Godot',
     tags: ['Medieval', 'Dungeon', 'Modular', 'Dark'],
     sketchfabUrl: 'https://sketchfab.com/Mhze',
-    downloadUrl: '#'
+    downloadUrl: '#',
+    preferredBackground: 'dark-green' // Medieval dungeon suits dark green
   },
 
   'sci-fi-rifle': {
@@ -176,7 +196,8 @@ const assetsData = {
     engines: 'Unity, Unreal',
     tags: ['Sci-Fi', 'Energy', 'Modular', 'Animated'],
     sketchfabUrl: 'https://sketchfab.com/Mhze',
-    downloadUrl: '#'
+    downloadUrl: '#',
+    preferredBackground: 'blue' // Sci-fi weapon suits futuristic blue
   },
 
   'magic-staff': {
@@ -191,7 +212,8 @@ const assetsData = {
     engines: 'Unity, Unreal, Godot',
     tags: ['Fantasy', 'Magic', 'Ancient', 'Ornate'],
     sketchfabUrl: 'https://sketchfab.com/Mhze',
-    downloadUrl: '#'
+    downloadUrl: '#',
+    preferredBackground: 'purple' // Magic staff suits mystical purple
   },
 
   'robot-companion': {
@@ -206,7 +228,8 @@ const assetsData = {
     engines: 'Unity, Unreal',
     tags: ['Sci-Fi', 'Companion', 'AI', 'Expressive'],
     sketchfabUrl: 'https://sketchfab.com/Mhze',
-    downloadUrl: '#'
+    downloadUrl: '#',
+    preferredBackground: 'blue' // Robot companion suits futuristic blue
   },
 
   'haunted-chair': {
@@ -221,7 +244,8 @@ const assetsData = {
     engines: 'Unity, Unreal',
     tags: ['Horror', 'Victorian', 'Haunted', 'Atmospheric'],
     sketchfabUrl: 'https://sketchfab.com/Mhze',
-    downloadUrl: '#'
+    downloadUrl: '#',
+    preferredBackground: 'red' // Haunted chair suits dramatic red
   },
 
   'space-station-module': {
@@ -236,7 +260,8 @@ const assetsData = {
     engines: 'Unity, Unreal',
     tags: ['Sci-Fi', 'Space', 'Modular', 'Technical'],
     sketchfabUrl: 'https://sketchfab.com/Mhze',
-    downloadUrl: '#'
+    downloadUrl: '#',
+    preferredBackground: 'black' // Space station suits cosmic black
   }
 };
 
@@ -250,11 +275,20 @@ Object.keys(assetsData).forEach(assetId => {
     asset.images = generateImagePaths(asset.assetFolder, assetId);
   }
   
+  // Set default background if none specified
+  if (!asset.preferredBackground) {
+    asset.preferredBackground = 'black'; // Default to black background
+  }
+  
+  // Add background image path
+  asset.backgroundImage = availableBackgrounds[asset.preferredBackground];
+  
   // For assets without assetFolder (using blog thumbnails), keep the existing image
   if (!asset.image && !asset.assetFolder) {
     console.warn(`Asset ${assetId} is missing both image and assetFolder properties`);
   }
 });
 
-// Export the assets data
+// Export the assets data and background utilities
 window.assetsData = assetsData;
+window.availableBackgrounds = availableBackgrounds;
