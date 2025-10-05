@@ -269,10 +269,10 @@ function populateModalContent(asset) {
     
     document.getElementById('modal-title').textContent = asset.title;
     document.getElementById('modal-category').textContent = getCategoryDisplayName(asset.category);
-    document.getElementById('modal-description').textContent = asset.detailedDescription || asset.description;
+    document.getElementById('modal-description').textContent = asset.description;
     document.getElementById('modal-polycount').textContent = asset.polyCount;
     document.getElementById('modal-textures').textContent = asset.textureResolution;
-    document.getElementById('modal-engines').textContent = asset.engines;
+    document.getElementById('modal-engines').textContent = asset.tools;
     
     // Populate tags
     const modalTags = document.getElementById('modal-tags');
@@ -280,17 +280,7 @@ function populateModalContent(asset) {
     
     // Set up action buttons
     const sketchfabBtn = document.getElementById('modal-sketchfab');
-    const downloadBtn = document.getElementById('modal-download');
-    
     sketchfabBtn.href = asset.sketchfabUrl;
-    
-    downloadBtn.onclick = () => {
-        if (asset.downloadUrl && asset.downloadUrl !== '#') {
-            window.open(asset.downloadUrl, '_blank');
-        } else {
-            showDownloadMessage();
-        }
-    };
     
     // Reset image type display to "Render"
     currentImageTypeIndex = 0;
@@ -389,11 +379,6 @@ function getImagePath(asset, imageType) {
         return asset.image; // Default to main image
     }
     return asset.images[imageType];
-}
-
-// Show download message (placeholder for now)
-function showDownloadMessage() {
-    alert('Download functionality coming soon! For now, please contact me directly for asset downloads.');
 }
 
 // Utility function to get all assets by category
