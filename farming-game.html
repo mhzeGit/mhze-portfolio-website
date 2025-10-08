@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farming Game - Innovative Agriculture Simulation | MHZE Portfolio</title>
+    <meta name="description" content="Explore the Farming Game - a farming simulation with innovative digging and soil mechanics that redefine agricultural gaming.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/project.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <button class="mobile-menu-button" aria-label="Toggle mobile menu">
+                <span class="menu-icon"></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#portfolio">Blog</a></li>
+                <li><a href="index.html#my-works">My Works</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Back Link -->
+    <div class="back-link-container">
+        <a href="index.html#my-works" class="back-link">
+            ← Back to My Works
+        </a>
+    </div>
+
+    <!-- Project Header -->
+    <section class="project-header">
+        <div class="container">
+            <div class="project-header-content">
+                <h1 class="project-title">Farming Game</h1>
+                <p class="project-subtitle">Innovative Agriculture Simulation with Dynamic Soil Systems</p>
+                <div class="project-meta">
+                    <span class="project-type">Game Development</span>
+                    <span class="project-year">2024</span>
+                    <span class="project-platform">PC / Unity Engine</span>
+                    <span class="project-status">In Development</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Hero Image -->
+    <section class="project-hero">
+        <div class="container">
+            <div class="project-hero-image">
+                <img src="./assets/blog-content/blog-farming-mechanic/blog-thumbnail-farming-mechanic.webp" alt="Farming Game Screenshot" />
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Content -->
+    <main class="project-content">
+        <div class="container">
+            <!-- Overview Section -->
+            <section class="content-section">
+                <h2>Project Overview</h2>
+                <p>This farming simulation game reimagines agricultural gameplay through innovative soil mechanics and realistic plant growth systems. Unlike traditional farming games that treat soil as simple tiles, this project features a dynamic underground ecosystem where every action has consequences for the health and productivity of your farm.</p>
+                
+                <div class="project-image-card left">
+                    <img src="./assets/my-work-content/farming-game-soil-system.webp" alt="Farming Game Soil System" />
+                    <p class="image-caption">Dynamic soil layers showing nutrient distribution and root systems</p>
+                </div>
+
+                <p>The core innovation lies in the multi-layered soil system where players must understand and manage soil composition, drainage, nutrient levels, and root development. Each plant species has unique requirements and growth patterns that interact realistically with the underground environment.</p>
+
+                <p>Players engage in deep agricultural planning, considering crop rotation, companion planting, and seasonal changes. The game rewards understanding of real farming principles while maintaining the relaxing, meditative qualities that make farming simulations appealing to a broad audience.</p>
+            </section>
+
+            <!-- Innovative Mechanics Section -->
+            <section class="content-section">
+                <h2>Revolutionary Soil Mechanics</h2>
+                
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <h3>Layered Soil System</h3>
+                        <p>Multiple soil layers with different properties affect water retention, nutrient availability, and root penetration for realistic plant growth.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Dynamic Water Flow</h3>
+                        <p>Water moves naturally through soil layers, creating realistic irrigation challenges and seasonal flooding or drought conditions.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Root Network Simulation</h3>
+                        <p>Plants develop complex root systems that compete for nutrients and water, encouraging strategic crop placement and timing.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Soil Health Management</h3>
+                        <p>Long-term soil health affects productivity, requiring crop rotation, composting, and sustainable farming practices to maintain.</p>
+                    </div>
+                </div>
+
+                <div class="project-video-container">
+                    <video controls poster="./assets/my-work-content/farming-game-video-poster.webp">
+                        <source src="./assets/my-work-content/farming-game-mechanics.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <p class="video-caption">Development demonstration of the dynamic soil system and plant growth mechanics</p>
+                </div>
+            </section>
+
+            <!-- Development Challenges Section -->
+            <section class="content-section">
+                <h2>Development Challenges & Solutions</h2>
+                <p>Creating a realistic soil simulation while maintaining game performance required innovative approaches to data management and visualization. The challenge was representing complex underground systems in an intuitive, visually appealing way that doesn't overwhelm players.</p>
+
+                <div class="project-image-card right">
+                    <img src="./assets/my-work-content/farming-game-ui-design.webp" alt="Farming Game UI Design" />
+                    <p class="image-caption">UI design showing soil analysis tools and underground visualization</p>
+                </div>
+
+                <p>I developed a custom cellular automata system to simulate soil conditions and water flow efficiently. The visual representation uses layered transparency and particle effects to show underground activity without cluttering the main farming interface. Players can toggle between surface view and cross-section analysis modes.</p>
+
+                <p>Balancing realism with accessibility was another major challenge. The game includes an adaptive difficulty system that gradually introduces complex mechanics, allowing casual players to enjoy basic farming while providing depth for those interested in agricultural simulation.</p>
+
+                <blockquote class="development-quote">
+                    "The breakthrough moment came when I realized that soil should be as important a character as the plants themselves. Once I started thinking of dirt as a living system with its own needs and behaviors, everything clicked into place."
+                </blockquote>
+            </section>
+
+            <!-- Technical Architecture Section -->
+            <section class="content-section">
+                <h2>Technical Architecture</h2>
+                <p>The game utilizes a custom grid-based simulation engine built on Unity's Job System for efficient parallel processing of soil calculations. Each soil cell maintains multiple data layers including moisture, nutrients, pH levels, organic matter, and compaction values that update in real-time.</p>
+
+                <div class="tech-stack-showcase">
+                    <h3>Technologies Used</h3>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Unity 3D</span>
+                        <span class="tech-tag">C# Job System</span>
+                        <span class="tech-tag">Unity DOTS</span>
+                        <span class="tech-tag">Custom Shaders</span>
+                        <span class="tech-tag">Blender</span>
+                        <span class="tech-tag">Substance Designer</span>
+                    </div>
+                </div>
+
+                <div class="project-image-card full">
+                    <img src="./assets/my-work-content/farming-game-technical-diagram.webp" alt="Technical Architecture Diagram" />
+                    <p class="image-caption">System architecture showing the relationship between simulation layers and rendering systems</p>
+                </div>
+
+                <p>The plant growth system uses state machines to manage different growth phases, with each plant maintaining relationships to multiple soil cells for realistic nutrient competition. Custom shaders handle the underground visualization, allowing players to see root networks and soil conditions through a stylized heat-map interface.</p>
+            </section>
+
+            <!-- Design Philosophy Section -->
+            <section class="content-section">
+                <h2>Educational Gaming Approach</h2>
+                <p>Beyond entertainment, this farming game serves as an educational tool that introduces players to real agricultural concepts. The mechanics are based on actual soil science principles, crop rotation benefits, and sustainable farming practices, making it valuable for both gaming and learning.</p>
+
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <h3>20+</h3>
+                        <p>Crop Varieties</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>8</h3>
+                        <p>Soil Parameters</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>4</h3>
+                        <p>Seasonal Cycles</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>100+</h3>
+                        <p>Soil Interactions</p>
+                    </div>
+                </div>
+
+                <p>The game includes an optional educational mode with detailed explanations of farming concepts, making it suitable for agricultural education programs. Players learn about companion planting, soil pH management, and sustainable farming practices through hands-on experimentation rather than traditional instruction.</p>
+            </section>
+
+            <!-- Current Status Section -->
+            <section class="content-section cta-section">
+                <h2>Development Status</h2>
+                <p>The farming simulation is currently in active development, with core soil mechanics implemented and crop systems being refined. Focus is on optimizing performance and enhancing the visual feedback systems.</p>
+                <div class="project-cta-buttons">
+                    <a href="#" class="btn btn-primary">Read Development Blog</a>
+                    <a href="#" class="btn btn-secondary">View Technical Details</a>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 MHZE. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

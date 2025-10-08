@@ -1,0 +1,562 @@
+/* Project page specific styles that extend main.css */
+
+/* Project Header */
+.project-header {
+    padding: 8rem 0 2rem;
+    text-align: center;
+   
+}
+
+.project-header-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.project-title {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 800;
+    margin-bottom: 1rem;
+    background: linear-gradient(45deg, #f57c00, #ff9800, #ffb74d);
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientShift 6s ease-in-out infinite;
+}
+
+.project-subtitle {
+    font-size: 1.4rem;
+    color: #a3c9d9;
+    margin-bottom: 2rem;
+    font-weight: 300;
+}
+
+.project-meta {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-top: 1.5rem;
+}
+
+.project-meta span {
+    background: rgba(77, 182, 172, 0.1);
+    color: #4db6ac;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    border: 1px solid rgba(77, 182, 172, 0.3);
+}
+
+.project-meta .project-status {
+    background: rgba(255, 152, 0, 0.1);
+    color: #ff9800;
+    border-color: rgba(255, 152, 0, 0.3);
+}
+
+.project-meta .project-status-released {
+    background: rgba(76, 175, 80, 0.1);
+    color: #4caf50;
+    border-color: rgba(76, 175, 80, 0.3);
+}
+
+/* Horror Games Showcase */
+.horror-game-showcase {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    margin: 2rem 0;
+}
+
+.horror-game-item {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 2rem;
+    background: rgba(45, 45, 45, 0.3);
+    border-radius: 12px;
+    padding: 1.5rem;
+    border: 1px solid rgba(120, 120, 120, 0.2);
+}
+
+.horror-game-image {
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.horror-game-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.horror-game-content h3 {
+    color: #ffb74d;
+    margin-bottom: 1rem;
+}
+
+.horror-game-stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.horror-game-stats span {
+    background: rgba(77, 182, 172, 0.1);
+    color: #4db6ac;
+    padding: 0.3rem 0.8rem;
+    border-radius: 12px;
+    font-size: 0.85rem;
+    border: 1px solid rgba(77, 182, 172, 0.3);
+}
+
+.youtube-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.youtube-stat {
+    background: rgba(255, 0, 0, 0.1);
+    border-color: rgba(255, 0, 0, 0.3);
+}
+
+.youtube-stat h3 {
+    color: #ff4444;
+}
+
+/* Animation Showcase */
+.animation-showcase {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    margin: 2rem 0;
+}
+
+.animation-item {
+    display: grid;
+    grid-template-columns: 400px 1fr;
+    gap: 2rem;
+    background: rgba(45, 45, 45, 0.3);
+    border-radius: 12px;
+    padding: 1.5rem;
+    border: 1px solid rgba(120, 120, 120, 0.2);
+}
+
+.animation-item.featured {
+    border-color: rgba(255, 152, 0, 0.5);
+    background: rgba(255, 152, 0, 0.05);
+}
+
+.animation-video {
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.animation-video video {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.animation-content h3 {
+    color: #ffb74d;
+    margin-bottom: 1rem;
+}
+
+.animation-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: #bdbdbd;
+}
+
+/* Process Steps */
+.process-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.process-step {
+    background: rgba(45, 45, 45, 0.3);
+    border-radius: 12px;
+    padding: 1.5rem;
+    border: 1px solid rgba(120, 120, 120, 0.2);
+}
+
+.process-step h4 {
+    color: #5dbcd2;
+    margin-bottom: 0.8rem;
+    font-size: 1.1rem;
+}
+
+.process-step p {
+    font-size: 0.95rem;
+    margin-bottom: 0;
+}
+
+/* Skills Breakdown */
+.skills-breakdown {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.skill-category {
+    background: rgba(45, 45, 45, 0.3);
+    border-radius: 12px;
+    padding: 1.5rem;
+    border: 1px solid rgba(120, 120, 120, 0.2);
+}
+
+.skill-category h4 {
+    color: #ffb74d;
+    margin-bottom: 1rem;
+}
+
+.skill-category ul {
+    list-style: none;
+    padding: 0;
+}
+
+.skill-category li {
+    color: #bdbdbd;
+    padding: 0.3rem 0;
+    border-bottom: 1px solid rgba(120, 120, 120, 0.1);
+}
+
+.skill-category li:last-child {
+    border-bottom: none;
+}
+
+/* Project Hero */
+.project-hero {
+    padding: 2rem 0;
+}
+
+.project-hero-image {
+    max-width: 900px;
+    margin: 0 auto;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+}
+
+.project-hero-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Project Content */
+.project-content {
+    padding: 4rem 0 6rem;
+}
+
+.content-section {
+    margin-bottom: 4rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.content-section h2 {
+    font-size: 2rem;
+    color: #ffb74d;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+}
+
+.content-section h3 {
+    font-size: 1.4rem;
+    color: #5dbcd2;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.content-section p {
+    font-size: 1.1rem;
+    color: #d6d6d6;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+}
+
+/* Project Image Cards */
+.project-image-card {
+    margin: 3rem 0;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid rgba(120, 120, 120, 0.2);
+    background: rgba(45, 45, 45, 0.5);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.project-image-card.full {
+    display: block;
+    margin: 3rem auto;
+    width: 90%;
+}
+
+.project-image-card.left {
+    float: left;
+    width: 45%;
+    margin: 1rem 2rem 1rem 0;
+}
+
+.project-image-card.right {
+    float: right;
+    width: 45%;
+    margin: 1rem 0 1rem 2rem;
+}
+
+.project-image-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.project-image-card .image-caption {
+    padding: 1rem;
+    background: rgba(30, 30, 30, 0.8);
+    margin: 0;
+    font-size: 0.9rem;
+    color: #a3c9d9;
+    border-top: 1px solid rgba(120, 120, 120, 0.2);
+    text-align: center;
+}
+
+/* Features Grid */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.feature-card {
+    background: rgba(45, 45, 45, 0.5);
+    border-radius: 12px;
+    padding: 1.5rem;
+    border: 1px solid rgba(120, 120, 120, 0.2);
+    backdrop-filter: blur(10px);
+}
+
+.feature-card h3 {
+    color: #ffb74d;
+    margin-bottom: 0.8rem;
+    font-size: 1.1rem;
+}
+
+.feature-card p {
+    color: #bdbdbd;
+    font-size: 0.95rem;
+    margin-bottom: 0;
+}
+
+/* Video Container */
+.project-video-container {
+    margin: 3rem 0;
+    text-align: center;
+}
+
+.project-video-container video {
+    width: 100%;
+    max-width: 700px;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.video-caption {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: #a3c9d9;
+    text-align: center;
+}
+
+/* Development Quote */
+.development-quote {
+    background: rgba(45, 45, 45, 0.5);
+    border-left: 4px solid #5dbcd2;
+    padding: 1.5rem;
+    margin: 2rem 0;
+    font-style: italic;
+    color: #d6d6d6;
+    border-radius: 0 8px 8px 0;
+}
+
+/* Tech Stack Showcase */
+.tech-stack-showcase {
+    background: rgba(45, 45, 45, 0.3);
+    border-radius: 12px;
+    padding: 2rem;
+    margin: 2rem 0;
+    border: 1px solid rgba(120, 120, 120, 0.2);
+}
+
+.tech-stack-showcase h3 {
+    margin-bottom: 1rem;
+    color: #ffb74d;
+}
+
+/* Stats Grid */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.stat-card {
+    background: rgba(45, 45, 45, 0.5);
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-align: center;
+    border: 1px solid rgba(120, 120, 120, 0.2);
+    backdrop-filter: blur(10px);
+}
+
+.stat-card h3 {
+    color: #5dbcd2;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    font-weight: 800;
+}
+
+.stat-card p {
+    color: #bdbdbd;
+    font-size: 0.9rem;
+    margin-bottom: 0;
+}
+
+/* CTA Section */
+.cta-section {
+    text-align: center;
+    background: rgba(45, 45, 45, 0.3);
+    border-radius: 20px;
+    padding: 3rem 2rem;
+    border: 1px solid rgba(120, 120, 120, 0.2);
+}
+
+.project-cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+
+/* Back Link */
+.back-link-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    padding-top: 6rem;
+}
+
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #5dbcd2;
+    text-decoration: none;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    transition: color 0.3s ease;
+}
+
+.back-link:hover {
+    color: #7fd4e8;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .project-header {
+        padding: 6rem 0 1rem;
+    }
+    
+    .project-meta {
+        gap: 1rem;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .content-section {
+        padding: 0 1rem;
+    }
+    
+    .project-image-card.left,
+    .project-image-card.right {
+        float: none;
+        width: 100%;
+        margin: 2rem 0;
+    }
+    
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .project-cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .back-link-container {
+        padding: 5rem 1rem 0;
+    }
+    
+    .horror-game-item,
+    .animation-item {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .horror-game-stats {
+        justify-content: center;
+    }
+    
+    .process-steps,
+    .skills-breakdown {
+        grid-template-columns: 1fr;
+    }
+    
+    .youtube-stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .cta-section {
+        padding: 2rem 1rem;
+    }
+    
+    .youtube-stats-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .horror-game-stats {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* Clear floats */
+.content-section::after {
+    content: "";
+    display: table;
+    clear: both;
+}

@@ -104,7 +104,7 @@ function generatePortfolioCards() {
       {
         title: 'Game Project: Blah Blah Family',
         description: 'A creepy stylized horror adventure game with unique mechanics and story.',
-        image: './assets/my-work-content/blah-blah-family-game-thumbnail.webp',
+        image: './assets/my-work-content/blah-blah-family/blah-blah-family-game-thumbnail.webp',
         link: 'blahblahfamily.html'
       },
       {
@@ -120,16 +120,16 @@ function generatePortfolioCards() {
         link: 'farming-game.html'
       },
       {
-        title: 'Horror Game: Midnight Terrors',
-        description: 'A spine-chilling horror experience with atmospheric environments and terrifying encounters.',
+        title: 'My 3 Horror Games',
+        description: '3 unique horror games I developed, each have gained a lot of attention on itch.io and youtube.',
         image: './assets/blog-content/blog-thumbnail-my-3-horror-games.webp',
-        link: 'midnight-terrors.html'
+        link: 'my-3-horror-games.html'
       },
       {
-        title: 'RPG Project: Fantasy Realms',
-        description: 'An open-world RPG featuring rich storytelling and immersive gameplay mechanics.',
+        title: 'My Top 10 Animation Works',
+        description: 'A showcase of my top 10 animation works, highlighting my skills and creativity in 3D animation.',
         image: './assets/blog-content/blog-thumbnail-my-experience-in-3d-animation.webp',
-        link: 'fantasy-realms.html'
+        link: 'my-animations.html'
       },
       {
         title: 'Action Game: Combat Arena',
