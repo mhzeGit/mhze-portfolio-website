@@ -272,6 +272,7 @@ nav {
   position: relative;
   overflow: hidden;
   /* padding-top: 20px; Default padding for all devices */
+  padding-top: 100px; /* Add spacing between the title and the navigation bar */
 }
 
 .hero-content {
@@ -282,7 +283,7 @@ nav {
 
 @media (max-width: 768px) {
   .hero {
-    padding-top: 120px; /* Increased padding for mobile */
+    padding-top: 150px; /* Adjust spacing for mobile */
     align-items: flex-start; /* Align from top on mobile */
   }
 }
