@@ -101,7 +101,7 @@ function showBlogPost(postId, updateHistory = true) {
   blogPost.querySelector('.author').textContent = post.author;
 
   // Update blog post content
-  document.getElementById('post-image').style.backgroundImage = `url(${post.image})`;
+  document.getElementById('post-image').style.backgroundImage = `url('../${post.image}')`;
 
   // Populate post data
   document.getElementById('post-title').textContent = post.title;

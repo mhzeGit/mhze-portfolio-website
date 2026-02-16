@@ -33,7 +33,7 @@ function initializeAssets() {
     
     // Asset card render function
     function renderAssetCard(asset) {
-        const backgroundStyle = asset.backgroundImage ? `background-image: url('${asset.backgroundImage}');` : '';
+        const backgroundStyle = asset.backgroundImage ? `background-image: url('../${asset.backgroundImage}');` : '';
         return `
             <div class="asset-card filtered-in" data-category="${asset.category}" data-asset-id="${asset.id}">
                 <div class="asset-image" style="${backgroundStyle}">
@@ -259,7 +259,7 @@ function populateModalContent(asset) {
     
     // Apply background to modal image container
     if (asset.backgroundImage) {
-        modalImageContainer.style.backgroundImage = `url('${asset.backgroundImage}')`;
+        modalImageContainer.style.backgroundImage = `url('../${asset.backgroundImage}')`;
         modalImageContainer.style.backgroundSize = 'cover';
         modalImageContainer.style.backgroundPosition = 'center';
         modalImageContainer.style.backgroundRepeat = 'no-repeat';
@@ -365,7 +365,7 @@ function updateImageTypeDisplay() {
         // Keep the background consistent for all image types
         const modalImageContainer = document.querySelector('.modal-image');
         if (currentAsset.backgroundImage) {
-            modalImageContainer.style.backgroundImage = `url('${currentAsset.backgroundImage}')`;
+            modalImageContainer.style.backgroundImage = `url('../${currentAsset.backgroundImage}')`;
             modalImageContainer.style.backgroundSize = 'cover';
             modalImageContainer.style.backgroundPosition = 'center';
             modalImageContainer.style.backgroundRepeat = 'no-repeat';

@@ -99,61 +99,61 @@ function generatePortfolioCards() {
         title: 'My Created 3D Assets',
         description: 'A collection of my best 3D models and assets created for games and other projects.',
         image: './assets/blog-content/blog-thumbnail-my-3d-models.webp',
-        link: 'my-3d-assets.html'
+        link: './html/my-3d-assets.html'
       },
       {
         title: 'Game Project: Blah Blah Family',
         description: 'A creepy stylized horror adventure game with unique mechanics and story.',
         image: './assets/my-work-content/blah-blah-family/blah-blah-family-game-thumbnail.webp',
-        link: 'blahblahfamily.html'
+        link: './html/blahblahfamily.html'
       },
       {
         title: 'Game Project: Slime Defence Game',
         description: 'A fun and strategic tower defense game featuring slimes and creative mechanics.',
         image: './assets/my-work-content/slime-defence-game-thumbnail.webp',
-        link: 'slime-defence.html'
+        link: './html/slime-defence.html'
       },
       {
         title: 'Game Project: Farming Game',
         description: 'A farming simulation game with innovative digging and soil mechanics.',
         image: './assets/blog-content/blog-farming-mechanic/blog-thumbnail-farming-mechanic.webp',
-        link: 'farming-game.html'
+        link: './html/farming-game.html'
       },
       {
         title: 'My 3 Horror Games',
         description: '3 unique horror games I developed, each have gained a lot of attention on itch.io and youtube.',
         image: './assets/blog-content/blog-thumbnail-my-3-horror-games.webp',
-        link: 'my-3-horror-games.html'
+        link: './html/my-3-horror-games.html'
       },
       {
         title: 'My Top 10 Animation Works',
         description: 'A showcase of my top 10 animation works, highlighting my skills and creativity in 3D animation.',
         image: './assets/blog-content/blog-thumbnail-my-experience-in-3d-animation.webp',
-        link: 'my-animations.html'
+        link: './html/my-animations.html'
       },
       {
         title: 'Action Game: Combat Arena',
         description: 'Fast-paced action combat game with dynamic environments and fluid controls.',
         image: './assets/blog-content/blog-thumbnail-blender-to-unity.webp',
-        link: 'combat-arena.html'
+        link: './html/combat-arena.html'
       },
       {
         title: 'Puzzle Game: Mind Bender',
         description: 'A challenging puzzle game that tests your logic and problem-solving skills.',
         image: './assets/blog-content/blog-thumbnail-my-3d-models.webp',
-        link: 'mind-bender.html'
+        link: './html/mind-bender.html'
       },
       {
         title: 'Simulation: City Builder Pro',
         description: 'A comprehensive city building simulation with realistic economic systems.',
         image: './assets/blog-content/blog-farming-mechanic/blog-thumbnail-farming-mechanic.webp',
-        link: 'city-builder.html'
+        link: './html/city-builder.html'
       },
       {
         title: 'Adventure: Lost Kingdoms',
         description: 'An epic adventure through mysterious lands filled with secrets and treasures.',
         image: './assets/blog-content/blog-thumbnail-my-experience-in-3d-animation.webp',
-        link: 'lost-kingdoms.html'
+        link: './html/lost-kingdoms.html'
       }
     ];
 
