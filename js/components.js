@@ -68,10 +68,11 @@ function setActiveNav() {
   const navLinks = document.querySelectorAll('.nav-links a');
   
   navLinks.forEach(link => {
+    const href = link.getAttribute('href') || '';
     link.classList.remove('active');
     if (
-      (currentPage === 'index.html' || currentPage === '') && link.getAttribute('href') === 'index.html' ||
-      currentPage === 'blog.html' && link.getAttribute('href') === 'blog.html'
+      ((currentPage === 'index.html' || currentPage === '') && href === 'index.html') ||
+      (currentPage === 'blog.html' && href.endsWith('blog.html'))
     ) {
       link.classList.add('active');
     }

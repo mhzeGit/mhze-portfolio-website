@@ -35,7 +35,7 @@ function generatePortfolioCards() {
   // Blog card render function
   function renderBlogCard(post) {
     return `
-      <div class="portfolio-card" onclick="window.location.href='blog.html?post=${post.id}'">
+      <div class="portfolio-card" onclick="window.location.href='html/blog.html?post=${post.id}'">
         <div class="card-image" style="background-image: url('${post.image}'); background-size: cover; background-position: center;"></div>
         <div class="card-content">
           <h3>${post.title}</h3>
