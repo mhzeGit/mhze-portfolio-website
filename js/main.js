@@ -51,11 +51,14 @@ function generatePortfolioCards() {
   // Work card render function
   function renderWorkCard(work) {
     return `
-      <div class="portfolio-card mywork-card" onclick="window.location.href='${work.link}'" style="cursor:pointer;">
+      <div class="portfolio-card" onclick="window.location.href='${work.link}'" style="cursor:pointer;">
         <div class="card-image" style="background-image: url('${work.image}'); background-size: cover; background-position: center;"></div>
         <div class="card-content">
           <h3>${work.title}</h3>
           <p>${work.description}</p>
+          <div class="tech-stack">
+            ${(work.tags || []).map(tag => `<span class="tech-tag">${tag}</span>`).join('')}
+          </div>
         </div>
       </div>
     `;
@@ -99,61 +102,71 @@ function generatePortfolioCards() {
         title: 'My Created 3D Assets',
         description: 'A collection of my best 3D models and assets created for games and other projects.',
         image: './assets/blog-content/blog-thumbnail-my-3d-models.webp',
-        link: './html/my-3d-assets.html'
+        link: './html/my-3d-assets.html',
+        tags: ['3D Modeling', 'Texturing', 'Blender']
       },
       {
         title: 'Game Project: Blah Blah Family',
         description: 'A creepy stylized horror adventure game with unique mechanics and story.',
         image: './assets/my-work-content/blah-blah-family/blah-blah-family-game-thumbnail.webp',
-        link: './html/blahblahfamily.html'
+        link: './html/blahblahfamily.html',
+        tags: ['Unreal Engine', 'Game Design', 'Horror']
       },
       {
         title: 'Game Project: Slime Defence Game',
         description: 'A fun and strategic tower defense game featuring slimes and creative mechanics.',
         image: './assets/my-work-content/slime-defence-game-thumbnail.webp',
-        link: './html/slime-defence.html'
+        link: './html/slime-defence.html',
+        tags: ['Unity', 'C#', 'Tower Defense']
       },
       {
         title: 'Game Project: Farming Game',
         description: 'A farming simulation game with innovative digging and soil mechanics.',
         image: './assets/blog-content/blog-farming-mechanic/blog-thumbnail-farming-mechanic.webp',
-        link: './html/farming-game.html'
+        link: './html/farming-game.html',
+        tags: ['Unity', 'Simulation', 'C#']
       },
       {
         title: 'My 3 Horror Games',
         description: '3 unique horror games I developed, each have gained a lot of attention on itch.io and youtube.',
         image: './assets/blog-content/blog-thumbnail-my-3-horror-games.webp',
-        link: './html/my-3-horror-games.html'
+        link: './html/my-3-horror-games.html',
+        tags: ['Unreal Engine', 'Horror', 'Game Design']
       },
       {
         title: 'My Top 10 Animation Works',
         description: 'A showcase of my top 10 animation works, highlighting my skills and creativity in 3D animation.',
         image: './assets/blog-content/blog-thumbnail-my-experience-in-3d-animation.webp',
-        link: './html/my-animations.html'
+        link: './html/my-animations.html',
+        tags: ['Animation', 'Blender', 'Autodesk Maya']
       },
       {
         title: 'Action Game: Combat Arena',
         description: 'Fast-paced action combat game with dynamic environments and fluid controls.',
         image: './assets/blog-content/blog-thumbnail-blender-to-unity.webp',
-        link: './html/combat-arena.html'
+        link: './html/combat-arena.html',
+        tags: ['Unity', 'Action', 'C#']
       },
       {
         title: 'Puzzle Game: Mind Bender',
         description: 'A challenging puzzle game that tests your logic and problem-solving skills.',
         image: './assets/blog-content/blog-thumbnail-my-3d-models.webp',
-        link: './html/mind-bender.html'
+        link: './html/mind-bender.html',
+        tags: ['Puzzle', 'Game Design', 'Unity']
       },
       {
         title: 'Simulation: City Builder Pro',
         description: 'A comprehensive city building simulation with realistic economic systems.',
         image: './assets/blog-content/blog-farming-mechanic/blog-thumbnail-farming-mechanic.webp',
-        link: './html/city-builder.html'
+        link: './html/city-builder.html',
+        tags: ['Simulation', 'C#', 'Unity']
       },
       {
         title: 'Adventure: Lost Kingdoms',
         description: 'An epic adventure through mysterious lands filled with secrets and treasures.',
         image: './assets/blog-content/blog-thumbnail-my-experience-in-3d-animation.webp',
-        link: './html/lost-kingdoms.html'
+        link: './html/lost-kingdoms.html',
+        tags: ['Adventure', 'Unreal Engine', 'Game Design']
       }
     ];
 
