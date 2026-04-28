@@ -723,9 +723,9 @@ footer {
   }
 }
 
-p.intro strong {
+.glow-text {
+  font-weight: 700;
   animation: glowPulse 4s infinite ease-in-out;
-  animation-delay: var(--delay, 0s); /* default = 0s if not set */
 }
 
 /* Smooth Movement Navigation Transition  */
