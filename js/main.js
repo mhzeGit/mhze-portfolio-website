@@ -106,13 +106,6 @@ function generatePortfolioCards() {
         tags: ['Indie Game Dev', 'Personal Project', 'Steam Game']
       },
       {
-        title: 'My Created 3D Assets',
-        description: 'A collection of my best 3D models and assets created for games and other projects.',
-        image: './assets/blog-content/blog-thumbnail-my-3d-models.webp',
-        link: './html/my-3d-assets.html',
-        tags: ['3D Modeling', 'Texturing', 'Blender']
-      },
-      {
         title: 'Game Project: Blah Blah Family',
         description: 'A creepy stylized horror adventure game with unique mechanics and story.',
         image: './assets/my-work-content/blah-blah-family/blah-blah-family-game-thumbnail.webp',
@@ -125,20 +118,6 @@ function generatePortfolioCards() {
         image: './assets/my-work-content/slime-defence-game-thumbnail.webp',
         link: './html/slime-defence.html',
         tags: ['Unity', 'C#', 'Tower Defense']
-      },
-      {
-        title: 'Game Project: Farming Game',
-        description: 'A farming simulation game with innovative digging and soil mechanics.',
-        image: './assets/blog-content/blog-farming-mechanic/blog-thumbnail-farming-mechanic.webp',
-        link: './html/farming-game.html',
-        tags: ['Unity', 'Simulation', 'C#']
-      },
-      {
-        title: 'My 3 Horror Games',
-        description: '3 unique horror games I developed, each have gained a lot of attention on itch.io and youtube.',
-        image: './assets/blog-content/blog-thumbnail-my-3-horror-games.webp',
-        link: './html/my-3-horror-games.html',
-        tags: ['Unreal Engine', 'Horror', 'Game Design']
       },
       {
         title: 'My Top 10 Animation Works',
@@ -155,25 +134,11 @@ function generatePortfolioCards() {
         tags: ['Unity', 'Action', 'C#']
       },
       {
-        title: 'Puzzle Game: Mind Bender',
-        description: 'A challenging puzzle game that tests your logic and problem-solving skills.',
+        title: 'My Created 3D Assets',
+        description: 'A collection of my best 3D models and assets created for games and other projects.',
         image: './assets/blog-content/blog-thumbnail-my-3d-models.webp',
-        link: './html/mind-bender.html',
-        tags: ['Puzzle', 'Game Design', 'Unity']
-      },
-      {
-        title: 'Simulation: City Builder Pro',
-        description: 'A comprehensive city building simulation with realistic economic systems.',
-        image: './assets/blog-content/blog-farming-mechanic/blog-thumbnail-farming-mechanic.webp',
-        link: './html/city-builder.html',
-        tags: ['Simulation', 'C#', 'Unity']
-      },
-      {
-        title: 'Adventure: Lost Kingdoms',
-        description: 'An epic adventure through mysterious lands filled with secrets and treasures.',
-        image: './assets/blog-content/blog-thumbnail-my-experience-in-3d-animation.webp',
-        link: './html/lost-kingdoms.html',
-        tags: ['Adventure', 'Unreal Engine', 'Game Design']
+        link: './html/my-3d-assets.html',
+        tags: ['3D Modeling', 'Texturing', 'Blender']
       }
     ];
 
