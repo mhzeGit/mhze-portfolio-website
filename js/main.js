@@ -99,6 +99,13 @@ function generatePortfolioCards() {
   if (myWorksGrid) {
     const works = [
       {
+        title: 'Uncanny Smile | The Last Harvest',
+        description: 'A adventure farming horror game about weird pumpkins.',
+        image: './assets/my-work-content/UncannySmileTheLastHarvest/BaseCapsuleArtThumbnailWithSteamLogo.webp',
+        link: './html/uncanny-smile.html',
+        tags: ['Indie Game Dev', 'Personal Project', 'Steam Game']
+      },
+      {
         title: 'My Created 3D Assets',
         description: 'A collection of my best 3D models and assets created for games and other projects.',
         image: './assets/blog-content/blog-thumbnail-my-3d-models.webp',
